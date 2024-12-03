@@ -1,32 +1,13 @@
 {
   "project_info": {
-    "project_number": "208283883833",
-    "project_id": "willgo-259ee",
-    "storage_bucket": "willgo-259ee.appspot.com"
+    "project_number": "430945010047",
+    "project_id": "willgo-99c0c",
+    "storage_bucket": "willgo-99c0c.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:208283883833:android:28dc62a0ddbfa9fadf70e8",
-        "android_client_info": {
-          "package_name": "com.qeema.willgo"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBkehmZRQvxUP_Gz8pGaEDUxue6B8zvQsk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:208283883833:android:0d4de0ff8f65081edf70e8",
+        "mobilesdk_app_id": "1:430945010047:android:e4a45f4579a9cd90025a4a",
         "android_client_info": {
           "package_name": "com.rowad.willgo"
         }
@@ -34,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBkehmZRQvxUP_Gz8pGaEDUxue6B8zvQsk"
+          "current_key": "AIzaSyBfZO7R8F147Taf44HpJ0TrMyt9twQdI7Y"
         }
       ],
       "services": {
