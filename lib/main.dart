@@ -2,11 +2,11 @@ import 'dart:developer';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:willgo/firebase_options.dart';
 import 'app.dart';
 import 'app/modules/environment/controllers/environment_controller.dart';
 import 'core/firebase_notifications_handler/src/widget.dart';
 import 'core/services/get_storage_helper.dart';
-import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
