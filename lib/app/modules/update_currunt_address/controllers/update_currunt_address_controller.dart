@@ -31,7 +31,7 @@ update();
   Future<void> setDefaultLocation(id) async {
 
     showLoading();
-    var res = await NewLocationApis.setDefaultLocation(id: selectedId
+    var res = await NewLocationApis.setDefaultLocation(id: id
     );
     if (res.success == true) {
       BotToast.closeAllLoading();

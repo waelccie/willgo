@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class PaymentParameters {
-  final String locationId;
+  final int locationId;
   final String paymentMethod; // يمكن أن يكون 'cash' أو 'payment'
 
   PaymentParameters({
@@ -10,7 +10,7 @@ class PaymentParameters {
   });
 
   PaymentParameters copyWith({
-    String? locationId,
+    int? locationId,
     String? paymentMethod,
   }) {
     return PaymentParameters(
@@ -28,7 +28,7 @@ class PaymentParameters {
 
   factory PaymentParameters.fromMap(Map<String, dynamic> map) {
     return PaymentParameters(
-      locationId: map['location_id'] as String,
+      locationId: map['location_id'] as int,
       paymentMethod: map['payment_method'] as String,
     );
   }

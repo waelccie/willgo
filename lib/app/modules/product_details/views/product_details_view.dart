@@ -43,7 +43,7 @@ class ProductDetailsView extends GetView<ProductDetailsController> {
                         SizedBox(height: 12.h,),
                         product.options!.isEmpty ?Center(child: Text("No Additional Option Found",style: TextStyle(color: Colors.grey),)) :AdditionalOptionsWidget(options: product.options!,),
                         SizedBox(height: 12.h,),
-                        CacheHelper.getUserToken != null?   foteButton(product.id,Get.find<ProductDetailsController>().quentity):Container()
+                        CacheHelper.getUserToken != null?   foteButton(product.id,Get.find<ProductDetailsController>().quantity):Container()
 
                       ],
                     );

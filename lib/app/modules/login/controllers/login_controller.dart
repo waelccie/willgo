@@ -11,6 +11,8 @@ import '../../../data/parameters/auth/login_parameters.dart';
 import '../../../routes/app_pages.dart';
 
 class LoginController extends GetxController {
+
+
   GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -19,6 +21,7 @@ class LoginController extends GetxController {
     rememberMe = value!;
     update();
   }
+
 
   String phoneKey = "+20";
   onChangePhoneKey(Country val) {

@@ -17,6 +17,7 @@ import '../models/update_profile.dart';
 import '../parameters/auth/login_parameters.dart';
 import '../parameters/auth/sendVerifyOtp.dart';
 import '../parameters/auth/send_otp_pararmeters.dart';
+import '../parameters/auth/uppdateLatLng.dart';
 import '../parameters/updateUser.dart';
 
 class AuthApis {
@@ -626,6 +627,69 @@ class AuthApis {
 
   static Future<UpdateProfie> updateProfile({
     required UserUpdate parameters,
+  }) async {
+    final request = NetworkRequest(
+      path: APIKeys.updateUser,
+      type: NetworkRequestType.POST,
+      headers: {
+        if (CacheHelper.getUserToken != null)
+          'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
+        "lang": CacheHelper.getLocale,
+      },
+      data: NetworkRequestBody.raw(
+        parameters.toMap(),
+      ),
+    );
+    final response = await networkService.execute(
+      request,
+          (parser) => UpdateProfie.fromJson(parser),
+    );
+    var data = response.maybeWhen(
+      ok: ((data) {
+        return data;
+      }),
+      orElse: () {
+        return null;
+      },
+      badRequest: (data) {
+        return data;
+      },
+      created: (data) {
+        return data;
+      },
+      noAuth: (data) {
+        return data;
+      },
+      conflict: (data) {
+        return data;
+      },
+      invalidParameters: (data) {
+        return data;
+      },
+      noAccess: (data) {
+        return data;
+      },
+      unprocessableEntity: (data) {
+        return data;
+      },
+      noData: (message) {
+        if (kDebugMode) {
+          print(message);
+        }
+        BotToast.closeAllLoading();
+      },
+      notFound: (data) {
+        return data;
+      },
+    );
+    return data;
+  }
+
+
+
+
+  static Future<UpdateProfie> updateLatLngProfile({
+    required LatLng  parameters,
   }) async {
     final request = NetworkRequest(
       path: APIKeys.updateUser,

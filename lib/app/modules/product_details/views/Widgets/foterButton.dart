@@ -16,7 +16,7 @@ Widget foteButton(productId,quantity)=>Row(
         children: [
           InkWell(
             onTap:(){
-              Get.find<ProductDetailsController>().dicrese();
+              Get.find<ProductDetailsController>().decreaseQuantity();
             },
             child: Container(
               height: 40.h,
@@ -28,11 +28,11 @@ Widget foteButton(productId,quantity)=>Row(
               ,),),
           ),
           SizedBox(width: 15.w,),
-           Text(Get.find<ProductDetailsController>().quentity.toString(),style: TextStyle(fontWeight: FontWeight.w400,fontSize: 21),),
+           Text(Get.find<ProductDetailsController>().quantity.toString(),style: TextStyle(fontWeight: FontWeight.w400,fontSize: 21),),
           SizedBox(width: 15.w,),
           InkWell(
             onTap: (){
-              Get.find<ProductDetailsController>().increese();
+              Get.find<ProductDetailsController>().increaseQuantity();
 
             },
             child: Container(
@@ -52,7 +52,7 @@ Widget foteButton(productId,quantity)=>Row(
       child: AppProgressButton(
         onPressed: (anim) {
 
-Get.find<ProductDetailsController>().addtoCart(productId, quantity);
+Get.find<ProductDetailsController>().addToCart(productId);
         },
 
         child:  Row(

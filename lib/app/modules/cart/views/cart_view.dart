@@ -54,7 +54,7 @@ class CartView extends GetView<CartController> {
                   future: controller.getCart,
                   onData: (BuildContext context, Cart data) {
                     final cart = data.data;
-                    return data.data!.data!.isEmpty?Center(
+                    return data.data==null||data.data!.data!.isEmpty?Center(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -68,6 +68,7 @@ class CartView extends GetView<CartController> {
                         ],
                       ),
                     ):Container(
+
                       width: Get.width,
                       child: ListView.separated(
                         shrinkWrap: true,
@@ -78,7 +79,8 @@ class CartView extends GetView<CartController> {
                             image: cart?.data?[index].product?.images?[0],
                             cat: cart?.data?[index].product?.category?.nameEn,
                             price: cart?.data?[index].totalPrice,
-                            quentity: int.parse( cart!.data![index].quantity.toString()),
+                            initialQuantity: cart?.data?[index].quantity ?? 0,
+
                             controller: controller,
                             id: cart?.data?[index].id,
                           );
@@ -129,7 +131,7 @@ class CartView extends GetView<CartController> {
                 CustomFutureBuilder(
                   future: controller.getCart,
                   onData: (BuildContext context, Cart data) {
-                    return data.data?.totalItems==0?Container():Column(
+                    return data.data==null|| data.data?.totalItems==0?Container():Column(
                       children: [
                         payment_SummeryWidget(
                           quentity: data.data?.totalItems,

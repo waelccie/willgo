@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:willgo/app/data/apis/check_out_apis.dart';
 import '../../../../core/global/const.dart';
+import '../../../data/apis/Product_DetailsApi.dart';
 import '../../../data/apis/location_apis.dart';
 import '../../../data/models/cart.dart';
 import '../../../data/models/setPrimaryLocation.dart';
@@ -14,7 +15,8 @@ import '../../payment_method/views/paymentSucess.dart';
 class CheckOutController extends GetxController {
   @override
   void onInit() {
-    getCart = Get.arguments?["payment"];
+    getCart=ProductDetailsApi.getCart();
+    //getCart = Get.arguments?["payment"];
     getdetDefaultLocation();
     update();
 
@@ -25,6 +27,7 @@ class CheckOutController extends GetxController {
 bool isCheck=false;
 
   Future<void> getdetDefaultLocation()async{
+    print("ddddddddddddddddddddddddddddddddd");
     getDelvryLocation = await NewLocationApis.getDefaultLocation();
 update();
   }
@@ -35,7 +38,7 @@ update();
     showLoading();
     var res = await CheckApis.makeOrder(
       parameters: PaymentParameters(
-        locationId: id.toString(),
+        locationId: id,
         paymentMethod: payment.toString(),
       ),
     );

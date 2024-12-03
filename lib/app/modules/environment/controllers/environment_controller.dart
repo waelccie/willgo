@@ -1,10 +1,14 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:latlong2/latlong.dart'as x;
 
+import '../../../../core/global/const.dart';
 import '../../../../core/services/get_storage_helper.dart';
+import '../../../data/apis/auth_apis.dart';
+import '../../../data/parameters/auth/uppdateLatLng.dart';
 
 class EnvironmentController extends GetxController {
   final InternetConnectionChecker _internetConnectionChecker =
@@ -25,6 +29,7 @@ class EnvironmentController extends GetxController {
       update();
       debugPrint("InternetCheckerService $status");
     });
+
     super.onInit();
   }
 
@@ -47,7 +52,7 @@ class EnvironmentController extends GetxController {
     update();
   }
 
-  LatLng? latLng;
+  x.LatLng? latLng;
 
   Future<void> getCurrentLocation() async {
     bool serviceEnabled;
@@ -72,7 +77,35 @@ class EnvironmentController extends GetxController {
       // ignore: deprecated_member_use
       desiredAccuracy: LocationAccuracy.high,
     );
-    latLng = LatLng(position.latitude, position.longitude);
+    latLng = x.LatLng(position.latitude, position.longitude);
+
+    update();
+    await updateLatLngprofile(position.latitude,position.longitude);
+
+    print(latLng!.latitude);
     update();
   }
+
+
+
+  Future<void>updateLatLngprofile(latitude,longitude)async {
+print("ssssssssssssssssssssssssssssssssssssss$latitude");
+    var res = await AuthApis.updateLatLngProfile(
+        parameters:LatLng(latitude: latitude, longitude: longitude)
+    );
+    if (res.success == true) {
+      BotToast.closeAllLoading();
+      BotToast.showText(text: res.message ?? "");
+
+    } else {
+      showErrorsSequentially(res.errors ?? []);
+
+      print(res.errors);
+
+      BotToast.closeAllLoading();
+    }
+  }
+
+
+
 }
