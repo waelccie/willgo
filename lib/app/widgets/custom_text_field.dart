@@ -56,7 +56,7 @@ class CustomTextField extends StatefulWidget {
   final bool isBold;
   final TextInputAction inputAction;
   final FocusNode? focusNode;
-  final TextStyle ?labelStyle;
+  final TextStyle? labelStyle;
   final String? name;
   final bool isPassword;
   final bool isRequired;
@@ -139,7 +139,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           onTap: widget.onTap,
           textInputAction: widget.inputAction,
           readOnly: widget.readOnly,
-
           onEditingComplete: widget.onEditingComplete,
           initialValue: widget.initialValue,
           autofocus: widget.autoFocus ?? false,
@@ -151,7 +150,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           obscureText: widget.isPassword && !showPassword,
           validator: widget.validate,
           keyboardType: widget.type,
-
           autovalidateMode: AutovalidateMode.onUserInteraction,
           onChanged: widget.isPassword
               ? (password) {
@@ -177,7 +175,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
           cursorColor: Colors.grey,
           decoration: InputDecoration(
-
             hintStyle: StylesManager.regular(
               fontSize: 14,
               color: widget.hintColor ?? Colors.grey[600],
@@ -185,10 +182,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
             isDense: true,
             enabled: widget.isEnabled,
             hintText: widget.anotherHint ?? widget.hint ?? "",
-            labelStyle:widget.labelStyle?? TextStyle(
-              fontSize: 16,
-              color: widget.labelColor ?? ColorsManager.white,
-            ),
+            labelStyle: widget.labelStyle ??
+                TextStyle(
+                  fontSize: 16,
+                  color: widget.labelColor ?? ColorsManager.white,
+                ),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             alignLabelWithHint: true,
             disabledBorder: OutlineInputBorder(

@@ -11,7 +11,7 @@ class OrderDetailsModel {
   final dynamic errors;
   final Data? data;
 
-  factory OrderDetailsModel.fromJson(Map<String, dynamic> json){
+  factory OrderDetailsModel.fromJson(Map<String, dynamic> json) {
     return OrderDetailsModel(
       success: json["success"],
       message: json["message"],
@@ -19,7 +19,6 @@ class OrderDetailsModel {
       data: json["data"] == null ? null : Data.fromJson(json["data"]),
     );
   }
-
 }
 
 class Data {
@@ -71,7 +70,7 @@ class Data {
   final bool? isRate;
   final dynamic rate;
 
-  factory Data.fromJson(Map<String, dynamic> json){
+  factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
       id: json["id"],
       paymentId: json["payment_id"],
@@ -88,16 +87,20 @@ class Data {
       cancellationCustomReason: json["cancellation_custom_reason"],
       createdAt: DateTime.tryParse(json["created_at"] ?? ""),
       updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
-      orderProducts: json["order_products"] == null ? [] : List<dynamic>.from(json["order_products"]!.map((x) => x)),
-      location: json["location"] == null ? null : Location.fromJson(json["location"]),
-      restaurant: json["restaurant"] == null ? null : Restaurant.fromJson(json["restaurant"]),
+      orderProducts: json["order_products"] == null
+          ? []
+          : List<dynamic>.from(json["order_products"]!.map((x) => x)),
+      location:
+          json["location"] == null ? null : Location.fromJson(json["location"]),
+      restaurant: json["restaurant"] == null
+          ? null
+          : Restaurant.fromJson(json["restaurant"]),
       driver: json["driver"],
       user: json["user"] == null ? null : User.fromJson(json["user"]),
       isRate: json["is_rate"],
       rate: json["rate"],
     );
   }
-
 }
 
 class Location {
@@ -133,7 +136,7 @@ class Location {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  factory Location.fromJson(Map<String, dynamic> json){
+  factory Location.fromJson(Map<String, dynamic> json) {
     return Location(
       id: json["id"],
       name: json["name"],
@@ -151,7 +154,6 @@ class Location {
       updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
     );
   }
-
 }
 
 class Restaurant {
@@ -199,7 +201,7 @@ class Restaurant {
   final int? orderCounts;
   final DateTime? createdAt;
 
-  factory Restaurant.fromJson(Map<String, dynamic> json){
+  factory Restaurant.fromJson(Map<String, dynamic> json) {
     return Restaurant(
       id: json["id"],
       arName: json["ar_name"],
@@ -223,7 +225,6 @@ class Restaurant {
       createdAt: DateTime.tryParse(json["created_at"] ?? ""),
     );
   }
-
 }
 
 class User {
@@ -261,7 +262,7 @@ class User {
   final DateTime? updatedAt;
   final String? image;
 
-  factory User.fromJson(Map<String, dynamic> json){
+  factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json["id"],
       name: json["name"],
@@ -280,5 +281,4 @@ class User {
       image: json["image"],
     );
   }
-
 }

@@ -66,7 +66,6 @@ class HomeController extends GetxController {
         longitude: Get.find<EnvironmentController>().latLng!.longitude,
         latitude: Get.find<EnvironmentController>().latLng!.latitude,
         page: firstPageKey,
-
       ),
     );
     if (res.success == true) {
@@ -87,35 +86,31 @@ class HomeController extends GetxController {
     }
   }
 
-
-
-  String currentCity="";
+  String currentCity = "";
 
   Future<void> getCityName() async {
     try {
       Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high
-      );
+          desiredAccuracy: LocationAccuracy.high);
 
       List<Placemark> placemarks = await placemarkFromCoordinates(
-          position.latitude,
-          position.longitude,
+        position.latitude,
+        position.longitude,
       );
 
       if (placemarks.isNotEmpty) {
         Placemark place = placemarks[0];
-          currentCity = place.locality ?? place.subAdministrativeArea ?? place.administrativeArea ?? "Un Known";
-          update();
+        currentCity = place.locality ??
+            place.subAdministrativeArea ??
+            place.administrativeArea ??
+            "Un Known";
+        update();
         print('Current City: $currentCity');
       }
     } catch (e) {
       print('Error getting city name: $e');
-        currentCity = "Error getting city name";
-        update();
+      currentCity = "Error getting city name";
+      update();
     }
   }
-
 }
-
-
-

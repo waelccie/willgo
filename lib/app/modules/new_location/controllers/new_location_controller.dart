@@ -19,18 +19,16 @@ class NewLocationController extends GetxController {
 
   final count = 0.obs;
 
-var buildingName=TextEditingController();
-  var appartNum=TextEditingController();
-  var floor=TextEditingController();
-  var streetController=TextEditingController();
-  var additionalData=TextEditingController();
-  var phone=TextEditingController();
-
-
+  var buildingName = TextEditingController();
+  var appartNum = TextEditingController();
+  var floor = TextEditingController();
+  var streetController = TextEditingController();
+  var additionalData = TextEditingController();
+  var phone = TextEditingController();
 
   void increment() => count.value++;
   LocationPermission? permission;
-   Position? position;
+  Position? position;
 
   String? street;
   String? cityAndCountry;
@@ -66,7 +64,8 @@ var buildingName=TextEditingController();
   Future<void> getLocationAndAddress() async {
     try {
       position = await _getCurrentLocation();
-      print("Location: Lat: ${position!.latitude}, Long: ${position!.longitude}");
+      print(
+          "Location: Lat: ${position!.latitude}, Long: ${position!.longitude}");
 
       List<Placemark> placemarks = await placemarkFromCoordinates(
         position!.latitude,
@@ -78,7 +77,7 @@ var buildingName=TextEditingController();
 
       street = place.street;
       cityAndCountry = "${place.locality}, ${place.country}";
-update();
+      update();
       isLocation = true;
       print("Street: $street");
       print("City and Country: $cityAndCountry");
@@ -86,7 +85,6 @@ update();
       print("Error: $e");
     }
   }
-
 
   Future<void> add_newLocation() async {
     try {
@@ -155,7 +153,4 @@ update();
       BotToast.closeAllLoading();
     }
   }
-
-
-
 }

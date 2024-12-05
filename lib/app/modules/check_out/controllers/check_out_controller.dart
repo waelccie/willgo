@@ -15,7 +15,7 @@ import '../../payment_method/views/paymentSucess.dart';
 class CheckOutController extends GetxController {
   @override
   void onInit() {
-    getCart=ProductDetailsApi.getCart();
+    getCart = ProductDetailsApi.getCart();
     //getCart = Get.arguments?["payment"];
     getdetDefaultLocation();
     update();
@@ -24,12 +24,12 @@ class CheckOutController extends GetxController {
   }
 
   SetPrimaryLocatiom? getDelvryLocation;
-bool isCheck=false;
+  bool isCheck = false;
 
-  Future<void> getdetDefaultLocation()async{
+  Future<void> getdetDefaultLocation() async {
     print("ddddddddddddddddddddddddddddddddd");
     getDelvryLocation = await NewLocationApis.getDefaultLocation();
-update();
+    update();
   }
 
   late Future<Cart> getCart;

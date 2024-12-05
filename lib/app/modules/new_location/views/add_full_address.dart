@@ -12,8 +12,8 @@ import '../controllers/new_location_controller.dart';
 import 'Weidgets.dart';
 
 class AddFullAddress extends StatefulWidget {
-  final city,street;
-  const AddFullAddress({super.key,required this.city,required this.street});
+  final city, street;
+  const AddFullAddress({super.key, required this.city, required this.street});
 
   @override
   State<AddFullAddress> createState() => _AddFullAddressState();
@@ -52,11 +52,12 @@ class _AddFullAddressState extends State<AddFullAddress> {
         centerTitle: true,
       ),
       body: GetBuilder<NewLocationController>(
-        builder: (controller){
-          controller.streetController.text=widget.street.toString();
+        builder: (controller) {
+          controller.streetController.text = widget.street.toString();
           return SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
               child: Column(
                 children: [
                   Stack(
@@ -66,7 +67,17 @@ class _AddFullAddressState extends State<AddFullAddress> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20)),
                           height: 120.h,
-                          child: mapWuidgetfull_Address(myLocation: controller.position==null? LatLng(Get.find<EnvironmentController>().latLng!.latitude, Get.find<EnvironmentController>().latLng!.longitude):LatLng(controller.position!.latitude, controller.position!.longitude))),
+                          child: mapWuidgetfull_Address(
+                              myLocation: controller.position == null
+                                  ? LatLng(
+                                      Get.find<EnvironmentController>()
+                                          .latLng!
+                                          .latitude,
+                                      Get.find<EnvironmentController>()
+                                          .latLng!
+                                          .longitude)
+                                  : LatLng(controller.position!.latitude,
+                                      controller.position!.longitude))),
                       Positioned(
                         top: 10,
                         right: 20,
@@ -87,7 +98,8 @@ class _AddFullAddressState extends State<AddFullAddress> {
                         ),
                       )
                     ],
-                  ),              SizedBox(
+                  ),
+                  SizedBox(
                     height: 8.h,
                   ),
                   Container(
@@ -129,7 +141,7 @@ class _AddFullAddressState extends State<AddFullAddress> {
                     height: 14.h,
                   ),
                   CustomTextField(
-                    controller:controller.buildingName ,
+                    controller: controller.buildingName,
                     type: TextInputType.text,
                     hint: 'building name',
                     name: 'building name ',
@@ -144,13 +156,11 @@ class _AddFullAddressState extends State<AddFullAddress> {
                   Row(
                     children: [
                       Expanded(
-
                         child: CustomTextField(
                           controller: controller.appartNum,
                           hint: 'Apartment number',
                           name: 'Apartment number ',
                           type: TextInputType.number,
-
                           labelStyle: GoogleFonts.roboto(
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
@@ -166,7 +176,6 @@ class _AddFullAddressState extends State<AddFullAddress> {
                           hint: 'floor',
                           name: 'floor ',
                           type: TextInputType.number,
-
                           labelStyle: GoogleFonts.roboto(
                               fontWeight: FontWeight.w400,
                               fontSize: 14,
@@ -194,7 +203,6 @@ class _AddFullAddressState extends State<AddFullAddress> {
                   CustomTextField(
                     type: TextInputType.text,
                     controller: controller.additionalData,
-
                     hint: 'Addtional details',
                     name: 'Addtional details ',
                     labelStyle: GoogleFonts.roboto(
@@ -206,7 +214,6 @@ class _AddFullAddressState extends State<AddFullAddress> {
                     height: 14.h,
                   ),
                   PhoneTextFormField(
-
                     controller: controller.phone,
                     hintText: '(+44) 564645646',
                     name: 'phone number',

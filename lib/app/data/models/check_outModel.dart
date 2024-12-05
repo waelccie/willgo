@@ -11,15 +11,16 @@ class CheckOutModel {
   final dynamic errors;
   final List<Datum> data;
 
-  factory CheckOutModel.fromJson(Map<String, dynamic> json){
+  factory CheckOutModel.fromJson(Map<String, dynamic> json) {
     return CheckOutModel(
       success: json["success"],
       message: json["message"],
       errors: json["errors"],
-      data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+      data: json["data"] == null
+          ? []
+          : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
     );
   }
-
 }
 
 class Datum {
@@ -63,7 +64,7 @@ class Datum {
   final DateTime? createdAt;
   final dynamic? id;
 
-  factory Datum.fromJson(Map<String, dynamic> json){
+  factory Datum.fromJson(Map<String, dynamic> json) {
     return Datum(
       userId: json["user_id"],
       locationId: json["location_id"],
@@ -85,5 +86,4 @@ class Datum {
       id: json["id"],
     );
   }
-
 }

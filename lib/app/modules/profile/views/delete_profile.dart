@@ -32,10 +32,20 @@ class _DeleteProfileState extends State<DeleteProfile> {
       ),
       body: Column(
         children: [
-          PhoneTextFormField(controller:TextEditingController() , hintText: 'enter your phone'),
-          CustomTextField(isPassword: true,hint: "password",),
-          AppProgressButton(onPressed: (c){},child: Text("Delete Your Account",style: TextStyle(color: Colors.white),),)
-
+          PhoneTextFormField(
+              controller: TextEditingController(),
+              hintText: 'enter your phone'),
+          CustomTextField(
+            isPassword: true,
+            hint: "password",
+          ),
+          AppProgressButton(
+            onPressed: (c) {},
+            child: Text(
+              "Delete Your Account",
+              style: TextStyle(color: Colors.white),
+            ),
+          )
         ],
       ),
     );

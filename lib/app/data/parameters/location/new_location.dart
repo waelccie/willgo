@@ -27,7 +27,6 @@ class NewLoaction {
   NewLoaction copyWith({
     String? address,
     String? name,
-
     String? latitude,
     String? longitude,
     String? buildingName,
@@ -39,7 +38,6 @@ class NewLoaction {
     return NewLoaction(
       address: address ?? this.address,
       name: name ?? this.name,
-
       latitude: latitude ?? this.latitude,
       longitude: longitude ?? this.longitude,
       buildingName: buildingName ?? this.buildingName,
@@ -52,7 +50,7 @@ class NewLoaction {
 
   Map<String, dynamic> toMap() {
     return {
-      'name':name,
+      'name': name,
       'address': address,
       'latitude': latitude,
       'longitude': longitude,
@@ -67,7 +65,6 @@ class NewLoaction {
   factory NewLoaction.fromMap(Map<String, dynamic> map) {
     return NewLoaction(
       name: map['name'] ?? '',
-
       address: map['address'] ?? '',
       latitude: map['latitude'] ?? '',
       longitude: map['longitude'] ?? '',
@@ -108,13 +105,13 @@ class NewLoaction {
   @override
   int get hashCode {
     return address.hashCode ^
-    name.hashCode ^
-    latitude.hashCode ^
-    longitude.hashCode ^
-    buildingName.hashCode ^
-    apartmentName.hashCode ^
-    streetName.hashCode ^
-    additionalDetails.hashCode ^
-    phoneNumber.hashCode;
+        name.hashCode ^
+        latitude.hashCode ^
+        longitude.hashCode ^
+        buildingName.hashCode ^
+        apartmentName.hashCode ^
+        streetName.hashCode ^
+        additionalDetails.hashCode ^
+        phoneNumber.hashCode;
   }
 }

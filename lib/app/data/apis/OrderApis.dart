@@ -7,10 +7,7 @@ import '../../../core/services/network_service.dart/dio_network_service.dart';
 import '../models/Order_Model.dart';
 import '../models/order_DetailsModel.dart';
 
-class OrderApis{
-
-
-
+class OrderApis {
   static Future<OrderModel> get_Order() async {
     final request = NetworkRequest(
       path: APIKeys.getOrders,
@@ -19,14 +16,12 @@ class OrderApis{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => OrderModel.fromJson(parser),
+      (parser) => OrderModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -68,7 +63,6 @@ class OrderApis{
     );
     return data;
   }
-
 
   static Future<OrderDetailsModel> get_OrderDetails(id) async {
     final request = NetworkRequest(
@@ -78,14 +72,12 @@ class OrderApis{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => OrderDetailsModel.fromJson(parser),
+      (parser) => OrderDetailsModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -127,8 +119,4 @@ class OrderApis{
     );
     return data;
   }
-
-
-
-
 }

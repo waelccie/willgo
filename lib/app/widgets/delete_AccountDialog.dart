@@ -11,9 +11,7 @@ class DeleteAccpont extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
       title: Text("Delete Accouct"),
-      content: Text(
-        "We hope you come back again"
-      ),
+      content: Text("We hope you come back again"),
       actions: [
         CupertinoDialogAction(
           isDefaultAction: true,
@@ -30,8 +28,6 @@ class DeleteAccpont extends GetView<ProfileController> {
           onPressed: () {
             Navigator.of(context).pop();
             controller.deleteAccount();
-
-
           },
           child: Text("submit"),
         ),

@@ -11,7 +11,7 @@ class LocarionById {
   final dynamic errors;
   final Data? data;
 
-  factory LocarionById.fromJson(Map<String, dynamic> json){
+  factory LocarionById.fromJson(Map<String, dynamic> json) {
     return LocarionById(
       success: json["success"],
       message: json["message"],
@@ -19,7 +19,6 @@ class LocarionById {
       data: json["data"] == null ? null : Data.fromJson(json["data"]),
     );
   }
-
 }
 
 class Data {
@@ -55,7 +54,7 @@ class Data {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  factory Data.fromJson(Map<String, dynamic> json){
+  factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
       id: json["id"],
       name: json["name"],
@@ -73,5 +72,4 @@ class Data {
       updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
     );
   }
-
 }

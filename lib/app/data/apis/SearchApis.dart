@@ -9,8 +9,7 @@ import '';
 import '../models/searchModel.dart';
 import '../parameters/search/searchApis.dart';
 
-class searchApis{
-
+class searchApis {
   static Future<SearchModel> search({
     required searcParaneter parameters,
   }) async {
@@ -28,7 +27,7 @@ class searchApis{
     );
     final response = await networkService.execute(
       request,
-          (parser) => SearchModel.fromJson(parser),
+      (parser) => SearchModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -70,5 +69,4 @@ class searchApis{
     );
     return data;
   }
-
 }

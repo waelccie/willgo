@@ -23,7 +23,7 @@ class RestaurantDetailsController extends GetxController {
 
   Future<ResturantDetailsModel> fetchRestaurantDetails() async {
     final details = await ResurantDetailsApi.get_Resturant_Details(id);
-   // classes = details.data?. ?? [];
+    // classes = details.data?. ?? [];
     update();
     return details;
   }
@@ -41,12 +41,12 @@ class RestaurantDetailsController extends GetxController {
     if (selectedIndex == -1 || index == 0) {
       filteredProducts = allProducts.data;
     } else {
-    //  final selectedClassId = classes[index - 1].id;
-    //  if (selectedClassId != null) {
-    //     filteredProducts = allProducts.data
-    //         .where((product) => product.category?.id == selectedClassId)
-    //         .toList();
-    //   }
+      //  final selectedClassId = classes[index - 1].id;
+      //  if (selectedClassId != null) {
+      //     filteredProducts = allProducts.data
+      //         .where((product) => product.category?.id == selectedClassId)
+      //         .toList();
+      //   }
     }
     print("Filtered Products: ${filteredProducts.length}");
     update();

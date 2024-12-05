@@ -14,12 +14,11 @@ class ResetPasswordParameters {
     required this.confirmPassword,
   });
 
-  ResetPasswordParameters copyWith({
-    String? phone,
-    String? newPassword,
-    String? confirmPassword,
-    String ?otp
-  }) {
+  ResetPasswordParameters copyWith(
+      {String? phone,
+      String? newPassword,
+      String? confirmPassword,
+      String? otp}) {
     return ResetPasswordParameters(
       otp: otp ?? this.otp,
       phone: phone ?? this.phone,
@@ -34,13 +33,12 @@ class ResetPasswordParameters {
       'new_password': newPassword,
       'confirm_password': confirmPassword,
       'otp': otp,
-
     };
   }
 
   factory ResetPasswordParameters.fromMap(Map<String, dynamic> map) {
     return ResetPasswordParameters(
-      otp:map['otp'] as String,
+      otp: map['otp'] as String,
       phone: map['phone'] as String,
       newPassword: map['new_password'] as String,
       confirmPassword: map['confirm_password'] as String,
@@ -69,5 +67,8 @@ class ResetPasswordParameters {
 
   @override
   int get hashCode =>
-      phone.hashCode ^  otp.hashCode ^ newPassword.hashCode ^ confirmPassword.hashCode;
+      phone.hashCode ^
+      otp.hashCode ^
+      newPassword.hashCode ^
+      confirmPassword.hashCode;
 }

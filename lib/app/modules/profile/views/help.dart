@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/routes/app_pages.dart';
 import '../../../widgets/custom_text_field.dart';
 import '../Widget/weidget_buildHelpType.dart';
 
@@ -40,11 +43,16 @@ class HelpCenterPage extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  buildHelpTile(
-                    icon: Icons.apps,
-                    title: "General",
-                    subtitle: "Basic question about Restate",
-                    iconColor: Colors.blue,
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(Routes.SUPPORTT);
+                    },
+                    child: buildHelpTile(
+                      icon: Icons.apps,
+                      title: "General",
+                      subtitle: "Basic question about Restate",
+                      iconColor: Colors.blue,
+                    ),
                   ),
                   buildHelpTile(
                     icon: Icons.attach_money,

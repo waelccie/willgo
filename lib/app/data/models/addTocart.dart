@@ -11,7 +11,7 @@ class AddSucessfully {
   final dynamic errors;
   final String? data;
 
-  factory AddSucessfully.fromJson(Map<String, dynamic> json){
+  factory AddSucessfully.fromJson(Map<String, dynamic> json) {
     return AddSucessfully(
       success: json["success"],
       message: json["message"],
@@ -19,5 +19,4 @@ class AddSucessfully {
       data: json["data"],
     );
   }
-
 }

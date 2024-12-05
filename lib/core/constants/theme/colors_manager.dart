@@ -4,8 +4,11 @@ class ColorsManager {
   static const Color star = Color(0xFFFBEC26);
   static const Color buttonColor = Color(0xFFD0FD3E);
   static const Color dotColor = Color(0xFFADB3BC);
+  static const Color black2 = Color(0xFF3C3F4F);
+  static const Color blue2 = Color(0xFFb3e3f6);
+  static const Color grey2 = Color(0xFFedf8fd);
   static const Color primary = Color(0xFF01A0E2);
-    static const Color primaryBackground = Color(0xFFF0F5FF);
+  static const Color primaryBackground = Color(0xFFF0F5FF);
 
   static const Color primaryDark = Color(0xFF24306E);
   static const Color accent = Color.fromARGB(255, 2, 30, 100);

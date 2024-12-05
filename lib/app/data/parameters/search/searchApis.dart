@@ -29,7 +29,8 @@ class searcParaneter {
 
   String toJson() => json.encode(toMap());
 
-  factory searcParaneter.fromJson(String source) => searcParaneter.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory searcParaneter.fromJson(String source) =>
+      searcParaneter.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'searcParaneter(name: $name)';
@@ -38,8 +39,7 @@ class searcParaneter {
   bool operator ==(covariant searcParaneter other) {
     if (identical(this, other)) return true;
 
-    return
-      other.name == name;
+    return other.name == name;
   }
 
   @override

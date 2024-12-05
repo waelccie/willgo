@@ -37,6 +37,9 @@ abstract class Routes {
   static const DELEVERY_ADDRESS = _Paths.DELEVERY_ADDRESS;
   static const NEW_LOCATION = _Paths.NEW_LOCATION;
   static const FAV_RESTURANT = _Paths.FAV_RESTURANT;
+  static const SUPPORTT = _Paths.SUPPORTT;
+  static const ADD_SUPPORT_REQUEST = _Paths.ADD_SUPPORT_REQUEST;
+  static const SUPPORT_RQUEST_DETAILS = _Paths.SUPPORT_RQUEST_DETAILS;
 }
 
 abstract class _Paths {
@@ -73,4 +76,7 @@ abstract class _Paths {
   static const DELEVERY_ADDRESS = '/delevery-address';
   static const NEW_LOCATION = '/new-location';
   static const FAV_RESTURANT = '/fav-resturant';
+  static const SUPPORTT = '/supportt';
+  static const ADD_SUPPORT_REQUEST = '/add-support-request';
+  static const SUPPORT_RQUEST_DETAILS = '/support-rquest-details';
 }

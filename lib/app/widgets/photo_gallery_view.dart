@@ -9,6 +9,7 @@ import 'package:photo_view/photo_view.dart';
 
 import '../../../core/constants/theme/colors_manager.dart';
 import 'custom_error_widget.dart';
+
 /// this widget is used for viewing the image in full size
 class PhotoGalleryView extends StatefulWidget {
   final XFile photo;

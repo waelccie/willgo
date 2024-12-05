@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:latlong2/latlong.dart'as x;
+import 'package:latlong2/latlong.dart' as x;
 
 import '../../../../core/global/const.dart';
 import '../../../../core/services/get_storage_helper.dart';
@@ -80,23 +80,19 @@ class EnvironmentController extends GetxController {
     latLng = x.LatLng(position.latitude, position.longitude);
 
     update();
-    await updateLatLngprofile(position.latitude,position.longitude);
+    await updateLatLngprofile(position.latitude, position.longitude);
 
     print(latLng!.latitude);
     update();
   }
 
-
-
-  Future<void>updateLatLngprofile(latitude,longitude)async {
-print("ssssssssssssssssssssssssssssssssssssss$latitude");
+  Future<void> updateLatLngprofile(latitude, longitude) async {
+    print("ssssssssssssssssssssssssssssssssssssss$latitude");
     var res = await AuthApis.updateLatLngProfile(
-        parameters:LatLng(latitude: latitude, longitude: longitude)
-    );
+        parameters: LatLng(latitude: latitude, longitude: longitude));
     if (res.success == true) {
       BotToast.closeAllLoading();
       BotToast.showText(text: res.message ?? "");
-
     } else {
       showErrorsSequentially(res.errors ?? []);
 
@@ -105,7 +101,4 @@ print("ssssssssssssssssssssssssssssssssssssss$latitude");
       BotToast.closeAllLoading();
     }
   }
-
-
-
 }

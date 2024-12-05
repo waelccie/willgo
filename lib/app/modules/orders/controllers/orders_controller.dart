@@ -15,39 +15,32 @@ class OrdersController extends GetxController {
 
   final count = 0.obs;
 
-
   @override
   void onInit() {
-
-    getOrder=OrderApis.get_Order();
+    getOrder = OrderApis.get_Order();
 
     super.onInit();
   }
 
-  late Future<OrderModel>getOrder;
+  late Future<OrderModel> getOrder;
   late OrderDetailsModel getOrderDetail;
-
 
   void increment() => count.value++;
 
-
-  Future<void> getOrderDetails(id,context) async {
-
+  Future<void> getOrderDetails(id, context) async {
     showLoading();
-   var res =  await OrderApis.get_OrderDetails(id);
+    var res = await OrderApis.get_OrderDetails(id);
 
     if (res.success == true) {
-      getOrderDetail=res;
+      getOrderDetail = res;
       BotToast.closeAllLoading();
       BotToast.showText(text: res.message ?? "");
-     Navigator.push(context, MaterialPageRoute(builder: (context)=>Ordertracking()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Ordertracking()));
     } else {
       showErrorsSequentially(res.errors ?? []);
 
       BotToast.closeAllLoading();
     }
   }
-
-
-
 }

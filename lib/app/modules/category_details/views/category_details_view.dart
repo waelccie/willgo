@@ -16,7 +16,10 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("All Resturant",style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),),
+        title: Text(
+          "All Resturant",
+          style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
+        ),
       ),
       body: SafeArea(
         child: GetBuilder<CategoryDetailsController>(
@@ -31,75 +34,96 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
                     child: CustomFutureBuilder<categoriesDetails>(
                       future: controller.getCateogriesDetails,
                       onData: (BuildContext context, categoriesDetails data) {
-                        
-                        return  data.data!.isEmpty?Center(child: Container(
-                          height: 50,
-                            child: Text("No Result Found",style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),))):Container(
-                          height: 120,
-                          child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            itemBuilder: (context, index) {
-                              return resturant_Weidget(
-                                name: data.data![index].nameEn.toString(),
-                                image: data.data![index].icon.toString(),
-                                id: data.data![index].id!.toInt(),
+                        return data.data!.isEmpty
+                            ? Center(
+                                child: Container(
+                                    height: 50,
+                                    child: Text(
+                                      "No Result Found",
+                                      style: GoogleFonts.dmSans(
+                                          fontWeight: FontWeight.w500),
+                                    )))
+                            : Container(
+                                height: 120,
+                                child: ListView.separated(
+                                  scrollDirection: Axis.horizontal,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, index) {
+                                    return resturant_Weidget(
+                                      name: data.data![index].nameEn.toString(),
+                                      image: data.data![index].icon.toString(),
+                                      id: data.data![index].id!.toInt(),
+                                    );
+                                  },
+                                  separatorBuilder: (context, index) {
+                                    return SizedBox(width: 8);
+                                  },
+                                  itemCount: data.data!.length,
+                                ),
                               );
-                            },
-                            separatorBuilder: (context, index) {
-                              return SizedBox(width: 8);
-                            },
-                            itemCount: data.data!.length,
-                          ),
-                        );
                       },
                     ),
                   ),
-
-                  SizedBox(height: 4,),
-
+                  SizedBox(
+                    height: 4,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text("All Resturant",style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),),
+                    child: Text(
+                      "All Resturant",
+                      style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
+                    ),
                   ),
-
-                  SizedBox(height: 12,),
-
-
+                  SizedBox(
+                    height: 12,
+                  ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: CustomFutureBuilder<ResturantByCat>(
                         future: controller.getResurantByCat,
                         onData: (BuildContext context, ResturantByCat data) {
-                          return data.data!.isEmpty?Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 20,),
-                                SvgPicture.asset("assets/images/NotFound.svg"),
-                                SizedBox(height: 30,),
-                                Text("No Resturant found",style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
-
-                              ],
-                            ),
-                          ):ListView.separated(
-                            physics: const AlwaysScrollableScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              return freeDeliveryTab(
-                                image: data.data?[index].photo,
-                                name: data.data?[index].enName,
-                                time: data.data?[index].deliveryTime,
-                                id: data.data?[index].id,
-                                rate: data.data?[index].rate,
-                              );
-                            },
-                            separatorBuilder: (context, index) {
-                              return SizedBox(height: 5);
-                            },
-                            itemCount: data.data!.length,
-                          );
+                          return data.data!.isEmpty
+                              ? Center(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      SvgPicture.asset(
+                                          "assets/images/NotFound.svg"),
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      Text(
+                                        "No Resturant found",
+                                        style: GoogleFonts.dmSans(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 16),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              : ListView.separated(
+                                  physics:
+                                      const AlwaysScrollableScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    return freeDeliveryTab(
+                                      image: data.data?[index].photo,
+                                      name: data.data?[index].enName,
+                                      time: data.data?[index].deliveryTime,
+                                      id: data.data?[index].id,
+                                      rate: data.data?[index].rate,
+                                    );
+                                  },
+                                  separatorBuilder: (context, index) {
+                                    return SizedBox(height: 5);
+                                  },
+                                  itemCount: data.data!.length,
+                                );
                         },
                       ),
                     ),

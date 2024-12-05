@@ -21,11 +21,12 @@ class ProfileController extends GetxController {
     getUserData = UserApis.getUserData();
     super.onInit();
   }
-  var name=TextEditingController();
-  var date=TextEditingController();
-  var phone=TextEditingController();
-  var email=TextEditingController();
-  var password=TextEditingController();
+
+  var name = TextEditingController();
+  var date = TextEditingController();
+  var phone = TextEditingController();
+  var email = TextEditingController();
+  var password = TextEditingController();
 
   File? imgFile;
   DateTime? selectedDate;
@@ -36,8 +37,8 @@ class ProfileController extends GetxController {
     );
     if (img == null) return;
     imgFile = File(img.path);
-
   }
+
   late Future<UserModel> getUserData;
 
   Future<void> logout() async {
@@ -56,8 +57,6 @@ class ProfileController extends GetxController {
     }
   }
 
-
-
   Future<void> deleteAccount() async {
     showLoading();
     var res = await AuthApis.deleteAccount();
@@ -74,25 +73,18 @@ class ProfileController extends GetxController {
     }
   }
 
-
-
-  Future<void>updateprofile()async {
-
+  Future<void> updateprofile() async {
     showLoading();
     var res = await AuthApis.updateProfile(
-      parameters: UserUpdate(name: name.text, phone: phone.text, email:email.text)
-    );
+        parameters:
+            UserUpdate(name: name.text, phone: phone.text, email: email.text));
     if (res.success == true) {
       BotToast.closeAllLoading();
       BotToast.showText(text: res.message ?? "");
-
     } else {
       showErrorsSequentially(res.errors ?? []);
 
       BotToast.closeAllLoading();
     }
   }
-
-  }
-
-
+}

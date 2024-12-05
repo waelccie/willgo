@@ -10,8 +10,7 @@ import '../models/cart.dart';
 import '../models/product_details.dart';
 import '../parameters/cart/add to cart.dart';
 
-class ProductDetailsApi{
-
+class ProductDetailsApi {
   static Future<ProductDetails> getProductsDetails(id) async {
     final request = NetworkRequest(
       path: APIKeys.getProductDetail(id),
@@ -25,7 +24,7 @@ class ProductDetailsApi{
     );
     final response = await networkService.execute(
       request,
-          (parser) => ProductDetails.fromJson(parser),
+      (parser) => ProductDetails.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -68,12 +67,11 @@ class ProductDetailsApi{
     return data;
   }
 
-
   static Future<AddSucessfully> addToCart({
     required CartParameters parameters,
   }) async {
     final request = NetworkRequest(
-      path: APIKeys.addToCart,  // Update this path to your cart endpoint
+      path: APIKeys.addToCart, // Update this path to your cart endpoint
       type: NetworkRequestType.POST,
       headers: {
         if (CacheHelper.getUserToken != null)
@@ -87,7 +85,7 @@ class ProductDetailsApi{
 
     final response = await networkService.execute(
       request,
-          (parser) => AddSucessfully.fromJson(parser),
+      (parser) => AddSucessfully.fromJson(parser),
     );
 
     var data = response.maybeWhen(
@@ -113,7 +111,6 @@ class ProductDetailsApi{
     return data;
   }
 
-
   static Future<Cart> getCart() async {
     final request = NetworkRequest(
       path: APIKeys.cart,
@@ -127,11 +124,10 @@ class ProductDetailsApi{
     );
     final response = await networkService.execute(
       request,
-          (parser) => Cart.fromJson(parser),
+      (parser) => Cart.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
-
         return data;
       }),
       orElse: () {
@@ -170,7 +166,4 @@ class ProductDetailsApi{
     );
     return data;
   }
-
-
-
 }

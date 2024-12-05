@@ -44,10 +44,10 @@ class RememberMeRow extends GetView<LoginController> {
             ),
             GestureDetector(
               onTap: () {
-                Get.toNamed(Routes.FORGET_PASSWORD,
+                Get.toNamed(
+                  Routes.FORGET_PASSWORD,
                   arguments: {
                     "type": VerifictionType.reset_password,
-
                   },
                 );
               },

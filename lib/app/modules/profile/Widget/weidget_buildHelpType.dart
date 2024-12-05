@@ -27,16 +27,16 @@ Widget buildHelpTile({
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Icon(icon, color: iconColor),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(icon, color: iconColor),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   Text(
                     title,
                     style: GoogleFonts.inter(
@@ -45,7 +45,9 @@ Widget buildHelpTile({
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 5.h,),
+                  SizedBox(
+                    height: 5.h,
+                  ),
                   Text(
                     subtitle,
                     style: GoogleFonts.inter(
@@ -54,16 +56,12 @@ Widget buildHelpTile({
                       color: const Color(0xff878787),
                     ),
                   ),
-                ],),
-              )
-
-            ],
-          ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-
-
-
-
-
     ),
-  );}
+  );
+}

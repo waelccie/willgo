@@ -78,24 +78,23 @@ class VerifyOtpParameters {
   bool operator ==(covariant VerifyOtpParameters other) {
     if (identical(this, other)) return true;
 
-    return
-      other.phone == phone &&
-          other.otp == otp &&
-          other.name == name &&
-          other.email == email &&
-          other.password == password &&
-          other.passwordConfirmation == passwordConfirmation &&
-          other.terms == terms;
+    return other.phone == phone &&
+        other.otp == otp &&
+        other.name == name &&
+        other.email == email &&
+        other.password == password &&
+        other.passwordConfirmation == passwordConfirmation &&
+        other.terms == terms;
   }
 
   @override
   int get hashCode {
     return phone.hashCode ^
-    otp.hashCode ^
-    name.hashCode ^
-    email.hashCode ^
-    password.hashCode ^
-    passwordConfirmation.hashCode ^
-    terms.hashCode;
+        otp.hashCode ^
+        name.hashCode ^
+        email.hashCode ^
+        password.hashCode ^
+        passwordConfirmation.hashCode ^
+        terms.hashCode;
   }
 }

@@ -61,8 +61,7 @@ class VerificationController extends GetxController {
           email: email ?? "",
           password: password ?? "",
           passwordConfirmation: password_confirmation ?? "",
-          terms: terms
-      ),
+          terms: terms),
     );
     if (res.success == true) {
       await CacheHelper.cacheToken(token: res.data!.token ?? "");
@@ -89,11 +88,9 @@ class VerificationController extends GetxController {
     }
     showLoading();
     var res = await AuthApis.vrifyOtpresetPassword(
-      parameters: OtpParameters (
+      parameters: OtpParameters(
         phone: phone ?? "",
         otp: otp ?? "",
-
-
       ),
     );
     if (res.success == true) {
@@ -101,30 +98,23 @@ class VerificationController extends GetxController {
       BotToast.showText(text: res.message ?? "");
       Get.offAllNamed(
         Routes.RESET_PASSWORD,
-        arguments: {
-
-          "phone": phone,
-          "otp":otp
-        },
+        arguments: {"phone": phone, "otp": otp},
       );
     } else {
       showErrorsSequentially(res.errors ?? []);
-print(phone);
-print(otp);
+      print(phone);
+      print(otp);
       print("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss");
       BotToast.closeAllLoading();
     }
   }
 
-
-
-
-
-
   Future<void> resendOtpCode() async {
     showLoading();
     var res = await AuthApis.sendOtp(
-      parameters: SendOtpPararmeters(phone: phone ?? "",),
+      parameters: SendOtpPararmeters(
+        phone: phone ?? "",
+      ),
     );
     if (res.success == true) {
       BotToast.closeAllLoading();
@@ -134,5 +124,4 @@ print(otp);
       BotToast.closeAllLoading();
     }
   }
-
 }

@@ -19,18 +19,17 @@ class AllRestaurantsController extends GetxController {
     super.onInit();
   }
 
-
-   RestaurantsModel? getAllResturantController;
+  RestaurantsModel? getAllResturantController;
 
   Future getAllResturant() async {
     getAllResturantController = await HomeApis.getAllResturant(
       GetRestaurantsParameters(
         longitude: 31.1669351,
-        latitude: 30.9553698, page: 0,
+        latitude: 30.9553698,
+        page: 0,
       ),
     );
     update();
     print("jjjjjjjjjjj");
   }
-
 }

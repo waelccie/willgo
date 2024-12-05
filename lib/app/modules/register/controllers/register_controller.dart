@@ -53,17 +53,16 @@ class RegisterController extends GetxController {
           "type": VerifictionType.verifyPhone,
           "phone": phoneController.text,
           "token": res.data?.token ?? "",
-          "name" : userController.text,
-          "email" : emailController.text,
-          "password" : passwordController.text,
-          "password_confirmation" : confirmPasswordController.text,
-          "terms" : termsAndConditions,
+          "name": userController.text,
+          "email": emailController.text,
+          "password": passwordController.text,
+          "password_confirmation": confirmPasswordController.text,
+          "terms": termsAndConditions,
         },
-
       );
       print(
         termsAndConditions,
-     );
+      );
     } else {
       showErrorsSequentially(res.errors ?? []);
 

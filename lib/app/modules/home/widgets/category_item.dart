@@ -16,8 +16,9 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(right: 6.w), 
       decoration: BoxDecoration(
-        color: ColorsManager.primaryBackground,
+        // color: ColorsManager.primaryBackground,
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(
@@ -33,9 +34,9 @@ class CategoryItem extends StatelessWidget {
           SizedBox(height: 4.h),
           Text(
             name,
-            style: const TextStyle(
+            style:  TextStyle(
               color: Colors.black,
-              fontSize: 16,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w700,
             ),
           ),

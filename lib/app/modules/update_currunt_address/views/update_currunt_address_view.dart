@@ -25,7 +25,6 @@ class UpdateCurruntAddressView extends GetView<UpdateCurruntAddressController> {
               IconButton(
                 onPressed: () {
                   Get.offAllNamed(Routes.CART);
-
                 },
                 icon: Assets.icons.cart.svg(),
               ),
@@ -46,14 +45,16 @@ class UpdateCurruntAddressView extends GetView<UpdateCurruntAddressController> {
                           return Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: const Color(0xffD6D6D6)),
+                              border:
+                                  Border.all(color: const Color(0xffD6D6D6)),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         locatuin[index].buildingName.toString(),

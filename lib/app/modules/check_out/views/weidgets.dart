@@ -149,7 +149,7 @@ class PaymentSummeryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Total Items (${data.data!.data?.length??0})',
+                        'Total Items (${data.data!.data?.length ?? 0})',
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,

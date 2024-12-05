@@ -53,7 +53,8 @@ class Ordertracking extends StatelessWidget {
               slivers: [
                 SliverToBoxAdapter(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 8.h),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 8.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -81,7 +82,7 @@ class Ordertracking extends StatelessWidget {
                 // Tracking Steps
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
-                        (context, index) {
+                    (context, index) {
                       return Padding(
                         padding: EdgeInsets.symmetric(horizontal: 18.0.w),
                         child: Row(
@@ -110,7 +111,9 @@ class Ordertracking extends StatelessWidget {
                               child: Padding(
                                 padding: EdgeInsets.all(8.0.w),
                                 child: AnotherStepper(
-                                  stepperList: [OrderTrackingPage().steps[index]],
+                                  stepperList: [
+                                    OrderTrackingPage().steps[index]
+                                  ],
                                   stepperDirection: Axis.vertical,
                                   activeBarColor: Colors.blue,
                                   inActiveBarColor: Colors.blue,
@@ -155,7 +158,6 @@ class Ordertracking extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: payment_SummeryWidget1(controller.getOrderDetail),
                 ),
-
               ],
             ),
           ),

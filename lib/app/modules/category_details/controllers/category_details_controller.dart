@@ -10,19 +10,15 @@ class CategoryDetailsController extends GetxController {
   late Future<categoriesDetails> getCateogriesDetails;
 
   Future<void> fetchCateogriesDetails(id) async {
-    getCateogriesDetails =  HomeApis.getCategoryDetails(id);
+    getCateogriesDetails = HomeApis.getCategoryDetails(id);
     update();
   }
 
-bool isClicked=false;
-  late Future<ResturantByCat>getResurantByCat;
+  bool isClicked = false;
+  late Future<ResturantByCat> getResurantByCat;
 
-  Future<void> fetchResturantByCat(catid,classid) async {
-     getResurantByCat =  HomeApis.getResturantByCat(catid,classid);
+  Future<void> fetchResturantByCat(catid, classid) async {
+    getResurantByCat = HomeApis.getResturantByCat(catid, classid);
     update();
   }
-
-
-
-
 }

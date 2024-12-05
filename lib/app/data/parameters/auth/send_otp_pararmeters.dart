@@ -29,7 +29,8 @@ class SendOtpPararmeters {
 
   String toJson() => json.encode(toMap());
 
-  factory SendOtpPararmeters.fromJson(String source) => SendOtpPararmeters.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory SendOtpPararmeters.fromJson(String source) =>
+      SendOtpPararmeters.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'SendOtpPararmeters(phone: $phone)';
@@ -37,17 +38,13 @@ class SendOtpPararmeters {
   @override
   bool operator ==(covariant SendOtpPararmeters other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.phone == phone;
+
+    return other.phone == phone;
   }
 
   @override
   int get hashCode => phone.hashCode;
 }
-
-
-
 
 class SendOtpPassPararmeters {
   final String phone;
@@ -85,7 +82,8 @@ class SendOtpPassPararmeters {
   String toJson() => json.encode(toMap());
 
   factory SendOtpPassPararmeters.fromJson(String source) =>
-      SendOtpPassPararmeters.fromMap(json.decode(source) as Map<String, dynamic>);
+      SendOtpPassPararmeters.fromMap(
+          json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'SendOtpPassPararmeters(phone: $phone, otp: $otp)';

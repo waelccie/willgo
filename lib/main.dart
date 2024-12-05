@@ -17,6 +17,5 @@ void main() async {
   Get.find<EnvironmentController>().checkConnection();
   Get.find<EnvironmentController>().getCurrentLocation();
 
-
   runApp(const FirebaseNotificationsHandler(child: MyApp()));
 }

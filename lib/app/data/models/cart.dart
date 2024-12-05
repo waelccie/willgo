@@ -1,4 +1,3 @@
-
 class Cart {
   bool? success;
   String? message;
@@ -33,10 +32,13 @@ class Data {
   dynamic discount; // استخدم dynamic لدعم جميع الأنواع
   dynamic totalPrice; // استخدم dynamic لدعم جميع الأنواع
 
-  Data({this.data, this.totalItems, this.price, this.discount, this.totalPrice});
+  Data(
+      {this.data, this.totalItems, this.price, this.discount, this.totalPrice});
 
   Data.fromJson(Map<String, dynamic> json) {
-    data = json["data"] != null ? (json["data"] as List).map((e) => Data1.fromJson(e)).toList() : null;
+    data = json["data"] != null
+        ? (json["data"] as List).map((e) => Data1.fromJson(e)).toList()
+        : null;
     totalItems = json["total_items"];
     price = json["price"];
     discount = json["discount"];
@@ -67,12 +69,22 @@ class Data1 {
   String? createdAt;
   String? updatedAt;
 
-  Data1({this.id, this.userId, this.product, this.quantity, this.options, this.pricePerItem, this.totalPrice, this.createdAt, this.updatedAt});
+  Data1(
+      {this.id,
+      this.userId,
+      this.product,
+      this.quantity,
+      this.options,
+      this.pricePerItem,
+      this.totalPrice,
+      this.createdAt,
+      this.updatedAt});
 
   Data1.fromJson(Map<String, dynamic> json) {
     id = json["id"];
     userId = json["user_id"];
-    product = json["product"] != null ? Product.fromJson(json["product"]) : null;
+    product =
+        json["product"] != null ? Product.fromJson(json["product"]) : null;
     quantity = json["quantity"];
     options = json["options"] ?? [];
     pricePerItem = json["price_per_item"];
@@ -120,62 +132,85 @@ class Product {
   List<String>? images;
   String? createdAt;
 
-  Product({this.id, this.arName, this.enName, this.price, this.currentPrice, this.isDiscount, this.timeForPreparation, this.category, this.classes, this.options, this.description, this.nutritionalInformation, this.ingredients, this.discount, this.discountStart, this.discountEnd, this.status, this.rate, this.images, this.createdAt});
+  Product(
+      {this.id,
+      this.arName,
+      this.enName,
+      this.price,
+      this.currentPrice,
+      this.isDiscount,
+      this.timeForPreparation,
+      this.category,
+      this.classes,
+      this.options,
+      this.description,
+      this.nutritionalInformation,
+      this.ingredients,
+      this.discount,
+      this.discountStart,
+      this.discountEnd,
+      this.status,
+      this.rate,
+      this.images,
+      this.createdAt});
 
   Product.fromJson(Map<String, dynamic> json) {
-  id = json["id"];
-  arName = json["ar_name"];
-  enName = json["en_name"];
-  price = json["price"];
-  currentPrice = json["current_price"];
-  isDiscount = json["is_discount"];
-  timeForPreparation = json["time_for_preparation"];
-  category = json["category"] == null ? null : Category.fromJson(json["category"]);
-  classes = json["class"] == null ? null : Class.fromJson(json["class"]);
-  options = json["options"] == null ? null : (json["options"] as List).map((e) => Options.fromJson(e)).toList();
-  description = json["description"];
-  nutritionalInformation = json["nutritional_information"];
-  ingredients = json["ingredients"];
-  discount = json["discount"];
-  discountStart = json["discount_start"];
-  discountEnd = json["discount_end"];
-  status = json["status"];
-  rate = json["rate"];
-  images = json["images"] == null ? null : List<String>.from(json["images"]);
-  createdAt = json["created_at"];
+    id = json["id"];
+    arName = json["ar_name"];
+    enName = json["en_name"];
+    price = json["price"];
+    currentPrice = json["current_price"];
+    isDiscount = json["is_discount"];
+    timeForPreparation = json["time_for_preparation"];
+    category =
+        json["category"] == null ? null : Category.fromJson(json["category"]);
+    classes = json["class"] == null ? null : Class.fromJson(json["class"]);
+    options = json["options"] == null
+        ? null
+        : (json["options"] as List).map((e) => Options.fromJson(e)).toList();
+    description = json["description"];
+    nutritionalInformation = json["nutritional_information"];
+    ingredients = json["ingredients"];
+    discount = json["discount"];
+    discountStart = json["discount_start"];
+    discountEnd = json["discount_end"];
+    status = json["status"];
+    rate = json["rate"];
+    images = json["images"] == null ? null : List<String>.from(json["images"]);
+    createdAt = json["created_at"];
   }
 
   Map<String, dynamic> toJson() {
-  final Map<String, dynamic> _data = <String, dynamic>{};
-  _data["id"] = id;
-  _data["ar_name"] = arName;
-  _data["en_name"] = enName;
-  _data["price"] = price;
-  _data["current_price"] = currentPrice;
-  _data["is_discount"] = isDiscount;
-  _data["time_for_preparation"] = timeForPreparation;
-  if(category != null) {
-  _data["category"] = category?.toJson();
-  }
-  if(classes != null) {
-  _data["class"] = classes?.toJson();
-  }
-  if(options != null) {
-  _data["options"] = options?.map((e) => e.toJson()).toList();
-  }
-  _data["description"] = description;
-  _data["nutritional_information"] = nutritionalInformation;
-  _data["ingredients"] = ingredients;
-  _data["discount"] = discount;
-  _data["discount_start"] = discountStart;
-  _data["discount_end"] = discountEnd;
-  _data["status"] = status;
-  _data["rate"] = rate;
-  if(images != null) {
-  _data["images"] = images;
-  }
-  _data["created_at"] = createdAt;
-  return _data;
+    final Map<String, dynamic> _data = <String, dynamic>{};
+    _data["id"] = id;
+    _data["ar_name"] = arName;
+    _data["en_name"] = enName;
+    _data["price"] = price;
+    _data["current_price"] = currentPrice;
+    _data["is_discount"] = isDiscount;
+    _data["time_for_preparation"] = timeForPreparation;
+    if (category != null) {
+      _data["category"] = category?.toJson();
+    }
+    if (classes != null) {
+      _data["class"] = classes?.toJson();
+    }
+    if (options != null) {
+      _data["options"] = options?.map((e) => e.toJson()).toList();
+    }
+    _data["description"] = description;
+    _data["nutritional_information"] = nutritionalInformation;
+    _data["ingredients"] = ingredients;
+    _data["discount"] = discount;
+    _data["discount_start"] = discountStart;
+    _data["discount_end"] = discountEnd;
+    _data["status"] = status;
+    _data["rate"] = rate;
+    if (images != null) {
+      _data["images"] = images;
+    }
+    _data["created_at"] = createdAt;
+    return _data;
   }
 }
 
@@ -212,7 +247,13 @@ class Class {
   String? icon;
   int? restaurantCounts;
 
-  Class({this.id, this.nameAr, this.nameEn, this.status, this.icon, this.restaurantCounts});
+  Class(
+      {this.id,
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.restaurantCounts});
 
   Class.fromJson(Map<String, dynamic> json) {
     id = json["id"];
@@ -244,7 +285,14 @@ class Category {
   ParentClass? parentClass;
   int? productCounts;
 
-  Category({this.id, this.nameAr, this.nameEn, this.status, this.icon, this.parentClass, this.productCounts});
+  Category(
+      {this.id,
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.parentClass,
+      this.productCounts});
 
   Category.fromJson(Map<String, dynamic> json) {
     id = json["id"];
@@ -252,7 +300,9 @@ class Category {
     nameEn = json["name_en"];
     status = json["status"];
     icon = json["icon"];
-    parentClass = json["parent_class"] == null ? null : ParentClass.fromJson(json["parent_class"]);
+    parentClass = json["parent_class"] == null
+        ? null
+        : ParentClass.fromJson(json["parent_class"]);
     productCounts = json["product_counts"];
   }
 
@@ -263,7 +313,7 @@ class Category {
     _data["name_en"] = nameEn;
     _data["status"] = status;
     _data["icon"] = icon;
-    if(parentClass != null) {
+    if (parentClass != null) {
       _data["parent_class"] = parentClass?.toJson();
     }
     _data["product_counts"] = productCounts;
@@ -279,7 +329,13 @@ class ParentClass {
   String? icon;
   int? restaurantCounts;
 
-  ParentClass({this.id, this.nameAr, this.nameEn, this.status, this.icon, this.restaurantCounts});
+  ParentClass(
+      {this.id,
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.restaurantCounts});
 
   ParentClass.fromJson(Map<String, dynamic> json) {
     id = json["id"];

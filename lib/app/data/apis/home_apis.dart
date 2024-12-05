@@ -69,12 +69,9 @@ class HomeApis {
     return data;
   }
 
-
   static Future<categoriesDetails> getCategoryDetails(int id) async {
     final request = NetworkRequest(
-      queryParams: {
-        "class_id":id
-      },
+      queryParams: {"class_id": id},
       path: APIKeys.getCategories,
       type: NetworkRequestType.GET,
       headers: {
@@ -82,12 +79,11 @@ class HomeApis {
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => categoriesDetails.fromJson(parser),
+      (parser) => categoriesDetails.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -130,12 +126,12 @@ class HomeApis {
     return data;
   }
 
-
-  static Future<ResturantByCat> getResturantByCat(var catid,var classid) async {
+  static Future<ResturantByCat> getResturantByCat(
+      var catid, var classid) async {
     final request = NetworkRequest(
       queryParams: {
-      if(catid!=null)   "category_id":catid,
-       if(classid!=null)"class_category_id":classid
+        if (catid != null) "category_id": catid,
+        if (classid != null) "class_category_id": classid
       },
       path: APIKeys.getResturantByCat,
       type: NetworkRequestType.GET,
@@ -144,12 +140,11 @@ class HomeApis {
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => ResturantByCat.fromJson(parser),
+      (parser) => ResturantByCat.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {

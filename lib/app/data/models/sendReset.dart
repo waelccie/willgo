@@ -11,7 +11,7 @@ class SendRestPasswordOtp {
   final dynamic errors;
   final Data? data;
 
-  factory SendRestPasswordOtp.fromJson(Map<String, dynamic> json){
+  factory SendRestPasswordOtp.fromJson(Map<String, dynamic> json) {
     return SendRestPasswordOtp(
       success: json["success"],
       message: json["message"],
@@ -19,7 +19,6 @@ class SendRestPasswordOtp {
       data: json["data"] == null ? null : Data.fromJson(json["data"]),
     );
   }
-
 }
 
 class Data {
@@ -31,13 +30,12 @@ class Data {
   final Otp? otp;
   final String? message;
 
-  factory Data.fromJson(Map<String, dynamic> json){
+  factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
       otp: json["otp"] == null ? null : Otp.fromJson(json["otp"]),
       message: json["message"],
     );
   }
-
 }
 
 class Otp {
@@ -57,7 +55,7 @@ class Otp {
   final DateTime? createdAt;
   final int? id;
 
-  factory Otp.fromJson(Map<String, dynamic> json){
+  factory Otp.fromJson(Map<String, dynamic> json) {
     return Otp(
       phone: json["phone"],
       otp: json["otp"],
@@ -67,5 +65,4 @@ class Otp {
       id: json["id"],
     );
   }
-
 }

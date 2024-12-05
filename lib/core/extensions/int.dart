@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants/theme/colors_manager.dart';
 
-
 extension DurationExt on int {
   Duration get seconds => Duration(seconds: this);
 

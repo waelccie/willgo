@@ -17,8 +17,7 @@ class OrdersView extends GetView<OrdersController> {
   Widget build(BuildContext context) {
     return GetBuilder<OrdersController>(
       init: OrdersController(),
-      builder: (controller){
-
+      builder: (controller) {
         return Scaffold(
           appBar: AppBar(
             // leading: Padding(
@@ -45,77 +44,126 @@ class OrdersView extends GetView<OrdersController> {
             backgroundColor: Colors.white,
             elevation: 0,
           ),
-          body:CacheHelper.getUserToken == null?
-          Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset("assets/images/NotFound.svg"),
-                SizedBox(height: 30,),
-                Text("We couldn't find any result!",style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
-                SizedBox(height: 20,),
-                Text("please Login / Register",style: GoogleFonts.dmSans(color: Color(0xff878787)),),
-                SizedBox(height: 30,),
-                AppProgressButton(radius: 10,height: 50,width: MediaQuery.of(context).size.width*0.8,onPressed: (d){
-                  Get.toNamed(Routes.AUTH);
-                },child: Text("Log in/ Sign Up",style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),)
-
-              ],
-            ),
-          ) :CustomFutureBuilder<OrderModel>(
-            future: controller.getOrder,
-            onData: (BuildContext context, data) {
-
-              return  data.data!.isEmpty? Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset("assets/images/NotFound.svg"),
-                    SizedBox(height: 30,),
-                    Text("We couldn't find any result!",style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
-                    SizedBox(height: 20,),
-                    Text("Come on, make your first order",style: GoogleFonts.dmSans(color: Color(0xff878787)),),
-
-                  ],
-                ),
-              ):Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: ListView.separated(
-                    itemBuilder:
-                      (BuildContext context, int index) {
-                    return  GestureDetector(
-                      onTap: () {
-                     controller.getOrderDetails(data.data![index].id,context);
-                      },
-                      child:  OrderCard(
-                        title: data.data?[index].restaurant!.enName.toString()??"",
-                        orderId:  data.data?[index].id.toString()??"",
-                        date:  data.data?[index].createdAt.toString().substring(0,11)??"",
-                        totalAmount:  data.data![index].total.toString()??"",
-                        quantity:  data.data?[index].orderProducts?.length??0,
-                        status:  data.data?[index].status.toString()??"",
-                        statusColor: Colors.orange,
+          body: CacheHelper.getUserToken == null
+              ? Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset("assets/images/NotFound.svg"),
+                      SizedBox(
+                        height: 30,
                       ),
-                    );
-                      },
-                    separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(height: 12,);
-                    },
-                    itemCount: data.data!.length,
-
+                      Text(
+                        "We couldn't find any result!",
+                        style: GoogleFonts.dmSans(
+                            fontWeight: FontWeight.w700, fontSize: 16),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "please Login / Register",
+                        style: GoogleFonts.dmSans(color: Color(0xff878787)),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      AppProgressButton(
+                        radius: 10,
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        onPressed: (d) {
+                          Get.toNamed(Routes.AUTH);
+                        },
+                        child: Text(
+                          "Log in/ Sign Up",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, color: Colors.white),
+                        ),
+                      )
+                    ],
                   ),
+                )
+              : CustomFutureBuilder<OrderModel>(
+                  future: controller.getOrder,
+                  onData: (BuildContext context, data) {
+                    return data.data!.isEmpty
+                        ? Center(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset("assets/images/NotFound.svg"),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Text(
+                                  "We couldn't find any result!",
+                                  style: GoogleFonts.dmSans(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 16),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Come on, make your first order",
+                                  style: GoogleFonts.dmSans(
+                                      color: Color(0xff878787)),
+                                ),
+                              ],
+                            ),
+                          )
+                        : Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: Container(
+                              height: MediaQuery.of(context).size.height,
+                              child: ListView.separated(
+                                itemBuilder: (BuildContext context, int index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      controller.getOrderDetails(
+                                          data.data![index].id, context);
+                                    },
+                                    child: OrderCard(
+                                      title: data
+                                              .data?[index].restaurant!.enName
+                                              .toString() ??
+                                          "",
+                                      orderId:
+                                          data.data?[index].id.toString() ?? "",
+                                      date: data.data?[index].createdAt
+                                              .toString()
+                                              .substring(0, 11) ??
+                                          "",
+                                      totalAmount:
+                                          data.data![index].total.toString() ??
+                                              "",
+                                      quantity: data.data?[index].orderProducts
+                                              ?.length ??
+                                          0,
+                                      status:
+                                          data.data?[index].status.toString() ??
+                                              "",
+                                      statusColor: Colors.orange,
+                                    ),
+                                  );
+                                },
+                                separatorBuilder:
+                                    (BuildContext context, int index) {
+                                  return SizedBox(
+                                    height: 12,
+                                  );
+                                },
+                                itemCount: data.data!.length,
+                              ),
+                            ),
+                          );
+                  },
                 ),
-              );
-            },
-
-          ),
         );
       },
-
     );
   }
 }

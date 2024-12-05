@@ -20,7 +20,9 @@ class ParentCategoriesModel {
     if (json["data"] is List) {
       data = json["data"] == null
           ? null
-          : (json["data"] as List).map((e) => ParentCategory.fromJson(e)).toList();
+          : (json["data"] as List)
+              .map((e) => ParentCategory.fromJson(e))
+              .toList();
     }
   }
 

@@ -20,7 +20,6 @@ class ThemeManager {
       cardColor: ColorsManager.white,
       errorColor: ColorsManager.error,
     ),
-    
     scaffoldBackgroundColor: ColorsManager.white,
     primaryColor: ColorsManager.primary,
     dialogBackgroundColor: Colors.white,

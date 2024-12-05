@@ -11,13 +11,12 @@ import '../models/locationById.dart';
 import '../models/newLocation_model.dart';
 import '../models/setPrimaryLocation.dart';
 
-class NewLocationApis{
-
+class NewLocationApis {
   static Future<NewLocationModel> addNewLocation({
     required NewLoaction parameters,
   }) async {
     final request = NetworkRequest(
-      path: APIKeys.addLocation,  // Update this path to your cart endpoint
+      path: APIKeys.addLocation, // Update this path to your cart endpoint
       type: NetworkRequestType.POST,
       headers: {
         if (CacheHelper.getUserToken != null)
@@ -31,7 +30,7 @@ class NewLocationApis{
 
     final response = await networkService.execute(
       request,
-          (parser) => NewLocationModel.fromJson(parser),
+      (parser) => NewLocationModel.fromJson(parser),
     );
 
     var data = response.maybeWhen(
@@ -57,7 +56,6 @@ class NewLocationApis{
     return data;
   }
 
-
   static Future<SetPrimaryLocatiom> getDefaultLocation() async {
     final request = NetworkRequest(
       path: APIKeys.getDEfaultLocation,
@@ -66,14 +64,12 @@ class NewLocationApis{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => SetPrimaryLocatiom.fromJson(parser),
+      (parser) => SetPrimaryLocatiom.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -115,7 +111,6 @@ class NewLocationApis{
     );
     return data;
   }
-
 
   static Future<GetLocation> getLocation() async {
     final request = NetworkRequest(
@@ -125,14 +120,12 @@ class NewLocationApis{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => GetLocation.fromJson(parser),
+      (parser) => GetLocation.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -174,7 +167,6 @@ class NewLocationApis{
     );
     return data;
   }
-
 
   static Future<LocarionById> getAllLocationbyId(id) async {
     final request = NetworkRequest(
@@ -184,14 +176,12 @@ class NewLocationApis{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => LocarionById.fromJson(parser),
+      (parser) => LocarionById.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -234,13 +224,10 @@ class NewLocationApis{
     return data;
   }
 
-
-
-  static Future<SetPrimaryLocatiom> setDefaultLocation({
-    id
-  }) async {
+  static Future<SetPrimaryLocatiom> setDefaultLocation({id}) async {
     final request = NetworkRequest(
-      path: APIKeys.setDefaultLocation(id),  // Update this path to your cart endpoint
+      path: APIKeys.setDefaultLocation(
+          id), // Update this path to your cart endpoint
       type: NetworkRequestType.POST,
       headers: {
         if (CacheHelper.getUserToken != null)
@@ -254,7 +241,7 @@ class NewLocationApis{
 
     final response = await networkService.execute(
       request,
-          (parser) => SetPrimaryLocatiom.fromJson(parser),
+      (parser) => SetPrimaryLocatiom.fromJson(parser),
     );
 
     var data = response.maybeWhen(
@@ -279,6 +266,4 @@ class NewLocationApis{
 
     return data;
   }
-
-
 }

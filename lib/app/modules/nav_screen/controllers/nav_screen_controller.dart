@@ -30,4 +30,3 @@ class NavScreenController extends GetxController {
     await GeneralApis.storeFCMToken(fcm: token);
   }
 }
- 

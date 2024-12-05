@@ -20,7 +20,7 @@ class HomeCategoriesListView extends GetView<HomeController> {
       width: context.width,
       height: 100.h,
       child: PagedListView(
-        itemExtent: context.width / 2.5,
+        // itemExtent: context.width / 2.5,
         scrollDirection: Axis.horizontal,
         pagingController: controller.getAllParentCategoriesPagingController,
         builderDelegate: PagedChildBuilderDelegate<ParentCategory>(
@@ -40,10 +40,11 @@ class HomeCategoriesListView extends GetView<HomeController> {
               child: GestureDetector(
                 onTap: () {
                   Get.put(CategoryDetailsController());
-                  Get.find<CategoryDetailsController>().fetchCateogriesDetails(item.id);
-                  Get.find<CategoryDetailsController>().fetchResturantByCat(null,item.id);
+                  Get.find<CategoryDetailsController>()
+                      .fetchCateogriesDetails(item.id);
+                  Get.find<CategoryDetailsController>()
+                      .fetchResturantByCat(null, item.id);
                   Get.toNamed(Routes.CATEGORY_DETAILS);
-
                 },
                 child: CategoryItem(
                   name: CacheHelper.getLocale == "ar"

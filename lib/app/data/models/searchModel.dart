@@ -11,15 +11,16 @@ class SearchModel {
   final dynamic errors;
   final List<Datum> data;
 
-  factory SearchModel.fromJson(Map<String, dynamic> json){
+  factory SearchModel.fromJson(Map<String, dynamic> json) {
     return SearchModel(
       success: json["success"],
       message: json["message"],
       errors: json["errors"],
-      data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+      data: json["data"] == null
+          ? []
+          : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
     );
   }
-
 }
 
 class Datum {
@@ -75,7 +76,7 @@ class Datum {
   final int? orderCounts;
   final DateTime? createdAt;
 
-  factory Datum.fromJson(Map<String, dynamic> json){
+  factory Datum.fromJson(Map<String, dynamic> json) {
     return Datum(
       id: json["id"],
       arName: json["ar_name"],
@@ -86,12 +87,16 @@ class Datum {
       city: json["city"] == null ? null : City.fromJson(json["city"]),
       zone: json["zone"] == null ? null : City.fromJson(json["zone"]),
       plan: json["plan"] == null ? null : Plan.fromJson(json["plan"]),
-      classes: json["classes"] == null ? [] : List<Class>.from(json["classes"]!.map((x) => Class.fromJson(x))),
+      classes: json["classes"] == null
+          ? []
+          : List<Class>.from(json["classes"]!.map((x) => Class.fromJson(x))),
       address: json["address"],
       latitude: json["latitude"],
       longitude: json["longitude"],
       rate: json["rate"],
-      phoneNumbers: json["phone_numbers"] == null ? [] : List<String>.from(json["phone_numbers"]!.map((x) => x)),
+      phoneNumbers: json["phone_numbers"] == null
+          ? []
+          : List<String>.from(json["phone_numbers"]!.map((x) => x)),
       deliveryTime: json["delivery_time"],
       crNumber: json["cr_number"],
       taxId: json["tax_id"],
@@ -103,7 +108,6 @@ class Datum {
       createdAt: DateTime.tryParse(json["created_at"] ?? ""),
     );
   }
-
 }
 
 class City {
@@ -131,21 +135,22 @@ class City {
   final dynamic? coordinates;
   final int? productCounts;
 
-  factory City.fromJson(Map<String, dynamic> json){
+  factory City.fromJson(Map<String, dynamic> json) {
     return City(
       id: json["id"],
       arName: json["ar_name"],
       enName: json["en_name"],
       status: json["status"],
       country: json["country"] == null ? null : City.fromJson(json["country"]),
-      zones: json["zones"] == null ? [] : List<City>.from(json["zones"]!.map((x) => City.fromJson(x))),
+      zones: json["zones"] == null
+          ? []
+          : List<City>.from(json["zones"]!.map((x) => City.fromJson(x))),
       createdAt: DateTime.tryParse(json["created_at"] ?? ""),
       updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
       coordinates: json["coordinates"],
       productCounts: json["product_counts"],
     );
   }
-
 }
 
 class Coordinate {
@@ -157,13 +162,12 @@ class Coordinate {
   final String? lat;
   final String? long;
 
-  factory Coordinate.fromJson(Map<String, dynamic> json){
+  factory Coordinate.fromJson(Map<String, dynamic> json) {
     return Coordinate(
       lat: json["lat"],
       long: json["long"],
     );
   }
-
 }
 
 class CoordinatesClass {
@@ -175,13 +179,12 @@ class CoordinatesClass {
   final int? lat;
   final int? lng;
 
-  factory CoordinatesClass.fromJson(Map<String, dynamic> json){
+  factory CoordinatesClass.fromJson(Map<String, dynamic> json) {
     return CoordinatesClass(
       lat: json["lat"],
       lng: json["lng"],
     );
   }
-
 }
 
 class Class {
@@ -201,7 +204,7 @@ class Class {
   final String? icon;
   final int? restaurantCounts;
 
-  factory Class.fromJson(Map<String, dynamic> json){
+  factory Class.fromJson(Map<String, dynamic> json) {
     return Class(
       id: json["id"],
       nameAr: json["name_ar"],
@@ -211,7 +214,6 @@ class Class {
       restaurantCounts: json["restaurant_counts"],
     );
   }
-
 }
 
 class Plan {
@@ -243,7 +245,7 @@ class Plan {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  factory Plan.fromJson(Map<String, dynamic> json){
+  factory Plan.fromJson(Map<String, dynamic> json) {
     return Plan(
       id: json["id"],
       nameAr: json["name_ar"],
@@ -259,7 +261,6 @@ class Plan {
       updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
     );
   }
-
 }
 
 class PriceRange {
@@ -277,7 +278,7 @@ class PriceRange {
   final String? priceForRange;
   final String? priceUnit;
 
-  factory PriceRange.fromJson(Map<String, dynamic> json){
+  factory PriceRange.fromJson(Map<String, dynamic> json) {
     return PriceRange(
       distanceFrom: json["distance_from"],
       distanceTo: json["distance_to"],
@@ -286,7 +287,6 @@ class PriceRange {
       priceUnit: json["price_unit"],
     );
   }
-
 }
 
 class PriceRangesClass {
@@ -298,11 +298,10 @@ class PriceRangesClass {
   final int? min;
   final int? max;
 
-  factory PriceRangesClass.fromJson(Map<String, dynamic> json){
+  factory PriceRangesClass.fromJson(Map<String, dynamic> json) {
     return PriceRangesClass(
       min: json["min"],
       max: json["max"],
     );
   }
-
 }

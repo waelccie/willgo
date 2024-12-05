@@ -1,7 +1,9 @@
-// ignore_for_file: constant_identifier_names
-
 import 'package:get/get.dart';
 
+import '../modules/AddSupportRequest/bindings/add_support_request_binding.dart';
+import '../modules/AddSupportRequest/views/add_support_request_view.dart';
+import '../modules/SupportRquestDetails/bindings/support_rquest_details_binding.dart';
+import '../modules/SupportRquestDetails/views/support_rquest_details_view.dart';
 import '../modules/all_offers/bindings/all_offers_binding.dart';
 import '../modules/all_offers/views/all_offers_view.dart';
 import '../modules/all_restaurants/bindings/all_restaurants_binding.dart';
@@ -60,10 +62,14 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/success/bindings/success_binding.dart';
 import '../modules/success/views/success_view.dart';
+import '../modules/support_request/bindings/supportt_binding.dart';
+import '../modules/support_request/views/support_requests_view.dart';
 import '../modules/update_currunt_address/bindings/update_currunt_address_binding.dart';
 import '../modules/update_currunt_address/views/update_currunt_address_view.dart';
 import '../modules/verification/bindings/verification_binding.dart';
 import '../modules/verification/views/verification_view.dart';
+
+// ignore_for_file: constant_identifier_names
 
 part 'app_routes.dart';
 
@@ -90,7 +96,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.REGISTER,
-      page: () =>  const RegisterView(),
+      page: () => const RegisterView(),
       binding: RegisterBinding(),
     ),
     GetPage(
@@ -110,7 +116,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.VERIFICATION,
-      page: () =>  const VerificationView(),
+      page: () => const VerificationView(),
       binding: VerificationBinding(),
     ),
     GetPage(
@@ -135,7 +141,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () =>  const ProfileView(),
+      page: () => const ProfileView(),
       binding: ProfileBinding(),
     ),
     GetPage(
@@ -220,13 +226,28 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.NEW_LOCATION,
-      page: () =>  NewLocationView(),
+      page: () => NewLocationView(),
       binding: NewLocationBinding(),
     ),
     GetPage(
       name: _Paths.FAV_RESTURANT,
       page: () => const FavResturantView(),
       binding: FavResturantBinding(),
+    ),
+    GetPage(
+      name: _Paths.SUPPORTT,
+      page: () => const SupportRequestsView(),
+      binding: SupporttBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_SUPPORT_REQUEST,
+      page: () =>  AddSupportRequestView(),
+      binding: AddSupportRequestBinding(),
+    ),
+    GetPage(
+      name: _Paths.SUPPORT_RQUEST_DETAILS,
+      page: () =>  SupportRquestDetailsView(),
+      binding: SupportRquestDetailsBinding(),
     ),
   ];
 }

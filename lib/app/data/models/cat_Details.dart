@@ -41,12 +41,12 @@ class Data {
 
   Data(
       {this.id,
-        this.nameAr,
-        this.nameEn,
-        this.status,
-        this.icon,
-        this.parentClass,
-        this.productCounts});
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.parentClass,
+      this.productCounts});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -85,11 +85,11 @@ class ParentClass {
 
   ParentClass(
       {this.id,
-        this.nameAr,
-        this.nameEn,
-        this.status,
-        this.icon,
-        this.restaurantCounts});
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.restaurantCounts});
 
   ParentClass.fromJson(Map<String, dynamic> json) {
     id = json['id'];

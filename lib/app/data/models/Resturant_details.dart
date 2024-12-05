@@ -1,4 +1,3 @@
-
 class ResturantDetailsModel {
   bool? success;
   String? message;
@@ -18,10 +17,10 @@ class ResturantDetailsModel {
     final Map<String, dynamic> _data = <String, dynamic>{};
     _data["success"] = success;
     _data["message"] = message;
-    if(errors != null) {
+    if (errors != null) {
       _data["errors"] = errors;
     }
-    if(data != null) {
+    if (data != null) {
       _data["data"] = data?.toJson();
     }
     return _data;
@@ -50,7 +49,27 @@ class Data {
   int? orderCounts;
   String? createdAt;
 
-  Data({this.id, this.arName, this.enName, this.email, this.phone, this.photo, this.address, this.latitude, this.longitude, this.rate, this.phoneNumbers, this.deliveryTime, this.crNumber, this.taxId, this.licenceExpireDate, this.legalEntityName, this.status, this.isFavourite, this.orderCounts, this.createdAt});
+  Data(
+      {this.id,
+      this.arName,
+      this.enName,
+      this.email,
+      this.phone,
+      this.photo,
+      this.address,
+      this.latitude,
+      this.longitude,
+      this.rate,
+      this.phoneNumbers,
+      this.deliveryTime,
+      this.crNumber,
+      this.taxId,
+      this.licenceExpireDate,
+      this.legalEntityName,
+      this.status,
+      this.isFavourite,
+      this.orderCounts,
+      this.createdAt});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json["id"];
@@ -63,7 +82,9 @@ class Data {
     latitude = json["latitude"];
     longitude = json["longitude"];
     rate = json["rate"];
-    phoneNumbers = json["phone_numbers"] == null ? null : List<String>.from(json["phone_numbers"]);
+    phoneNumbers = json["phone_numbers"] == null
+        ? null
+        : List<String>.from(json["phone_numbers"]);
     deliveryTime = json["delivery_time"];
     crNumber = json["cr_number"];
     taxId = json["tax_id"];
@@ -87,7 +108,7 @@ class Data {
     _data["latitude"] = latitude;
     _data["longitude"] = longitude;
     _data["rate"] = rate;
-    if(phoneNumbers != null) {
+    if (phoneNumbers != null) {
       _data["phone_numbers"] = phoneNumbers;
     }
     _data["delivery_time"] = deliveryTime;

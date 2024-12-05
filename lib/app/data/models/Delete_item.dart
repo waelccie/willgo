@@ -11,7 +11,7 @@ class DeleteItem {
   final dynamic errors;
   final String? data;
 
-  factory DeleteItem.fromJson(Map<String, dynamic> json){
+  factory DeleteItem.fromJson(Map<String, dynamic> json) {
     return DeleteItem(
       success: json["success"],
       message: json["message"],
@@ -19,5 +19,4 @@ class DeleteItem {
       data: json["data"],
     );
   }
-
 }

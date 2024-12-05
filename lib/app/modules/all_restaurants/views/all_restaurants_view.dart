@@ -15,31 +15,48 @@ class AllRestaurantsView extends GetView<AllRestaurantsController> {
         centerTitle: true,
       ),
       body: GetBuilder<AllRestaurantsController>(
-        builder: (controller){
+        builder: (controller) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Text("All Rssturant",style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),),
+                child: Text(
+                  "All Rssturant",
+                  style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
+                ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: ListView.separated(
-                  shrinkWrap: true,
-                    itemBuilder: (context,index){
-                  return AllResturantWidget(image: controller.getAllResturantController?.data?[index].photo.toString(),
-                    name:  controller.getAllResturantController?.data?[index].enName.toString(),
-                    time:  controller.getAllResturantController?.data?[index].deliveryTime.toString(),
-                    id:  controller.getAllResturantController?.data?[index].id.toString(),
-                    rate:  controller.getAllResturantController?.data?[index].rate.toString(),);
-                }, separatorBuilder: (context,index){
-                  return SizedBox(height: 8,);
-                }, itemCount:  controller.getAllResturantController!.data!.length),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return AllResturantWidget(
+                        image: controller
+                            .getAllResturantController?.data?[index].photo
+                            .toString(),
+                        name: controller
+                            .getAllResturantController?.data?[index].enName
+                            .toString(),
+                        time: controller.getAllResturantController?.data?[index]
+                            .deliveryTime
+                            .toString(),
+                        id: controller
+                            .getAllResturantController?.data?[index].id
+                            .toString(),
+                        rate: controller
+                            .getAllResturantController?.data?[index].rate
+                            .toString(),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return SizedBox(
+                        height: 8,
+                      );
+                    },
+                    itemCount:
+                        controller.getAllResturantController!.data!.length),
               )
-
-
             ],
           );
         },

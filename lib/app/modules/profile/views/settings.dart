@@ -61,11 +61,11 @@ class _SettingsState extends State<Settings> {
                       },
                       activeColor: Colors.white, // لون السويتش في حالة "تشغيل"
                       activeTrackColor:
-                      Colors.blue[100], // لون المسار في حالة "تشغيل"
+                          Colors.blue[100], // لون المسار في حالة "تشغيل"
                       inactiveThumbColor:
-                      Colors.white, // لون السويتش في حالة "إيقاف"
-                      inactiveTrackColor: const Color(
-                          0xffDFE0F3), // لون المسار في حالة "إيقاف"
+                          Colors.white, // لون السويتش في حالة "إيقاف"
+                      inactiveTrackColor:
+                          const Color(0xffDFE0F3), // لون المسار في حالة "إيقاف"
                     ),
                   ),
                   buildListTileSettings(
@@ -83,12 +83,12 @@ class _SettingsState extends State<Settings> {
                         });
                       },
                       activeColor: Colors.white, // لون السويتش في حالة "تشغيل"
-                      activeTrackColor: const Color(
-                          0xff01A0E2), // لون المسار في حالة "تشغيل"
+                      activeTrackColor:
+                          const Color(0xff01A0E2), // لون المسار في حالة "تشغيل"
                       inactiveThumbColor:
-                      Colors.grey, // لون السويتش في حالة "إيقاف"
+                          Colors.grey, // لون السويتش في حالة "إيقاف"
                       inactiveTrackColor:
-                      Colors.grey[300], // لون المسار في حالة "إيقاف"
+                          Colors.grey[300], // لون المسار في حالة "إيقاف"
                     ),
                   ),
                   GestureDetector(
@@ -185,26 +185,26 @@ class _SettingsState extends State<Settings> {
     print('Push Notifications Disabled');
   }
 
-
-    Future<void> enableLocation() async {
-      final permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        return;
-      }
-
-      if (!await Geolocator.isLocationServiceEnabled()) {
-        await Geolocator.openLocationSettings();
-        return;
-      }
-
-      try {
-        final position = await Geolocator.getCurrentPosition();
-        print('Current location: ${position.latitude}, ${position.longitude}');
-      } catch (e) {
-        print('Error getting location: $e');
-      }
+  Future<void> enableLocation() async {
+    final permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      return;
     }
 
-    Future<void> disableLocation() async {
+    if (!await Geolocator.isLocationServiceEnabled()) {
       await Geolocator.openLocationSettings();
-    } }
+      return;
+    }
+
+    try {
+      final position = await Geolocator.getCurrentPosition();
+      print('Current location: ${position.latitude}, ${position.longitude}');
+    } catch (e) {
+      print('Error getting location: $e');
+    }
+  }
+
+  Future<void> disableLocation() async {
+    await Geolocator.openLocationSettings();
+  }
+}

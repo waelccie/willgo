@@ -7,7 +7,7 @@ import '../../../core/services/get_storage_helper.dart';
 import '../../../core/services/network_service.dart/dio_network_service.dart';
 import '../models/product_model.dart';
 
-class ResurantDetailsApi{
+class ResurantDetailsApi {
   static Future<ResturantDetailsModel> get_Resturant_Details(id) async {
     final request = NetworkRequest(
       path: APIKeys.getRestaurantDetail(id),
@@ -16,16 +16,13 @@ class ResurantDetailsApi{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-      queryParams: {
-
-      },
+      queryParams: {},
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => ResturantDetailsModel.fromJson(parser),
+      (parser) => ResturantDetailsModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -67,7 +64,6 @@ class ResurantDetailsApi{
     );
     return data;
   }
-
 
   static Future<ResturantProductModel> get_Resturant_products(id) async {
     final request = NetworkRequest(
@@ -77,17 +73,13 @@ class ResurantDetailsApi{
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
         "lang": CacheHelper.getLocale,
-
       },
-      queryParams: {
-       "restaurant_id":id
-
-      },
+      queryParams: {"restaurant_id": id},
       data: const NetworkRequestBody.empty(),
     );
     final response = await networkService.execute(
       request,
-          (parser) => ResturantProductModel.fromJson(parser),
+      (parser) => ResturantProductModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -129,5 +121,4 @@ class ResurantDetailsApi{
     );
     return data;
   }
-
 }

@@ -45,8 +45,7 @@ class LoginParameters {
   bool operator ==(covariant LoginParameters other) {
     if (identical(this, other)) return true;
 
-    return other.phone == phone &&
-        other.password == password;
+    return other.phone == phone && other.password == password;
   }
 
   @override

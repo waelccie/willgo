@@ -15,12 +15,11 @@ class ResetPasswordController extends GetxController {
   TextEditingController confirmPasswordController = TextEditingController();
 
   String? phone;
-  String?otp;
+  String? otp;
   @override
   void onInit() {
     phone = Get.arguments?["phone"];
     otp = Get.arguments?["otp"];
-
 
     super.onInit();
   }
@@ -33,8 +32,7 @@ class ResetPasswordController extends GetxController {
     var res = await AuthApis.resetPassword(
       parameters: ResetPasswordParameters(
         phone: phone ?? "",
-        otp: otp??"",
-
+        otp: otp ?? "",
         newPassword: newPasswordController.text,
         confirmPassword: confirmPasswordController.text,
       ),
@@ -54,5 +52,3 @@ class ResetPasswordController extends GetxController {
     }
   }
 }
-
-

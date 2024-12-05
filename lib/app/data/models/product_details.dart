@@ -80,7 +80,8 @@ class Data {
     currentPrice = _convertToOriginalType(json["current_price"]);
     isDiscount = json["is_discount"];
     timeForPreparation = json["time_for_preparation"];
-    category = json["category"] == null ? null : Category.fromJson(json["category"]);
+    category =
+        json["category"] == null ? null : Category.fromJson(json["category"]);
     classes = json["class"] == null ? null : Class.fromJson(json["class"]);
     options = json["options"] == null
         ? null
@@ -134,7 +135,8 @@ class Data {
     if (value is int) return value;
     if (value is String) {
       final int? parsed = int.tryParse(value);
-      return parsed ?? value; // إذا لم يتم التحويل إلى int، يتم إرجاع النص كما هو
+      return parsed ??
+          value; // إذا لم يتم التحويل إلى int، يتم إرجاع النص كما هو
     }
     return value;
   }
@@ -182,7 +184,13 @@ class Class {
   String? icon;
   dynamic restaurantCounts;
 
-  Class({this.id, this.nameAr, this.nameEn, this.status, this.icon, this.restaurantCounts});
+  Class(
+      {this.id,
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.restaurantCounts});
 
   Class.fromJson(Map<String, dynamic> json) {
     id = _convertToOriginalType(json["id"]);
@@ -223,7 +231,14 @@ class Category {
   ParentClass? parentClass;
   dynamic productCounts;
 
-  Category({this.id, this.nameAr, this.nameEn, this.status, this.icon, this.parentClass, this.productCounts});
+  Category(
+      {this.id,
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.parentClass,
+      this.productCounts});
 
   Category.fromJson(Map<String, dynamic> json) {
     id = _convertToOriginalType(json["id"]);
@@ -269,7 +284,13 @@ class ParentClass {
   String? icon;
   dynamic restaurantCounts;
 
-  ParentClass({this.id, this.nameAr, this.nameEn, this.status, this.icon, this.restaurantCounts});
+  ParentClass(
+      {this.id,
+      this.nameAr,
+      this.nameEn,
+      this.status,
+      this.icon,
+      this.restaurantCounts});
 
   ParentClass.fromJson(Map<String, dynamic> json) {
     id = _convertToOriginalType(json["id"]);

@@ -9,35 +9,29 @@ import 'package:willgo/app/modules/all_offers/bindings/all_offers_binding.dart';
 
 import '../../environment/controllers/environment_controller.dart';
 
-
-
 class mapWuidgetfull_Address extends StatelessWidget {
- final LatLng myLocation;
-  const mapWuidgetfull_Address({super.key,required this.myLocation});
+  final LatLng myLocation;
+  const mapWuidgetfull_Address({super.key, required this.myLocation});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12)
-
-      ),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
       height: 123.h,
       width: MediaQuery.of(context).size.width,
-      child:   Padding(
+      child: Padding(
         padding: const EdgeInsets.all(2.0),
         child: FlutterMap(
           options: MapOptions(
             center: Get.find<EnvironmentController>().latLng,
             zoom: 12.0,
             maxZoom: 18,
-            onTap: (_, __) {
-
-            },
+            onTap: (_, __) {},
           ),
           children: [
             TileLayer(
-              urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+              urlTemplate:
+                  'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
               subdomains: const ['a', 'b', 'c'],
               backgroundColor: Colors.white,
               additionalOptions: const {
@@ -45,22 +39,19 @@ class mapWuidgetfull_Address extends StatelessWidget {
                 'language': 'ar',
               },
             ),
-            MarkerLayer(
-              markers: [
-                 Marker(
-                  width: 40,
-                  height: 40,
-                  point: myLocation,
-                  builder: (context) => GestureDetector(
-                    onTap: () {
-
-                    },
-                    child: Icon(Icons.location_history,size: 50,)
-                  ),
-                )
-              ]
-            ),
-
+            MarkerLayer(markers: [
+              Marker(
+                width: 40,
+                height: 40,
+                point: myLocation,
+                builder: (context) => GestureDetector(
+                    onTap: () {},
+                    child: Icon(
+                      Icons.location_history,
+                      size: 50,
+                    )),
+              )
+            ]),
           ],
         ),
       ),
@@ -68,31 +59,26 @@ class mapWuidgetfull_Address extends StatelessWidget {
   }
 }
 
-
 class mapWuidget extends StatelessWidget {
   const mapWuidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12)
-
-      ),
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
       height: 448.h,
       width: MediaQuery.of(context).size.width,
-      child:   FlutterMap(
+      child: FlutterMap(
         options: MapOptions(
           center: const LatLng(24.6911, 46.7268),
           zoom: 12.0,
           maxZoom: 18,
-          onTap: (_, __) {
-
-          },
+          onTap: (_, __) {},
         ),
         children: [
           TileLayer(
-            urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            urlTemplate:
+                'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
             subdomains: const ['a', 'b', 'c'],
             backgroundColor: Colors.white,
             additionalOptions: const {
@@ -122,10 +108,8 @@ class mapWuidget extends StatelessWidget {
           //   }).toList(),
           // ),
           // إظهار معلومات المسجد المحدد
-
         ],
       ),
     );
   }
 }
-

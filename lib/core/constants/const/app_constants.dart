@@ -23,7 +23,7 @@ class AppConstants {
   static const String relationMy = 'my';
   static const String appPhoneKey = '20';
   static const String appCountryKey = 'EG';
-  static const String appCurrency ='EGP';
+  static const String appCurrency = 'EGP';
   static const String failed = 'Failed';
   static const String completed = 'Completed';
   static const String delivered = 'Delivered';

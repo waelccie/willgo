@@ -11,15 +11,16 @@ class GetLocation {
   final dynamic errors;
   final List<Datum> data;
 
-  factory GetLocation.fromJson(Map<String, dynamic> json){
+  factory GetLocation.fromJson(Map<String, dynamic> json) {
     return GetLocation(
       success: json["success"],
       message: json["message"],
       errors: json["errors"],
-      data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+      data: json["data"] == null
+          ? []
+          : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
     );
   }
-
 }
 
 class Datum {
@@ -55,7 +56,7 @@ class Datum {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  factory Datum.fromJson(Map<String, dynamic> json){
+  factory Datum.fromJson(Map<String, dynamic> json) {
     return Datum(
       id: json["id"],
       name: json["name"],
@@ -73,5 +74,4 @@ class Datum {
       updatedAt: DateTime.tryParse(json["updated_at"] ?? ""),
     );
   }
-
 }

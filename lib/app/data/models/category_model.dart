@@ -11,15 +11,16 @@ class CategoryModel {
   final dynamic errors;
   final List<Datum> data;
 
-  factory CategoryModel.fromJson(Map<String, dynamic> json){
+  factory CategoryModel.fromJson(Map<String, dynamic> json) {
     return CategoryModel(
       success: json["success"],
       message: json["message"],
       errors: json["errors"],
-      data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+      data: json["data"] == null
+          ? []
+          : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
     );
   }
-
 }
 
 class Datum {
@@ -41,7 +42,7 @@ class Datum {
   final Class? datumClass;
   final int? productCounts;
 
-  factory Datum.fromJson(Map<String, dynamic> json){
+  factory Datum.fromJson(Map<String, dynamic> json) {
     return Datum(
       id: json["id"],
       nameAr: json["name_ar"],
@@ -52,7 +53,6 @@ class Datum {
       productCounts: json["product_counts"],
     );
   }
-
 }
 
 class Class {
@@ -72,7 +72,7 @@ class Class {
   final String? icon;
   final int? restaurantCounts;
 
-  factory Class.fromJson(Map<String, dynamic> json){
+  factory Class.fromJson(Map<String, dynamic> json) {
     return Class(
       id: json["id"],
       nameAr: json["name_ar"],
@@ -82,5 +82,4 @@ class Class {
       restaurantCounts: json["restaurant_counts"],
     );
   }
-
 }

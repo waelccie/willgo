@@ -13,9 +13,6 @@ class VerificationView extends GetView<VerificationController> {
   Widget build(BuildContext context) {
     var phone = Get.parameters['phone'] ?? 'No phone provided';
 
-
-
-
     return GetBuilder<VerificationController>(
       builder: (controller) {
         return Scaffold(

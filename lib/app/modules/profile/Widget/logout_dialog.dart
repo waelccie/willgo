@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 import '../controllers/profile_controller.dart';
 
-
 class LogoutDialog extends GetView<ProfileController> {
   const LogoutDialog({super.key});
 

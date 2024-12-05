@@ -42,9 +42,8 @@ class PopularRestaurantsListView extends GetView<HomeController> {
                 : item.enName ?? "",
             imageUrl: item.photo,
             onTap: () {
-              Get.toNamed(Routes.RESTAURANT_DETAILS, arguments: {
-                "res_id":item.id
-              });
+              Get.toNamed(Routes.RESTAURANT_DETAILS,
+                  arguments: {"res_id": item.id});
             },
           );
         },

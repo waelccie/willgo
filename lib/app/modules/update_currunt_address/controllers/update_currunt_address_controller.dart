@@ -11,38 +11,29 @@ class UpdateCurruntAddressController extends GetxController {
 
   final count = 0.obs;
 
-
-
   void increment() => count.value++;
-
 
   @override
   void onInit() {
+    getLocations = NewLocationApis.getLocation();
 
-    getLocations=NewLocationApis.getLocation();
-
-update();
+    update();
     super.onInit();
   }
-  late Future<GetLocation>getLocations;
+
+  late Future<GetLocation> getLocations;
   int? selectedId;
 
-
   Future<void> setDefaultLocation(id) async {
-
     showLoading();
-    var res = await NewLocationApis.setDefaultLocation(id: id
-    );
+    var res = await NewLocationApis.setDefaultLocation(id: id);
     if (res.success == true) {
       BotToast.closeAllLoading();
       BotToast.showText(text: res.message ?? "");
-
     } else {
       showErrorsSequentially(res.errors ?? []);
 
       BotToast.closeAllLoading();
     }
   }
-
-
 }

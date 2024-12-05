@@ -11,7 +11,7 @@ class RegisterAfteOtp {
   final dynamic errors;
   final Data? data;
 
-  factory RegisterAfteOtp.fromJson(Map<String, dynamic> json){
+  factory RegisterAfteOtp.fromJson(Map<String, dynamic> json) {
     return RegisterAfteOtp(
       success: json["success"],
       message: json["message"],
@@ -19,7 +19,6 @@ class RegisterAfteOtp {
       data: json["data"] == null ? null : Data.fromJson(json["data"]),
     );
   }
-
 }
 
 class Data {
@@ -31,13 +30,12 @@ class Data {
   final User? user;
   final String? token;
 
-  factory Data.fromJson(Map<String, dynamic> json){
+  factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
       user: json["user"] == null ? null : User.fromJson(json["user"]),
       token: json["token"],
     );
   }
-
 }
 
 class User {
@@ -57,7 +55,7 @@ class User {
   final DateTime? createdAt;
   final int? id;
 
-  factory User.fromJson(Map<String, dynamic> json){
+  factory User.fromJson(Map<String, dynamic> json) {
     return User(
       name: json["name"],
       phone: json["phone"],
@@ -67,5 +65,4 @@ class User {
       id: json["id"],
     );
   }
-
 }

@@ -10,20 +10,13 @@ class UserUpdate {
     required this.name,
     required this.phone,
     required this.email,
-
   });
 
-  UserUpdate copyWith({
-    String? name,
-    String? phone,
-    String? email
-
-  }) {
+  UserUpdate copyWith({String? name, String? phone, String? email}) {
     return UserUpdate(
       name: name ?? this.name,
       phone: phone ?? this.phone,
       email: email ?? this.email,
-
     );
   }
 
@@ -32,7 +25,6 @@ class UserUpdate {
       'name': name,
       'phone': phone,
       'email': email,
-
     };
   }
 
@@ -41,7 +33,6 @@ class UserUpdate {
       name: map['name'] as String,
       phone: map['phone'] as String,
       email: map['email'] as String,
-
     );
   }
 
@@ -59,18 +50,11 @@ class UserUpdate {
   bool operator ==(covariant UserUpdate other) {
     if (identical(this, other)) return true;
 
-    return other.name == name &&
-        other.phone == phone &&
-        other.email == email ;
-
+    return other.name == name && other.phone == phone && other.email == email;
   }
 
   @override
   int get hashCode {
-    return name.hashCode ^
-    phone.hashCode ^
-    email.hashCode ;
-
+    return name.hashCode ^ phone.hashCode ^ email.hashCode;
   }
 }
-

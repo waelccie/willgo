@@ -87,9 +87,7 @@ class AuthApis {
     final request = NetworkRequest(
       path: APIKeys.register,
       type: NetworkRequestType.POST,
-      headers: {
-
-      },
+      headers: {},
       data: NetworkRequestBody.fromData(
         FormData.fromMap(parameters.toMap()),
       ),
@@ -259,7 +257,6 @@ class AuthApis {
     return data;
   }
 
-
   static Future<SendRestPasswordOtp> sendRsesetPassword({
     required SendOtpPassPararmeters parameters,
   }) async {
@@ -277,7 +274,7 @@ class AuthApis {
     );
     final response = await networkService.execute(
       request,
-          (parser) => SendRestPasswordOtp.fromJson(parser),
+      (parser) => SendRestPasswordOtp.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -380,8 +377,6 @@ class AuthApis {
     return data;
   }
 
-
-
   static Future<MainModel> vrifyOtpresetPassword({
     required OtpParameters parameters,
   }) async {
@@ -399,7 +394,7 @@ class AuthApis {
     );
     final response = await networkService.execute(
       request,
-          (parser) => MainModel.fromJson(parser),
+      (parser) => MainModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -441,11 +436,6 @@ class AuthApis {
     );
     return data;
   }
-
-
-
-
-
 
   // static Future<MainModel> deleteAccount({
   //   required ResetPasswordParameters parameters,
@@ -507,9 +497,6 @@ class AuthApis {
   //   return data;
   // }
 
-
-
-
   static Future<MainModel> logout() async {
     final request = NetworkRequest(
       path: APIKeys.logout,
@@ -566,8 +553,6 @@ class AuthApis {
     return data;
   }
 
-
-
   static Future<MainModel> deleteAccount() async {
     final request = NetworkRequest(
       path: APIKeys.deleteAccount,
@@ -581,7 +566,7 @@ class AuthApis {
     );
     final response = await networkService.execute(
       request,
-          (parser) => MainModel.fromJson(parser),
+      (parser) => MainModel.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -623,7 +608,6 @@ class AuthApis {
     );
     return data;
   }
-
 
   static Future<UpdateProfie> updateProfile({
     required UserUpdate parameters,
@@ -642,7 +626,7 @@ class AuthApis {
     );
     final response = await networkService.execute(
       request,
-          (parser) => UpdateProfie.fromJson(parser),
+      (parser) => UpdateProfie.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -685,11 +669,8 @@ class AuthApis {
     return data;
   }
 
-
-
-
   static Future<UpdateProfie> updateLatLngProfile({
-    required LatLng  parameters,
+    required LatLng parameters,
   }) async {
     final request = NetworkRequest(
       path: APIKeys.updateUser,
@@ -705,7 +686,7 @@ class AuthApis {
     );
     final response = await networkService.execute(
       request,
-          (parser) => UpdateProfie.fromJson(parser),
+      (parser) => UpdateProfie.fromJson(parser),
     );
     var data = response.maybeWhen(
       ok: ((data) {
@@ -747,7 +728,4 @@ class AuthApis {
     );
     return data;
   }
-
-
-
 }

@@ -19,13 +19,11 @@ class PersonaldataView extends StatelessWidget {
     return GetBuilder<ProfileController>(
       builder: (ProfileController controller) {
         return CustomFutureBuilder<UserModel>(
-          future:controller.getUserData,
-
+          future: controller.getUserData,
           onData: (BuildContext context, UserModel data) {
-            controller.phone.text=data.data!.phone.toString();
-            controller.name.text=data.data!.name.toString();
-            controller.email.text=data.data!.email.toString();
-
+            controller.phone.text = data.data!.phone.toString();
+            controller.name.text = data.data!.name.toString();
+            controller.email.text = data.data!.email.toString();
 
             return Scaffold(
               appBar: AppBar(
@@ -124,9 +122,7 @@ class PersonaldataView extends StatelessWidget {
                 ),
               ),
             );
-
           },
-
         );
       },
     );

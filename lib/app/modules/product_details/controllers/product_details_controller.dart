@@ -61,20 +61,14 @@ class ProductDetailsController extends GetxController {
       showLoading();
 
       // Convert selected options to Option objects
-      List<Option> cartOptions = selectedOptions
-          .map((option) => Option(id: option.id ?? 0))
-          .toList();
+      List<Option> cartOptions =
+          selectedOptions.map((option) => Option(id: option.id ?? 0)).toList();
 
       var res = await ProductDetailsApi.addToCart(
-        parameters: CartParameters(
-            products: [
-              Product(
-                  productId: productId,
-                  quantity: quantity,
-                  options: cartOptions
-              )
-            ]
-        ),
+        parameters: CartParameters(products: [
+          Product(
+              productId: productId, quantity: quantity, options: cartOptions)
+        ]),
       );
 
       if (res.success == true) {

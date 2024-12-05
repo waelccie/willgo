@@ -24,36 +24,53 @@ class _PaymentsucessState extends State<Paymentsucess> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Payment Successful',style: GoogleFonts.roboto(
-              fontWeight: FontWeight.w600,
-              fontSize: 20
-            ),),
-            SizedBox(height: 8.h,),
-            Image(image: const AssetImage("assets/images/confetti 1.png"),height: 143.h,width: 143.w,),
-            Text('Thank you for your order!',style: GoogleFonts.roboto(
-                fontWeight: FontWeight.w600,
-                fontSize: 15
-            ),),
-            const SizedBox(height: 8,),
-
-            Text("Your payment has been successfully\n processed.",textAlign: TextAlign.center,style: GoogleFonts.roboto(
-
-              fontSize: 15,
-              fontWeight: FontWeight.w400,color: const Color(0xff4C555F)
-            ),),
-
+            Text(
+              'Payment Successful',
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
+            Image(
+              image: const AssetImage("assets/images/confetti 1.png"),
+              height: 143.h,
+              width: 143.w,
+            ),
+            Text(
+              'Thank you for your order!',
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.w600, fontSize: 15),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              "Your payment has been successfully\n processed.",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.roboto(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xff4C555F)),
+            ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0,horizontal: 16),
-              child: AppProgressButton(onPressed: (v){
-                Get.put(HomeController());
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16),
+              child: AppProgressButton(
+                onPressed: (v) {
+                  Get.put(HomeController());
 
-              Get.toNamed(Routes.NAV_SCREEN);
-               Get.reloadAll(force: true);
-              },child: Text("Ok. Great!",style: GoogleFonts.roboto(
-                fontWeight: FontWeight.w600,
-                fontSize: 17,
-                color: Colors.white
-              ),),),
+                  Get.toNamed(Routes.NAV_SCREEN);
+                  Get.reloadAll(force: true);
+                },
+                child: Text(
+                  "Ok. Great!",
+                  style: GoogleFonts.roboto(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17,
+                      color: Colors.white),
+                ),
+              ),
             )
           ],
         ),

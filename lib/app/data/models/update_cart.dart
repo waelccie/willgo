@@ -11,7 +11,7 @@ class UpdateCart {
   final dynamic errors;
   final dynamic? data;
 
-  factory UpdateCart.fromJson(Map<String, dynamic> json){
+  factory UpdateCart.fromJson(Map<String, dynamic> json) {
     return UpdateCart(
       success: json["success"],
       message: json["message"],
@@ -19,5 +19,4 @@ class UpdateCart {
       data: json["data"],
     );
   }
-
 }
