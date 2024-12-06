@@ -24,6 +24,9 @@ class UserApis {
     );
     var data = response.maybeWhen(
       ok: ((data) {
+           if (data?.data?.email != null) {
+          CacheHelper.cacheEmail (email: data?.data?.email?? "");
+        }
         return data;
       }),
       orElse: () {

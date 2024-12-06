@@ -13,6 +13,16 @@ class CacheHelper {
   }) async {
     await _cacheUserToken(token);
   }
+    //========================================================
+
+ static Future<void> cacheEmail({
+    required String email,
+  }) async {
+    await _appBox.write('email', email);
+  }
+    static String? get getEmail => _appBox.read('email');
+
+  //========================================================
 
   static Future<void> _cacheUserToken(String uid) async =>
       await _appBox.write('token', uid);

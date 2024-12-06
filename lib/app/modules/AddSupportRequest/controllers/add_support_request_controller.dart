@@ -20,8 +20,8 @@ class AddSupportRequestController extends GetxController {
    @override
   void onInit() {
     super.onInit();
+    emailController.text = CacheHelper.getEmail ?? ""; 
 
-    emailController.text = profileController.email.text;
   }
 
 

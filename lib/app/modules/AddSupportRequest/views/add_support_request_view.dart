@@ -9,7 +9,7 @@ import '../controllers/add_support_request_controller.dart';
 
 class AddSupportRequestView extends GetView<AddSupportRequestController> {
    AddSupportRequestView({super.key});
-    final ProfileController profileController = Get.find<ProfileController>();
+   
 
   @override
   Widget build(BuildContext context) {
