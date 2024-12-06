@@ -22,7 +22,7 @@ class mapWuidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: FlutterMap(
         options: MapOptions(
-          center: const LatLng(24.6911, 46.7268),
+          center:  LatLng(24.6911, 46.7268),
           zoom: 12.0,
           maxZoom: 18,
           onTap: (_, __) {},
@@ -149,7 +149,7 @@ class PaymentSummeryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Total Items (${data.data!.data?.length ?? 0})',
+                        'Total Items (${data.data!.data?.length??0})',
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
@@ -176,7 +176,7 @@ class PaymentSummeryWidget extends StatelessWidget {
                             color: const Color(0xff878787)),
                       ),
                       Text(
-                        'free',
+                          data.data!.deliveryFee.toString(),
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w700, fontSize: 14),
                       )

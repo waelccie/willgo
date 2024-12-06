@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,6 +39,8 @@ class VerificationController extends GetxController {
     password = Get.arguments?['password'];
     password_confirmation = Get.arguments?['password_confirmation'];
     terms = Get.arguments?['terms'];
+    startTimer();
+
   }
 
   Future<void> verifyOtp() async {
@@ -61,7 +65,8 @@ class VerificationController extends GetxController {
           email: email ?? "",
           password: password ?? "",
           passwordConfirmation: password_confirmation ?? "",
-          terms: terms),
+          terms: terms
+      ),
     );
     if (res.success == true) {
       await CacheHelper.cacheToken(token: res.data!.token ?? "");
@@ -88,9 +93,11 @@ class VerificationController extends GetxController {
     }
     showLoading();
     var res = await AuthApis.vrifyOtpresetPassword(
-      parameters: OtpParameters(
+      parameters: OtpParameters (
         phone: phone ?? "",
         otp: otp ?? "",
+
+
       ),
     );
     if (res.success == true) {
@@ -98,7 +105,11 @@ class VerificationController extends GetxController {
       BotToast.showText(text: res.message ?? "");
       Get.offAllNamed(
         Routes.RESET_PASSWORD,
-        arguments: {"phone": phone, "otp": otp},
+        arguments: {
+
+          "phone": phone,
+          "otp":otp
+        },
       );
     } else {
       showErrorsSequentially(res.errors ?? []);
@@ -109,12 +120,32 @@ class VerificationController extends GetxController {
     }
   }
 
+  late Timer _timer;
+  int remainingSeconds = 80; // 1 minute 20 seconds = 80 seconds
+
+  void startTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (remainingSeconds > 0) {
+        remainingSeconds--;
+        update();
+      } else {
+        _timer.cancel();
+      }
+    });
+  }
+
+  String formatTime(int seconds) {
+    final minutes = (seconds ~/ 60).toString().padLeft(2, '0');
+    final secs = (seconds % 60).toString().padLeft(2, '0');
+    return "$minutes:$secs";
+  }
+
+
+
   Future<void> resendOtpCode() async {
     showLoading();
     var res = await AuthApis.sendOtp(
-      parameters: SendOtpPararmeters(
-        phone: phone ?? "",
-      ),
+      parameters: SendOtpPararmeters(phone: phone ?? "",),
     );
     if (res.success == true) {
       BotToast.closeAllLoading();
@@ -124,4 +155,5 @@ class VerificationController extends GetxController {
       BotToast.closeAllLoading();
     }
   }
+
 }

@@ -92,7 +92,7 @@ class APIKeys {
   static const String login = "login_by_phone";
   static const String register = "send-register-otp";
   static const String verifyPhone = "reset-password-after-otp";
-  static const String sendOtp = "send-otp";
+  static const String sendOtp = "send-reset-password-otp";
   static const String search = "user/searches";
   static const String sendresetPassword = "register-after-otp";
   static const String resetPassword = "reset-password-after-otp";

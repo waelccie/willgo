@@ -11,7 +11,9 @@ class VerificationView extends GetView<VerificationController> {
   const VerificationView({super.key});
   @override
   Widget build(BuildContext context) {
-    var phone = Get.parameters['phone'] ?? 'No phone provided';
+
+
+
 
     return GetBuilder<VerificationController>(
       builder: (controller) {
@@ -31,11 +33,20 @@ class VerificationView extends GetView<VerificationController> {
                         AuthHeader(
                           title: "Phone number verification",
                           subTitle:
-                              "Enter the verification code we send you on:$phone",
+                          "Enter the verification code we send you on:${controller.phone??"No phon provided"}",
                         ),
                         SizedBox(height: 40.h),
                         PinCodeFields(onChanged: controller.onChangeOtpCode),
+
                         SizedBox(height: 12.h),
+                        Text(
+                          controller.formatTime(controller.remainingSeconds),
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
                         AuthFooter(
                           title: "Didn’t receive code?",
                           subTitle: "Resend",
