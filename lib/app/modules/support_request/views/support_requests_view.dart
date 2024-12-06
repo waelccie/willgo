@@ -17,9 +17,13 @@ class SupportRequestsView extends GetView<SupportRequestController> {
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         backgroundColor: ColorsManager.primary,
-        onPressed: () {
-          Get.toNamed(Routes.ADD_SUPPORT_REQUEST);
+         onPressed: () async {
+          final result = await Get.toNamed(Routes.ADD_SUPPORT_REQUEST);
+          if (result == true) {
+            controller.fetchSupportRequests();
+          }
         },
+       
         child: const Icon(Icons.add,color: Colors.white,),
       ),
       backgroundColor:const Color(0xfffcfcfc),
@@ -32,9 +36,16 @@ class SupportRequestsView extends GetView<SupportRequestController> {
         child: Obx(() {
           if (controller.supportRequests.isEmpty) {
             return Center(
-              child: Text(
-                "No support requests found.",
-                style: TextStyle(fontSize: 16.sp, color: Colors.grey),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/Emptyticket.png"),
+                   SizedBox(height: 10.h),
+                  Text(
+                    "No requests found.",
+                    style: TextStyle(fontSize: 16.sp, color: Colors.black),
+                  ),
+                ],
               ),
             );
           }

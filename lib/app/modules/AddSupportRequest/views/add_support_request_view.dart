@@ -15,7 +15,6 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
   Widget build(BuildContext context) {
     return GetBuilder<AddSupportRequestController>(
       builder: (controller) {
-                controller.emailController.text = profileController.email.text;
 
         return Scaffold(
           appBar: AppBar(
@@ -40,7 +39,6 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
                   CustomTextField(
                     borderRadius: 30.r,
 
-                    // controller: profileController.email,
                   controller: controller.emailController,
 
                     hint: "Email",

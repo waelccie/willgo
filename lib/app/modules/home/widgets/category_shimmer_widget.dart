@@ -9,7 +9,7 @@ class CategoryItemShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: context.width / 2.5,
+      // width: context.width / 2.5,
       decoration: BoxDecoration(
         color: Colors.grey[200], // Placeholder background color
         borderRadius: BorderRadius.circular(24),
@@ -29,7 +29,7 @@ class CategoryItemShimmer extends StatelessWidget {
             SizedBox(height: 4.h),
             Container(
               height: 16.h,
-              width: 80.w,
+              width: 54.w,
               color: Colors.white,
             ),
           ],
