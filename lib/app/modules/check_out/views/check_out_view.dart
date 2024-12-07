@@ -194,52 +194,52 @@ class CheckOutView extends GetView<CheckOutController> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 0.0, vertical: 8),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: const Color(0xffE9EAEB)),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Online',
-                              style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 17.22,
-                              ),
-                            ),
-                            const Spacer(),
-                            Radio<int>(
-                              fillColor:
-                              WidgetStateProperty.resolveWith<Color?>(
-                                    (Set<WidgetState> states) {
-                                  if (states
-                                      .contains(WidgetState.selected)) {
-                                    return const Color(0xff01A0E2);
-                                  }
-                                  return Colors.grey; // اللون الافتراضي
-                                },
-                              ),
-                              value: 2,
-                              groupValue: radioSelected,
-                              onChanged: (value) {
-                                radioSelected = value;
-                                selectedPayment = 'Online';
-                                controller.update();
-                              },
-                              activeColor: Colors.blue,
-                              focusColor: const Color(0xff01A0E2),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(
+                  //       horizontal: 0.0, vertical: 8),
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(12),
+                  //       border: Border.all(color: const Color(0xffE9EAEB)),
+                  //     ),
+                  //     child: Padding(
+                  //       padding: const EdgeInsets.all(6.0),
+                  //       child: Row(
+                  //         children: [
+                  //           Text(
+                  //             'Online',
+                  //             style: GoogleFonts.roboto(
+                  //               fontWeight: FontWeight.w600,
+                  //               fontSize: 17.22,
+                  //             ),
+                  //           ),
+                  //           const Spacer(),
+                  //           Radio<int>(
+                  //             fillColor:
+                  //             WidgetStateProperty.resolveWith<Color?>(
+                  //                   (Set<WidgetState> states) {
+                  //                 if (states
+                  //                     .contains(WidgetState.selected)) {
+                  //                   return const Color(0xff01A0E2);
+                  //                 }
+                  //                 return Colors.grey; // اللون الافتراضي
+                  //               },
+                  //             ),
+                  //             value: 2,
+                  //             groupValue: radioSelected,
+                  //             onChanged: (value) {
+                  //               radioSelected = value;
+                  //               selectedPayment = 'Online';
+                  //               controller.update();
+                  //             },
+                  //             activeColor: Colors.blue,
+                  //             focusColor: const Color(0xff01A0E2),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   const PaymentSummeryWidget(),
                   SizedBox(height: 8.h),
                   AppProgressButton(
