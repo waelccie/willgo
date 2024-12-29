@@ -25,14 +25,15 @@ final Map<String, dynamic> args = Get.arguments;
             child: ListView(
               padding: const EdgeInsets.all(30),
               children:  [
+                 args["note"] != null?
                     Align(
                   alignment: Alignment.centerRight,
                   child: Bubble(
                     message: args["note"],
                     isSender: true,
                   ),
-                ),
-                 args["answer"] == null?
+                ): Container(),
+                 args["answer"] != null?
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Bubble(
