@@ -9,6 +9,7 @@ import 'package:willgo/app/modules/update_currunt_address/controllers/update_cur
 import '../../../../core/global/const.dart';
 import '../../../data/apis/location_apis.dart';
 import '../../../data/models/getLocation.dart';
+import '../../../data/parameters/auth/uppdateLatLng.dart';
 import '../../../data/parameters/location/new_location.dart';
 import '../../../routes/app_pages.dart';
 import '../../../widgets/loading_widget.dart';
@@ -19,22 +20,24 @@ class NewLocationController extends GetxController {
 
   final count = 0.obs;
 
-  var buildingName = TextEditingController();
-  var appartNum = TextEditingController();
-  var floor = TextEditingController();
-  var streetController = TextEditingController();
-  var additionalData = TextEditingController();
-  var phone = TextEditingController();
+var buildingName=TextEditingController();
+  var appartNum=TextEditingController();
+  var floor=TextEditingController();
+  var streetController=TextEditingController();
+  var additionalData=TextEditingController();
+  var phone=TextEditingController();
+
+
 
   void increment() => count.value++;
   LocationPermission? permission;
-  Position? position;
+   Position? position;
 
   String? street;
   String? cityAndCountry;
   bool isLocation = false;
 
-  Future<Position> _getCurrentLocation() async {
+  Future<Position> getCurrentLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
 
@@ -50,6 +53,7 @@ class NewLocationController extends GetxController {
       if (permission == LocationPermission.denied) {
         return Future.error('Location permissions are denied');
       }
+
     }
 
     if (permission == LocationPermission.deniedForever) {
@@ -61,23 +65,31 @@ class NewLocationController extends GetxController {
         desiredAccuracy: LocationAccuracy.high);
   }
 
-  Future<void> getLocationAndAddress() async {
+  Future<void> getLocationAndAddress(position1) async {
     try {
-      position = await _getCurrentLocation();
-      print(
-          "Location: Lat: ${position!.latitude}, Long: ${position!.longitude}");
+
+      print("Location: Lat: ${position1!.latitude}, Long: ${position1!.longitude}");
 
       List<Placemark> placemarks = await placemarkFromCoordinates(
-        position!.latitude,
-        position!.longitude,
+        position1!.latitude,
+        position1!.longitude,
+      );
+
+       position = Position(
+          latitude: position1!.latitude,
+          longitude: position1!.longitude,
+          // Add other required parameters for Position constructor
+          accuracy: 0.0,
+          altitude: 0.0,
+          heading: 0.0,
+          speed: 0.0,
+          timestamp: DateTime.now(), altitudeAccuracy: 0, headingAccuracy: 0, speedAccuracy: 0
       );
       update();
-
       Placemark place = placemarks[0];
-
       street = place.street;
       cityAndCountry = "${place.locality}, ${place.country}";
-      update();
+update();
       isLocation = true;
       print("Street: $street");
       print("City and Country: $cityAndCountry");
@@ -85,6 +97,7 @@ class NewLocationController extends GetxController {
       print("Error: $e");
     }
   }
+
 
   Future<void> add_newLocation() async {
     try {
@@ -134,6 +147,7 @@ class NewLocationController extends GetxController {
       BotToast.showText(text: res.message ?? "Location added successfully");
 
       // Navigation logic
+      Get.put(CheckOutController());
       if (Get.find<CheckOutController>().isCheck == true) {
         Get.offAllNamed(
           Routes.CHECK_OUT,
@@ -141,7 +155,7 @@ class NewLocationController extends GetxController {
         );
         Get.find<CheckOutController>().isCheck = false;
       } else {
-        Get.offAllNamed(
+        Get.toNamed(
           Routes.UPDATE_CURRUNT_ADDRESS,
           arguments: {"refresh": true},
         );
@@ -153,4 +167,7 @@ class NewLocationController extends GetxController {
       BotToast.closeAllLoading();
     }
   }
+
+
+
 }

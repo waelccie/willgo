@@ -13,15 +13,16 @@ class cartItem extends StatefulWidget {
   final int initialQuantity;
   final CartController controller;
 
-  const cartItem(
-      {super.key,
-      required this.name,
-      required this.image,
-      required this.cat,
-      required this.price,
-      required this.initialQuantity,
-      required this.controller,
-      required this.id});
+  const cartItem({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.cat,
+    required this.price,
+    required this.initialQuantity,
+    required this.controller,
+    required this.id
+  });
   @override
   State<cartItem> createState() => _cartItemState();
 }
@@ -34,7 +35,6 @@ class _cartItemState extends State<cartItem> {
     super.initState();
     quantity = widget.initialQuantity;
   }
-
   @override
   Widget build(BuildContext context) {
     return Slidable(
@@ -129,8 +129,8 @@ class _cartItemState extends State<cartItem> {
                           shape: BoxShape.circle,
                           color: Color(0xff01A0E2),
                         ),
-                        height: 30,
-                        width: 30,
+                        height: 25,
+                        width: 25,
                         child: const Icon(
                           Icons.remove,
                           color: Colors.white,
@@ -158,8 +158,8 @@ class _cartItemState extends State<cartItem> {
                           shape: BoxShape.circle,
                           border: Border.all(color: const Color(0xff01A0E2)),
                         ),
-                        height: 30,
-                        width: 30,
+                        height: 25,
+                        width: 25,
                         child: const Icon(
                           Icons.add,
                           color: Color(0xff01A0E2),
@@ -175,4 +175,9 @@ class _cartItemState extends State<cartItem> {
       ),
     );
   }
+
 }
+
+
+
+

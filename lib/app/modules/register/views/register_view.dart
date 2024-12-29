@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:willgo/core/global/validator.dart';
+import '../../../routes/app_pages.dart';
 import '../../../widgets/progress_button.dart';
 import '../../../widgets/custom_text_field.dart';
 import '../../../widgets/phone_text_form_field.dart';
@@ -27,7 +28,7 @@ class RegisterView extends GetView<RegisterController> {
                   const AuthHeader(
                     title: "Create your new\naccount",
                     subTitle:
-                        "Create an account to start looking for the food you like",
+                    "Create an account to start looking for the food you like",
                   ),
                   SizedBox(height: 20.h),
                   CustomTextField(
@@ -89,7 +90,7 @@ class RegisterView extends GetView<RegisterController> {
                     title: "Have an account?",
                     subTitle: "Login",
                     onTap: () {
-                      Get.back();
+                      Get.toNamed(Routes.LOGIN);
                     },
                   ),
                 ],

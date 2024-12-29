@@ -15,17 +15,18 @@ import 'add_full_address.dart';
 class NewLocationView extends GetView<NewLocationController> {
   const NewLocationView({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<NewLocationController>(
       init: NewLocationController(),
-      builder: (controller) {
+      builder: (controller){
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
             leadingWidth: 60,
             leading: InkWell(
-              onTap: () {
+              onTap: (){
                 Get.toNamed(Routes.UPDATE_CURRUNT_ADDRESS);
               },
               child: Padding(
@@ -56,8 +57,7 @@ class NewLocationView extends GetView<NewLocationController> {
           ),
           body: SingleChildScrollView(
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8),
               child: Column(
                 children: [
                   Stack(
@@ -67,36 +67,7 @@ class NewLocationView extends GetView<NewLocationController> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20)),
                           height: 400.h,
-                          child: mapWuidgetfull_Address(
-                              myLocation: controller.position == null
-                                  ? LatLng(
-                                      Get.find<EnvironmentController>()
-                                          .latLng!
-                                          .latitude,
-                                      Get.find<EnvironmentController>()
-                                          .latLng!
-                                          .longitude)
-                                  : LatLng(controller.position!.latitude,
-                                      controller.position!.longitude))),
-                      Positioned(
-                        top: 10,
-                        right: 20,
-                        child: GestureDetector(
-                          onTap: () {
-                            controller.getLocationAndAddress();
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Icon(Icons.my_location),
-                            ),
-                          ),
-                        ),
-                      )
+                          child: MapWidgetFullAddress(myLocation: controller.position==null? LatLng(Get.find<EnvironmentController>().latLng!.latitude, Get.find<EnvironmentController>().latLng!.longitude):LatLng(controller.position!.latitude, controller.position!.longitude), getLocationAndAddress:  controller.getLocationAndAddress,)),
                     ],
                   ),
                   SizedBox(height: 8.h),
@@ -121,19 +92,15 @@ class NewLocationView extends GetView<NewLocationController> {
                       padding: const EdgeInsets.all(12.0),
                       child: Row(
                         children: [
-                          controller.cityAndCountry == null
-                              ? Text(
-                                  "loaction....",
-                                  style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12),
-                                )
-                              : Text(
-                                  "${controller.cityAndCountry ?? ""}",
-                                  style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 16),
-                                ),
+                          controller.cityAndCountry==null?Text(
+                            "loaction....",
+                            style: GoogleFonts.dmSans(
+                                fontWeight: FontWeight.w500, fontSize: 12),
+                          ): Text(
+                            "${controller.cityAndCountry??""}",
+                            style: GoogleFonts.dmSans(
+                                fontWeight: FontWeight.w500, fontSize: 16),
+                          ),
                           const Spacer(),
                           const Icon(
                             Icons.location_on_outlined,
@@ -153,22 +120,15 @@ class NewLocationView extends GetView<NewLocationController> {
                       padding: const EdgeInsets.all(12.0),
                       child: Row(
                         children: [
-                          controller.street == null
-                              ? Text(
-                                  'street name.....',
-                                  style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12),
-                                )
-                              : Text(
-                                  controller.street
-                                      .toString()
-                                      .trim()
-                                      .toString(),
-                                  style: GoogleFonts.dmSans(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 14),
-                                ),
+                          controller.street==null? Text(
+                            'street name.....',
+                            style: GoogleFonts.dmSans(
+                                fontWeight: FontWeight.w500, fontSize: 12),
+                          ) : Text(
+                            controller.street.toString().trim().toString(),
+                            style: GoogleFonts.dmSans(
+                                fontWeight: FontWeight.w500, fontSize: 14),
+                          ),
                         ],
                       ),
                     ),
@@ -176,16 +136,12 @@ class NewLocationView extends GetView<NewLocationController> {
                   SizedBox(height: 12.h),
                   AppProgressButton(
                     onPressed: (v) {
-                      if (controller.street != null &&
-                          controller.cityAndCountry != null) {
+                      if(controller.street!=null&&controller.cityAndCountry!=null){
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AddFullAddress(
-                                      city: controller.cityAndCountry,
-                                      street: controller.street,
-                                    )));
-                      } else {
+                                builder: (context) => AddFullAddress(city: controller.cityAndCountry , street:  controller.street,)));
+                      }else{
                         BotToast.showText(text: "pick your Location from Map");
                       }
                     },
@@ -203,6 +159,7 @@ class NewLocationView extends GetView<NewLocationController> {
           ),
         );
       },
+
     );
   }
 }

@@ -92,7 +92,7 @@ class EnvironmentController extends GetxController {
         parameters: LatLng(latitude: latitude, longitude: longitude));
     if (res.success == true) {
       BotToast.closeAllLoading();
-      BotToast.showText(text: res.message ?? "");
+   //   BotToast.showText(text: res.message ?? "");
     } else {
       showErrorsSequentially(res.errors ?? []);
 
