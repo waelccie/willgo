@@ -130,5 +130,14 @@
   "settings": "الإعدادات",
   "location": "الموقع",
   "support": "الدعم",
-  "privacypolicy": "سياسة الخصوصية"
+  "privacypolicy": "سياسة الخصوصية",
+  "profilesettings": "إعدادات الملف الشخصي",
+  "hinicetomeetyou": "مرحبًا، سعداء بلقائك",
+  "helpcenter": "مركز المساعدة",
+  "aboutus": "معلومات عنا",
+  "contactus": "اتصل بنا",
+  "faq": "الأسئلة الشائعة",
+  "myrates": "تقييماتي",
+  "requestaccountdeletion": "طلب حذف الحساب",
+  "signout": "تسجيل الخروج"
 }

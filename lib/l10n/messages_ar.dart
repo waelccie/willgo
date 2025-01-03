@@ -455,4 +455,31 @@ class SAr extends S {
 
   @override
   String get termsandconditions => 'الشروط والأحكام';
+
+  @override
+  String get profilesettings => 'إعدادات الملف الشخصي';
+
+  @override
+  String get hinicetomeetyou => 'مرحبًا، سعداء بلقائك';
+
+  @override
+  String get helpcenter => 'مركز المساعدة';
+
+  @override
+  String get aboutus => 'معلومات عنا';
+
+  @override
+  String get contactus => 'اتصل بنا';
+
+  @override
+  String get faq => 'الأسئلة الشائعة';
+
+  @override
+  String get myrates => 'تقييماتي';
+
+  @override
+  String get requestaccountdeletion => 'طلب حذف الحساب';
+
+  @override
+  String get signout => 'تسجيل الخروج';
 }

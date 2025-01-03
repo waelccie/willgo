@@ -148,6 +148,19 @@
   "location": "Location",
   "support": "Support",
   "privacypolicy": "Privacy Policy",
-  "termsandconditions": "Terms and Conditions"
+  "termsandconditions": "Terms and Conditions",
+  "profilesettings": "Profile Settings",
+  "hinicetomeetyou": "Hi, nice to meet you",
+  "helpcenter": "Help Center",
+  "aboutus": "About Us",
+  "contactus": "Contact Us",
+  "faq": "FAQ",
+  "myrates": "My Rates",
+  "requestaccountdeletion": "Request Account Deletion",
+  "signout": "Sign Out"
+
+
+
+
   
 }

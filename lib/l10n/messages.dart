@@ -994,6 +994,60 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Terms and Conditions'**
   String get termsandconditions;
+
+  /// No description provided for @profilesettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile Settings'**
+  String get profilesettings;
+
+  /// No description provided for @hinicetomeetyou.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, nice to meet you'**
+  String get hinicetomeetyou;
+
+  /// No description provided for @helpcenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Help Center'**
+  String get helpcenter;
+
+  /// No description provided for @aboutus.
+  ///
+  /// In en, this message translates to:
+  /// **'About Us'**
+  String get aboutus;
+
+  /// No description provided for @contactus.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contactus;
+
+  /// No description provided for @faq.
+  ///
+  /// In en, this message translates to:
+  /// **'FAQ'**
+  String get faq;
+
+  /// No description provided for @myrates.
+  ///
+  /// In en, this message translates to:
+  /// **'My Rates'**
+  String get myrates;
+
+  /// No description provided for @requestaccountdeletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Account Deletion'**
+  String get requestaccountdeletion;
+
+  /// No description provided for @signout.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signout;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

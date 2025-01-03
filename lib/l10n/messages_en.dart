@@ -455,4 +455,31 @@ class SEn extends S {
 
   @override
   String get termsandconditions => 'Terms and Conditions';
+
+  @override
+  String get profilesettings => 'Profile Settings';
+
+  @override
+  String get hinicetomeetyou => 'Hi, nice to meet you';
+
+  @override
+  String get helpcenter => 'Help Center';
+
+  @override
+  String get aboutus => 'About Us';
+
+  @override
+  String get contactus => 'Contact Us';
+
+  @override
+  String get faq => 'FAQ';
+
+  @override
+  String get myrates => 'My Rates';
+
+  @override
+  String get requestaccountdeletion => 'Request Account Deletion';
+
+  @override
+  String get signout => 'Sign Out';
 }

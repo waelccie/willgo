@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/modules/environment/views/internet_connection_view.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
 import 'package:willgo/app/widgets/progress_button.dart';
 import 'package:willgo/core/constants/const/app_constants.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../../core/services/get_storage_helper.dart';
 import '../../../data/models/user_model.dart';
 import '../../../widgets/delete_AccountDialog.dart';
@@ -29,7 +31,7 @@ class ProfileView extends GetView<ProfileController> {
             backgroundColor: Colors.white,
             elevation: 0,
             title: Text(
-              'Profile Settings',
+              context.translate.profilesettings,
               style: GoogleFonts.inter(
                 color: Colors.black,
                 fontSize: 16,
@@ -54,7 +56,7 @@ class ProfileView extends GetView<ProfileController> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Nice to meet you !",
+                                 context.translate.hinicetomeetyou,
                                   style: GoogleFonts.inter(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 18),
@@ -69,7 +71,7 @@ class ProfileView extends GetView<ProfileController> {
                                     Get.toNamed(Routes.AUTH);
                                   },
                                   child: Text(
-                                    "Log in/ Sign Up",
+                                    context.translate.signin,
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         color: Colors.white),
@@ -88,13 +90,13 @@ class ProfileView extends GetView<ProfileController> {
                                     builder: (context) => const Settings()));
                           },
                           child: buildListTile(
-                              'Settings', Icons.settings_outlined)),
+                             context.translate.settings, Icons.settings_outlined)),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 20, bottom: 8),
                           child: Text(
-                            'Support',
+                            context.translate.support,
                             style: GoogleFonts.inter(
                               fontSize: 12,
                               color: const Color(0xff878787),
@@ -112,7 +114,7 @@ class ProfileView extends GetView<ProfileController> {
                                         const HelpCenterPage()));
                           },
                           child:
-                              buildListTile('Help Center', Icons.help_outline)),
+                              buildListTile(  context.translate.helpcenter, Icons.help_outline)),
                     ],
                   ),
                 )
@@ -169,7 +171,7 @@ class ProfileView extends GetView<ProfileController> {
                                     padding: const EdgeInsets.only(
                                         left: 20, bottom: 8),
                                     child: Text(
-                                      'Profile',
+                                     context.translate.profile,
                                       style: GoogleFonts.inter(
                                         fontSize: 12,
                                         color: const Color(0xff878787),
@@ -187,7 +189,7 @@ class ProfileView extends GetView<ProfileController> {
                                                   const PersonaldataView()));
                                     },
                                     child: buildListTile(
-                                        'Personal Data', Icons.person_outline)),
+                                        context.translate.personaldata, Icons.person_outline)),
                                 GestureDetector(
                                     onTap: () {
                                       Navigator.push(
@@ -197,7 +199,7 @@ class ProfileView extends GetView<ProfileController> {
                                                   const Settings()));
                                     },
                                     child: buildListTile(
-                                        'Settings', Icons.settings_outlined)),
+                                      context.translate.settings, Icons.settings_outlined)),
                                 // GestureDetector(
                                 //     onTap: () {
                                 //       Get.toNamed(Routes.FAV_RESTURANT);
@@ -212,7 +214,7 @@ class ProfileView extends GetView<ProfileController> {
                                     padding: const EdgeInsets.only(
                                         left: 20, bottom: 8),
                                     child: Text(
-                                      'Support',
+                                      context.translate.support,
                                       style: GoogleFonts.inter(
                                         fontSize: 12,
                                         color: const Color(0xff878787),
@@ -230,7 +232,7 @@ class ProfileView extends GetView<ProfileController> {
                                                   const HelpCenterPage()));
                                     },
                                     child: buildListTile(
-                                        'Help Center', Icons.help_outline)),
+                                       context.translate.helpcenter, Icons.help_outline)),
                                 GestureDetector(
                                     onTap: () {
                                       showCupertinoDialog(
@@ -241,7 +243,7 @@ class ProfileView extends GetView<ProfileController> {
                                       //  Get.toNamed(Routes.PAYMENT_METHOD);
                                     },
                                     child: buildListTile(
-                                        'Request Account Deletion',
+                                        context.translate.requestaccountdeletion,
                                         Icons.delete_outline)),
                                 // buildListTile(
                                 //     'Add another account', Icons.person_add_outlined),
@@ -273,8 +275,8 @@ class ProfileView extends GetView<ProfileController> {
                                         color: Colors.red,
                                         size: 20,
                                       ),
-                                      label: const Text(
-                                        'Sign Out',
+                                      label:  Text(
+                                        context.translate.signout,
                                         style: TextStyle(
                                           color: Colors.red,
                                           fontSize: 15,

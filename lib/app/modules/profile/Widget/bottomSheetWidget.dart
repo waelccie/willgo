@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:willgo/app/modules/profile/controllers/translation_controller.dart';
 import 'package:willgo/core/extensions/build_context.dart';
 import 'package:get/get.dart';
-import '../../../../core/global/const.dart';
-import '../../../widgets/network_image.dart';
+import 'package:willgo/gen/assets.gen.dart';
+
 
 Widget BottomSheetView(BuildContext context) {
   final translationController = Get.find<TranslationController>();
@@ -26,40 +26,42 @@ Widget BottomSheetView(BuildContext context) {
         SizedBox(height: 12.h),
         Text(
           context.translate
-              .slectlanguage, // Ensure the key exists in your ARB files.
-          style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 16),
+              .slectlanguage, 
+          style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 16.sp),
         ),
         SizedBox(height: 12.h),
 
-        // English Language Option
         GestureDetector(
           onTap: () => translationController.changeLanguage('en'),
           child: Container(
             height: 55.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: const Color(0xffEAEAEA)),
-            ),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: translationController.currentLocale.value.languageCode == 'en'
+                        ? Colors.blue  
+                        : const Color(0xffEAEAEA), 
+                  ),
+                ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0.w),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: const Color(0xffF3F6FB),
-                    radius: 28,
-                    child: AppCashedImage(
-                      imageUrl: dummyImage,
-                      width: 20.w,
-                      height: 18.h,
-                      fit: BoxFit.cover,
-                      radius: 2,
+                    radius: 28.r,
+                    child: Image.asset(
+                      Assets.images.ukflagnew.path,
+                      height: 27.h,
+                      width: 27.w,
                     ),
+                   
                   ),
-                  const SizedBox(width: 10),
+                   SizedBox(width: 10.w),
                   Text(
                     context.translate.english,
                     style: GoogleFonts.inter(
-                        fontWeight: FontWeight.w600, fontSize: 14),
+                        fontWeight: FontWeight.w600, fontSize: 14.sp),
                   ),
                 ],
               ),
@@ -68,35 +70,38 @@ Widget BottomSheetView(BuildContext context) {
         ),
         SizedBox(height: 12.h),
 
-        // Arabic Language Option
         GestureDetector(
           onTap: () => translationController.changeLanguage('ar'),
           child: Container(
             height: 55.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: const Color(0xffEAEAEA)),
-            ),
+             decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: translationController.currentLocale.value.languageCode == 'ar'
+                        ? Colors.blue  
+                        : const Color(0xffEAEAEA), 
+                  ),
+                ),
+          
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0.r),
               child: Row(
                 children: [
                   CircleAvatar(
                     backgroundColor: const Color(0xffF3F6FB),
-                    radius: 28,
-                    child: AppCashedImage(
-                      imageUrl: dummyImage,
-                      width: 20.w,
-                      height: 18.h,
-                      fit: BoxFit.cover,
-                      radius: 2,
+                    radius: 28.r, child: Image.asset(
+                      Assets.images.saudiArabiaflagnew.path,
+                      height: 27.h,
+                      width: 27.w,
                     ),
+
+                   
                   ),
-                  const SizedBox(width: 10),
+                   SizedBox(width: 10.w),
                   Text(
                     context.translate.arabic,
                     style: GoogleFonts.inter(
-                        fontWeight: FontWeight.w600, fontSize: 14),
+                        fontWeight: FontWeight.w600, fontSize: 14.sp),
                   ),
                 ],
               ),

@@ -1970,6 +1970,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/NotFound.svg
   SvgGenImage get notFound => const SvgGenImage('assets/images/NotFound.svg');
 
+  /// File path: assets/images/SaudiArabiaflag.svg
+  SvgGenImage get saudiArabiaflag =>
+      const SvgGenImage('assets/images/SaudiArabiaflag.svg');
+
+  /// File path: assets/images/SaudiArabiaflagnew.png
+  AssetGenImage get saudiArabiaflagnew =>
+      const AssetGenImage('assets/images/SaudiArabiaflagnew.png');
+
   /// File path: assets/images/confetti 1.png
   AssetGenImage get confetti1 =>
       const AssetGenImage('assets/images/confetti 1.png');
@@ -2018,10 +2026,19 @@ class $AssetsImagesGen {
   /// File path: assets/images/success.svg
   SvgGenImage get success => const SvgGenImage('assets/images/success.svg');
 
+  /// File path: assets/images/ukflag.svg
+  SvgGenImage get ukflag => const SvgGenImage('assets/images/ukflag.svg');
+
+  /// File path: assets/images/ukflagnew.png
+  AssetGenImage get ukflagnew =>
+      const AssetGenImage('assets/images/ukflagnew.png');
+
   /// List of all assets
   List<dynamic> get values => [
         emptyticket,
         notFound,
+        saudiArabiaflag,
+        saudiArabiaflagnew,
         confetti1,
         creditCard,
         empty,
@@ -2035,7 +2052,9 @@ class $AssetsImagesGen {
         onboarding1,
         onboarding2,
         onboarding3,
-        success
+        success,
+        ukflag,
+        ukflagnew
       ];
 }
 
