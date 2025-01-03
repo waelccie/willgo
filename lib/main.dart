@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:willgo/app/modules/profile/controllers/translation_controller.dart';
 import 'package:willgo/firebase_options.dart';
 import 'app.dart';
 import 'app/modules/environment/controllers/environment_controller.dart';
@@ -16,6 +17,6 @@ void main() async {
   Get.put<EnvironmentController>(EnvironmentController());
   Get.find<EnvironmentController>().checkConnection();
   Get.find<EnvironmentController>().getCurrentLocation();
-
+  Get.put<TranslationController>(TranslationController()); 
   runApp(const FirebaseNotificationsHandler(child: MyApp()));
 }

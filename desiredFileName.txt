@@ -1,1 +1,25 @@
-{}
+{
+  "ar": [
+    "continueasguest",
+    "createanaccountorlogintoexploreourapp",
+    "emailorphonenumber",
+    "or",
+    "enteryouremailtoreceivepassword",
+    "sendemail",
+    "backtologin",
+    "pleaseenter4digitcodehasbeensentto",
+    "dontreceiveotp",
+    "verifying",
+    "verify",
+    "invalidorincorrectotptryagain",
+    "iagreewithtermsandconditions",
+    "streetname",
+    "login",
+    "rememberme",
+    "signup",
+    "personaldata",
+    "please_try_again",
+    "deliver_to",
+    "makeyourfirst_order"
+  ]
+}

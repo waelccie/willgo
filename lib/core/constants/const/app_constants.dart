@@ -30,6 +30,7 @@ class AppConstants {
   static const String paymentIdNotAvailable = 'PAYMENT_ID NOT AVAILABLE';
   static const String image = 'image';
   static const String body = 'body';
+  static const String selectLanguage = 'selectLanguage';
   String getAppCurrency() {
     return Get.context!.translate.currency;
   }

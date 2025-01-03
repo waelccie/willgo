@@ -40,6 +40,7 @@ class AppCashedImage extends StatelessWidget {
         borderRadius: isCircular ? null : BorderRadius.circular(radius ?? 12),
       ),
       child: CachedNetworkImage(
+        
         imageBuilder: (context, imageProvider) => Container(
           decoration: BoxDecoration(
             color: color ?? ColorsManager.primary.withOpacity(.2),

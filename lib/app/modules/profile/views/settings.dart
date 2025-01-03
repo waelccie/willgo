@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/modules/environment/views/internet_connection_view.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import 'privacy_page.dart';
 import 'terms_condition.dart';
 import '../Widget/widget.dart';
@@ -20,7 +22,7 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title:  Text(context.translate.settings),
         centerTitle: true,
       ),
       body: Column(
@@ -36,7 +38,7 @@ class _SettingsState extends State<Settings> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20, bottom: 8),
                       child: Text(
-                        'PROFILE',
+                       context.translate.profile,
                         style: GoogleFonts.inter(
                           fontSize: 12,
                           color: const Color(0xff878787),
@@ -46,7 +48,7 @@ class _SettingsState extends State<Settings> {
                     ),
                   ),
                   buildListTileSettings(
-                    'Push Notification',
+                     context.translate.notifications,
                     Switch(
                       value: isPushNotificationEnabled,
                       onChanged: (value) {
@@ -69,7 +71,7 @@ class _SettingsState extends State<Settings> {
                     ),
                   ),
                   buildListTileSettings(
-                    'Location',
+                    context.translate.location,
                     Switch(
                       value: isLocationEnabled,
                       onChanged: (value) {
@@ -96,7 +98,7 @@ class _SettingsState extends State<Settings> {
                       show(context);
                     },
                     child: buildListTileSettings(
-                      'Language',
+                      context.translate.language,
                       const Icon(
                         Icons.arrow_forward_ios,
                         size: 16,
@@ -111,7 +113,7 @@ class _SettingsState extends State<Settings> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20, bottom: 8),
                       child: Text(
-                        'Support',
+                        context.translate.support,
                         style: GoogleFonts.inter(
                           fontSize: 12,
                           color: const Color(0xff878787),
@@ -120,17 +122,7 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: buildListTileSettings(
-                      'About Ticketis',
-                      const Icon(
-                        Icons.arrow_forward_ios,
-                        size: 16,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
+               
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -141,7 +133,7 @@ class _SettingsState extends State<Settings> {
                       );
                     },
                     child: buildListTileSettings(
-                      'Privacy Policy',
+                      context.translate.privacypolicy,
                       const Icon(
                         Icons.arrow_forward_ios,
                         size: 16,
@@ -159,7 +151,7 @@ class _SettingsState extends State<Settings> {
                       );
                     },
                     child: buildListTileSettings(
-                      'Terms and Conditions',
+                      context.translate.termsandconditions,
                       const Icon(
                         Icons.arrow_forward_ios,
                         size: 16,

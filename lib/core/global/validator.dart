@@ -57,10 +57,10 @@ class Validator {
       String? password, String? confirmPassword) {
     confirmPassword = confirmPassword?.trim();
     if (confirmPassword == null || confirmPassword.isEmpty) {
-      return Get.context!.translate.confirmPassword_empty;
+      return Get.context!.translate.confirmpassword_empty;
     }
     if (password != confirmPassword) {
-      return Get.context!.translate.confirmPassword_mismatch;
+      return Get.context!.translate.confirmpassword_mismatch;
     }
     return null;
   }
@@ -110,7 +110,7 @@ class Validator {
   static String? validateFirstName(String? value) {
     value = value?.trim();
     if (value == null || value.isEmpty) {
-      return Get.context!.translate.firstName_empty;
+      return Get.context!.translate.firstname_empty;
     }
     return null;
   }
@@ -118,7 +118,7 @@ class Validator {
   static String? validateLastName(String? value) {
     value = value?.trim();
     if (value == null || value.isEmpty) {
-      return Get.context!.translate.lastName_empty;
+      return Get.context!.translate.lastname_empty;
     }
     return null;
   }
@@ -126,7 +126,7 @@ class Validator {
   static String? validateNotEmpty(String? value) {
     value = value?.trim();
     if (value == null || value.isEmpty) {
-      return Get.context!.translate.notEmpty_required;
+      return Get.context!.translate.notempty_required;
     }
     return null;
   }

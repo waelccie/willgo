@@ -95,11 +95,11 @@ abstract class S {
     Locale('en')
   ];
 
-  /// No description provided for @appName.
+  /// No description provided for @appname.
   ///
   /// In en, this message translates to:
   /// **'WillGo'**
-  String get appName;
+  String get appname;
 
   /// No description provided for @currency.
   ///
@@ -209,17 +209,17 @@ abstract class S {
   /// **'Your password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.'**
   String get password_complexity;
 
-  /// No description provided for @confirmPassword_empty.
+  /// No description provided for @confirmpassword_empty.
   ///
   /// In en, this message translates to:
   /// **'Please confirm your password.'**
-  String get confirmPassword_empty;
+  String get confirmpassword_empty;
 
-  /// No description provided for @confirmPassword_mismatch.
+  /// No description provided for @confirmpassword_mismatch.
   ///
   /// In en, this message translates to:
   /// **'Passwords do not match. Please try again.'**
-  String get confirmPassword_mismatch;
+  String get confirmpassword_mismatch;
 
   /// No description provided for @phone_empty.
   ///
@@ -239,11 +239,11 @@ abstract class S {
   /// **'Please enter a valid phone number.'**
   String get phone_invalid;
 
-  /// No description provided for @normalPhone_invalid.
+  /// No description provided for @normalphone_invalid.
   ///
   /// In en, this message translates to:
   /// **'Please enter a valid phone number.'**
-  String get normalPhone_invalid;
+  String get normalphone_invalid;
 
   /// No description provided for @address_empty.
   ///
@@ -251,23 +251,23 @@ abstract class S {
   /// **'Please enter your address.'**
   String get address_empty;
 
-  /// No description provided for @firstName_empty.
+  /// No description provided for @firstname_empty.
   ///
   /// In en, this message translates to:
   /// **'Please enter your first name.'**
-  String get firstName_empty;
+  String get firstname_empty;
 
-  /// No description provided for @lastName_empty.
+  /// No description provided for @lastname_empty.
   ///
   /// In en, this message translates to:
   /// **'Please enter your last name.'**
-  String get lastName_empty;
+  String get lastname_empty;
 
-  /// No description provided for @notEmpty_required.
+  /// No description provided for @notempty_required.
   ///
   /// In en, this message translates to:
   /// **'This field is required.'**
-  String get notEmpty_required;
+  String get notempty_required;
 
   /// No description provided for @phone.
   ///
@@ -346,6 +346,654 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancel;
+
+  /// No description provided for @camera.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera'**
+  String get camera;
+
+  /// No description provided for @gallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery'**
+  String get gallery;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @continuee.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continuee;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @validatename.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your name'**
+  String get validatename;
+
+  /// No description provided for @validateemail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email'**
+  String get validateemail;
+
+  /// No description provided for @validateemailstructure.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get validateemailstructure;
+
+  /// No description provided for @validatephone.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid phone number'**
+  String get validatephone;
+
+  /// No description provided for @validatephonestartwithzero.
+  ///
+  /// In en, this message translates to:
+  /// **'The phone number should not start with 0'**
+  String get validatephonestartwithzero;
+
+  /// No description provided for @validatephonecontaintennumbers.
+  ///
+  /// In en, this message translates to:
+  /// **'The phone number must contain digits'**
+  String get validatephonecontaintennumbers;
+
+  /// No description provided for @validatepassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your password'**
+  String get validatepassword;
+
+  /// No description provided for @validateconfirmpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your password correctly'**
+  String get validateconfirmpassword;
+
+  /// No description provided for @validateempty.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get validateempty;
+
+  /// No description provided for @passwordstructurevalidation.
+  ///
+  /// In en, this message translates to:
+  /// **'password must contain an uppercase letter, a lowercase letter, a symbol and a number'**
+  String get passwordstructurevalidation;
+
+  /// No description provided for @pleaseloginfirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Please log in first'**
+  String get pleaseloginfirst;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// No description provided for @yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// No description provided for @lang.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get lang;
+
+  /// No description provided for @doyouwanttologout.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to log out?'**
+  String get doyouwanttologout;
+
+  /// No description provided for @continueasvisitor.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue as Visitor'**
+  String get continueasvisitor;
+
+  /// No description provided for @welcomeback.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back!'**
+  String get welcomeback;
+
+  /// No description provided for @signin.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signin;
+
+  /// No description provided for @pleaselogintoyouraccountorcreateanewaccounttocontinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Please log in to your account or create a new account to continue.'**
+  String get pleaselogintoyouraccountorcreateanewaccounttocontinue;
+
+  /// No description provided for @mobilenumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Number'**
+  String get mobilenumber;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @forgotpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotpassword;
+
+  /// No description provided for @donthaveanaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get donthaveanaccount;
+
+  /// No description provided for @createnewaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Account'**
+  String get createnewaccount;
+
+  /// No description provided for @dontworry.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t worry!'**
+  String get dontworry;
+
+  /// No description provided for @pleaseenteryournumbertocontinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your mobile number to continue.'**
+  String get pleaseenteryournumbertocontinue;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @joinforus.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Us!'**
+  String get joinforus;
+
+  /// No description provided for @otp.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP Code'**
+  String get otp;
+
+  /// No description provided for @pleaseentertheotcodesentto.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the OTP code sent to'**
+  String get pleaseentertheotcodesentto;
+
+  /// No description provided for @tocompletetheregistrationprocess.
+  ///
+  /// In en, this message translates to:
+  /// **'to complete the registration process'**
+  String get tocompletetheregistrationprocess;
+
+  /// No description provided for @didntreceivethecode.
+  ///
+  /// In en, this message translates to:
+  /// **'Didn\'t receive the code?'**
+  String get didntreceivethecode;
+
+  /// No description provided for @resendcode.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Code'**
+  String get resendcode;
+
+  /// No description provided for @onelaststep.
+  ///
+  /// In en, this message translates to:
+  /// **'One last step!'**
+  String get onelaststep;
+
+  /// No description provided for @setnewpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Set New Password'**
+  String get setnewpassword;
+
+  /// No description provided for @pleaseenternewpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your new password.'**
+  String get pleaseenternewpassword;
+
+  /// No description provided for @pleaseenteroldpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your old password.'**
+  String get pleaseenteroldpassword;
+
+  /// No description provided for @confirmpassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmpassword;
+
+  /// No description provided for @createyouraccountnow.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account now!'**
+  String get createyouraccountnow;
+
+  /// No description provided for @createanewaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a New Account'**
+  String get createanewaccount;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @newaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'New Account'**
+  String get newaccount;
+
+  /// No description provided for @enteryourinfotobeapartofus.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your information to be a part of our community.'**
+  String get enteryourinfotobeapartofus;
+
+  /// No description provided for @agreeto.
+  ///
+  /// In en, this message translates to:
+  /// **'Agree to'**
+  String get agreeto;
+
+  /// No description provided for @haveanaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get haveanaccount;
+
+  /// No description provided for @enteryourinfotostarttouseourservices.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your information to start using our services.'**
+  String get enteryourinfotostarttouseourservices;
+
+  /// No description provided for @firstname.
+  ///
+  /// In en, this message translates to:
+  /// **'First Name'**
+  String get firstname;
+
+  /// No description provided for @lastname.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Name'**
+  String get lastname;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @createaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createaccount;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @activenotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate Notifications'**
+  String get activenotifications;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @nointernet.
+  ///
+  /// In en, this message translates to:
+  /// **'No Internet'**
+  String get nointernet;
+
+  /// No description provided for @connectiontimeoutwithapiserver.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection timeout with ApiServer'**
+  String get connectiontimeoutwithapiserver;
+
+  /// No description provided for @sendtimeoutwithapiserver.
+  ///
+  /// In en, this message translates to:
+  /// **'Send timeout with ApiServer'**
+  String get sendtimeoutwithapiserver;
+
+  /// No description provided for @receivetimeoutwithapiserver.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive timeout with ApiServer'**
+  String get receivetimeoutwithapiserver;
+
+  /// No description provided for @requesttoapiserverwascanceled.
+  ///
+  /// In en, this message translates to:
+  /// **'Request to ApiServer was canceled'**
+  String get requesttoapiserverwascanceled;
+
+  /// No description provided for @nointernetconnection.
+  ///
+  /// In en, this message translates to:
+  /// **'No Internet Connection'**
+  String get nointernetconnection;
+
+  /// No description provided for @unexpectederrorpleasetryagain.
+  ///
+  /// In en, this message translates to:
+  /// **'Unexpected Error, Please Try Again!'**
+  String get unexpectederrorpleasetryagain;
+
+  /// No description provided for @oppstherewasanerrorpleasetryagain.
+  ///
+  /// In en, this message translates to:
+  /// **'Opps There was an Error, Please try again'**
+  String get oppstherewasanerrorpleasetryagain;
+
+  /// No description provided for @yourrequestnotfoundpleasetrylater.
+  ///
+  /// In en, this message translates to:
+  /// **'Your request not found, Please try later!'**
+  String get yourrequestnotfoundpleasetrylater;
+
+  /// No description provided for @internalservererrorpleasetrylater.
+  ///
+  /// In en, this message translates to:
+  /// **'Internal Server error, Please try later'**
+  String get internalservererrorpleasetrylater;
+
+  /// No description provided for @continueasguest.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue as guest'**
+  String get continueasguest;
+
+  /// No description provided for @createanaccountorlogintoexploreourapp.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account or log in to explore our app'**
+  String get createanaccountorlogintoexploreourapp;
+
+  /// No description provided for @emailorphonenumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Email or Phone Number'**
+  String get emailorphonenumber;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'Or'**
+  String get or;
+
+  /// No description provided for @enteryouremailtoreceivepassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email to receive password'**
+  String get enteryouremailtoreceivepassword;
+
+  /// No description provided for @sendemail.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Email'**
+  String get sendemail;
+
+  /// No description provided for @backtologin.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Login'**
+  String get backtologin;
+
+  /// No description provided for @pleaseenter4digitcodehasbeensentto.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter 4 digit code has been sent to'**
+  String get pleaseenter4digitcodehasbeensentto;
+
+  /// No description provided for @dontreceiveotp.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t receive OTP?'**
+  String get dontreceiveotp;
+
+  /// No description provided for @verifying.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying...'**
+  String get verifying;
+
+  /// No description provided for @verify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify'**
+  String get verify;
+
+  /// No description provided for @invalidorincorrectotptryagain.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid or incorrect OTP, try again'**
+  String get invalidorincorrectotptryagain;
+
+  /// No description provided for @iagreewithtermsandconditions.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree with Terms and Conditions'**
+  String get iagreewithtermsandconditions;
+
+  /// No description provided for @streetname.
+  ///
+  /// In en, this message translates to:
+  /// **'Street Name'**
+  String get streetname;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @rememberme.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember Me'**
+  String get rememberme;
+
+  /// No description provided for @signup.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signup;
+
+  /// No description provided for @personaldata.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Data'**
+  String get personaldata;
+
+  /// No description provided for @please_try_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Please try again'**
+  String get please_try_again;
+
+  /// No description provided for @searchforfood.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for food'**
+  String get searchforfood;
+
+  /// No description provided for @deliver_to.
+  ///
+  /// In en, this message translates to:
+  /// **'Deliver to'**
+  String get deliver_to;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @orders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get orders;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @noresultsfound.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t find any results'**
+  String get noresultsfound;
+
+  /// No description provided for @makeyourfirst_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Come on, make your first order'**
+  String get makeyourfirst_order;
+
+  /// No description provided for @restaurant.
+  ///
+  /// In en, this message translates to:
+  /// **'Restaurant'**
+  String get restaurant;
+
+  /// No description provided for @restaurants.
+  ///
+  /// In en, this message translates to:
+  /// **'Restaurants'**
+  String get restaurants;
+
+  /// No description provided for @allrestaurants.
+  ///
+  /// In en, this message translates to:
+  /// **'All Restaurants'**
+  String get allrestaurants;
+
+  /// No description provided for @seeall.
+  ///
+  /// In en, this message translates to:
+  /// **'See all'**
+  String get seeall;
+
+  /// No description provided for @slectlanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Language'**
+  String get slectlanguage;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @support.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get support;
+
+  /// No description provided for @privacypolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacypolicy;
+
+  /// No description provided for @termsandconditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsandconditions;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

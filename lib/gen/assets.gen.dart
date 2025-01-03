@@ -1963,6 +1963,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Emptyticket.png
+  AssetGenImage get emptyticket =>
+      const AssetGenImage('assets/images/Emptyticket.png');
+
   /// File path: assets/images/NotFound.svg
   SvgGenImage get notFound => const SvgGenImage('assets/images/NotFound.svg');
 
@@ -2016,6 +2020,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<dynamic> get values => [
+        emptyticket,
         notFound,
         confetti1,
         creditCard,
