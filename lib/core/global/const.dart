@@ -128,6 +128,7 @@ class APIKeys {
   static const String storeFCMToken = "fcm";
   static const String getAllSliders = "user/sliders";
   static const String getAllParentCategories = "user/classes";
+  static String getSettings({String? settingkey}) =>"user/settings/$settingkey";
 }
 
 void openUrl(String url) async {
