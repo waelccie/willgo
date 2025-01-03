@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_social_button/flutter_social_button.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 
 import '../../../../core/global/const.dart';
 import '../../../routes/app_pages.dart';
@@ -51,7 +53,7 @@ class _freeDeliveryTabState extends State<freeDeliveryTab> {
                 Text(
                   widget.name,
                   style: GoogleFonts.dmSans(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       color: const Color(0xff101010)),
                 ),
@@ -69,10 +71,10 @@ class _freeDeliveryTabState extends State<freeDeliveryTab> {
                       width: 3.w,
                     ),
                     Text(
-                      '${widget.time} minutes',
+                      '${widget.time} ${context.translate.minut}',
                       style: GoogleFonts.dmSans(
                           fontWeight: FontWeight.w500,
-                          fontSize: 13,
+                          fontSize: 13.sp,
                           color: const Color(0xff878787)),
                     ),
                     SizedBox(
@@ -88,7 +90,7 @@ class _freeDeliveryTabState extends State<freeDeliveryTab> {
                     Text(
                       widget.rate.toString(),
                       style: GoogleFonts.dmSans(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: const Color(0xff878787)),
                     ),

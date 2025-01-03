@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 
 import '../../../../core/global/const.dart';
 import '../../../widgets/network_image.dart';
@@ -17,12 +19,12 @@ class rateTab extends StatelessWidget {
             width: 80.w,
             height: 80.h,
             fit: BoxFit.cover,
-            radius: 20,
+            radius: 20.r,
           ),
           Column(
             children: [
-              const Text(
-                "the pizza place",
+               Text(
+                context.translate.thepizzaplace,
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,

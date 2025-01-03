@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../routes/app_pages.dart';
 import '../../../widgets/progress_button.dart';
 import '../../../../core/constants/theme/colors_manager.dart';
@@ -24,14 +25,14 @@ class AuthView extends GetView<AuthController> {
           Assets.images.logo.image(),
           SizedBox(height: 20.h),
           AppProgressButton(
-            text: "login",
+            text: context.translate.login,
             onPressed: (anim) {
               Get.toNamed(Routes.LOGIN);
             },
           ),
           SizedBox(height: 16.h),
           AppProgressButton(
-            text: "register",
+            text: context.translate.register,
             isBordered: true,
             isOutlined: true,
             onPressed: (anim) {
@@ -43,11 +44,11 @@ class AuthView extends GetView<AuthController> {
             onTap: () {
               Get.offAndToNamed(Routes.NAV_SCREEN);
             },
-            child: const Text(
-              "as a guest",
-              style: TextStyle(
+            child:  Text(
+              context.translate.asaguest,
+              style:  TextStyle(
                 color: ColorsManager.primary,
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w400,
                 decoration: TextDecoration.underline,
                 decorationColor: ColorsManager.primary,

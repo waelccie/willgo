@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../widgets/progress_button.dart';
 
 import '../controllers/cancel_order_controller.dart';
@@ -13,16 +15,16 @@ class CancelOrderView extends GetView<CancelOrderController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cancel Order'),
+        title:  Text(  context.translate.cancelorder),
         centerTitle: true,
       ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+            padding:  EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 8.h),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(color: const Color(0xffE9EAEB))),
               child: Row(
                 children: [
@@ -45,19 +47,19 @@ class CancelOrderView extends GetView<CancelOrderController> {
                     width: 4.w,
                   ),
                   Text(
-                    'Change of mind',
+                      context.translate.changeofmind,
                     style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w400, fontSize: 15.22),
+                        fontWeight: FontWeight.w400, fontSize: 15.22.sp),
                   ),
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+            padding:  EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 8.h),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(color: const Color(0xffE9EAEB))),
               child: Row(
                 children: [
@@ -80,19 +82,19 @@ class CancelOrderView extends GetView<CancelOrderController> {
                     width: 4.w,
                   ),
                   Text(
-                    'Found better price elsewhere',
+                      context.translate.foundbetterpriceelsewhere,
                     style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w400, fontSize: 15.22),
+                        fontWeight: FontWeight.w400, fontSize: 15.22.sp),
                   ),
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+            padding:  EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 8.h),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(color: const Color(0xffE9EAEB))),
               child: Row(
                 children: [
@@ -115,19 +117,19 @@ class CancelOrderView extends GetView<CancelOrderController> {
                     width: 4.w,
                   ),
                   Text(
-                    'Delivery delay',
+                      context.translate.deliverydelay,
                     style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w400, fontSize: 15.22),
+                        fontWeight: FontWeight.w400, fontSize: 15.22.sp),
                   ),
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+            padding:  EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 8.h),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(color: const Color(0xffE9EAEB))),
               child: Row(
                 children: [
@@ -150,19 +152,19 @@ class CancelOrderView extends GetView<CancelOrderController> {
                     width: 4.w,
                   ),
                   Text(
-                    'Incorrect item selected',
+                      context.translate.incorrectitemselected,
                     style: GoogleFonts.roboto(
-                        fontWeight: FontWeight.w400, fontSize: 15.22),
+                        fontWeight: FontWeight.w400, fontSize: 15.22.sp),
                   ),
                 ],
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+            padding:  EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 8.h),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(color: const Color(0xffE9EAEB))),
               child: Row(
                 children: [
@@ -185,7 +187,7 @@ class CancelOrderView extends GetView<CancelOrderController> {
                     width: 4.w,
                   ),
                   Text(
-                    'Change of mind',
+                      context.translate.changeofmind,
                     style: GoogleFonts.roboto(
                         fontWeight: FontWeight.w400, fontSize: 15.22),
                   ),
@@ -202,13 +204,13 @@ class CancelOrderView extends GetView<CancelOrderController> {
                   context: context,
                   builder: (BuildContext context) {
                     return SizedBox(
-                        height: 450,
+                        height: 450.h,
                         width: MediaQuery.of(context)
                             .size
                             .width, // Set your desired height
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8.0, horizontal: 16),
+                          padding:  EdgeInsets.symmetric(
+                              vertical: 8.0.h, horizontal: 16.w),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -231,22 +233,22 @@ class CancelOrderView extends GetView<CancelOrderController> {
                                 height: 10.h,
                               ),
                               Text(
-                                "Your Order Canceled",
+                                context.translate.yourordercancelled,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.dmSans(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 24,
+                                  fontSize: 24.sp,
                                 ),
                               ),
                               SizedBox(
                                 height: 10.h,
                               ),
                               Text(
-                                "We're sorry to see your order go. 😔We're always striving to improve, and we hope to serve you better next time!",
+                               context.translate.weresorrytoseeyourordergo,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.dmSans(
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     color: const Color(0xff878787)),
                               ),
                               SizedBox(
@@ -255,10 +257,10 @@ class CancelOrderView extends GetView<CancelOrderController> {
                               AppProgressButton(
                                 onPressed: (c) {},
                                 child: Text(
-                                  "ok",
+                                  context.translate.ok,
                                   style: GoogleFonts.dmSans(
                                       color: Colors.white,
-                                      fontSize: 17,
+                                      fontSize: 17.sp,
                                       fontWeight: FontWeight.w600),
                                 ),
                               )

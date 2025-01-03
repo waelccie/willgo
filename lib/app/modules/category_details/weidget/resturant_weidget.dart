@@ -33,7 +33,7 @@ class resturant_Weidget extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                       border: Border.all(
                           color: controller.isClicked == true
                               ? Color(0xff01A0E2)
@@ -45,7 +45,7 @@ class resturant_Weidget extends StatelessWidget {
                       width: 72.w,
                       height: 60.h,
                       fit: BoxFit.cover,
-                      radius: 20,
+                      radius: 20.r,
                     ),
                   ),
                 ),
@@ -54,18 +54,18 @@ class resturant_Weidget extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                       color: controller.isClicked == true
                           ? Color(0xff01A0E2)
                           : Colors.white),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 8.0, vertical: 5),
+                    padding:  EdgeInsets.symmetric(
+                        horizontal: 8.0.w, vertical: 5.h),
                     child: Text(
                       name,
                       style: GoogleFonts.dmSans(
                           fontWeight: FontWeight.w500,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           color: controller.isClicked == true
                               ? Colors.white
                               : Colors.black),

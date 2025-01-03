@@ -4,6 +4,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:willgo/app/modules/cart/controllers/cart_controller.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 
 import '../../../../core/global/const.dart';
 import '../../../widgets/network_image.dart';
@@ -51,7 +52,7 @@ class _cartItemState extends State<cartItem> {
             backgroundColor: Colors.green.shade100,
             foregroundColor: Colors.green,
             icon: Icons.edit,
-            label: 'edit',
+            label: context.translate.edit,
           ),
           SlidableAction(
             onPressed: (context) {
@@ -60,20 +61,20 @@ class _cartItemState extends State<cartItem> {
             backgroundColor: Colors.red.shade100,
             foregroundColor: Colors.red,
             icon: Icons.delete_outline,
-            label: 'delete',
+            label: context.translate.delete,
           ),
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 10.h),
         child: Container(
           width: double.infinity, // Ensure the container takes the full width
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
             color: Colors.white,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding:  EdgeInsets.all(12.0.w),
             child: Row(
               children: [
                 AppCashedImage(
@@ -81,7 +82,7 @@ class _cartItemState extends State<cartItem> {
                   width: 71.w,
                   height: 64.h,
                   fit: BoxFit.cover,
-                  radius: 20,
+                  radius: 20.r,
                 ),
                 SizedBox(width: 10.w),
                 Column(
@@ -90,7 +91,7 @@ class _cartItemState extends State<cartItem> {
                     Text(
                       widget.name,
                       style: GoogleFonts.dmSans(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -98,7 +99,7 @@ class _cartItemState extends State<cartItem> {
                     Text(
                       widget.cat,
                       style: GoogleFonts.dmSans(
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -106,7 +107,7 @@ class _cartItemState extends State<cartItem> {
                     Text(
                       '\$${widget.price}',
                       style: GoogleFonts.dmSans(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         color: const Color(0xff01A0E2),
                         fontWeight: FontWeight.w500,
                       ),
@@ -129,8 +130,8 @@ class _cartItemState extends State<cartItem> {
                           shape: BoxShape.circle,
                           color: Color(0xff01A0E2),
                         ),
-                        height: 25,
-                        width: 25,
+                        height: 25.h,
+                        width: 25.w,
                         child: const Icon(
                           Icons.remove,
                           color: Colors.white,
@@ -143,7 +144,7 @@ class _cartItemState extends State<cartItem> {
                         "$quantity",
                         style: GoogleFonts.dmSans(
                           fontWeight: FontWeight.w500,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                         ),
                       ),
                     ),
@@ -158,8 +159,8 @@ class _cartItemState extends State<cartItem> {
                           shape: BoxShape.circle,
                           border: Border.all(color: const Color(0xff01A0E2)),
                         ),
-                        height: 25,
-                        width: 25,
+                        height: 25.h,
+                        width: 25.w,
                         child: const Icon(
                           Icons.add,
                           color: Color(0xff01A0E2),

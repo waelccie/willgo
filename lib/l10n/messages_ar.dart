@@ -482,4 +482,181 @@ class SAr extends S {
 
   @override
   String get signout => 'تسجيل الخروج';
+
+  @override
+  String get addrequest => 'إضافة طلب';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get note => 'ملاحظة';
+
+  @override
+  String get sendrequest => 'إرسال الطلب';
+
+  @override
+  String get minut => 'دقيقة';
+
+  @override
+  String get edit => 'تعديل';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get savechanges => 'حفظ التغييرات';
+
+  @override
+  String get add => 'إضافة';
+
+  @override
+  String get select => 'اختر';
+
+  @override
+  String get selectdate => 'اختر التاريخ';
+
+  @override
+  String get selecttime => 'اختر الوقت';
+
+  @override
+  String get selectlocation => 'اختر الموقع';
+
+  @override
+  String get selectaddress => 'اختر العنوان';
+
+  @override
+  String get selectcity => 'اختر المدينة';
+
+  @override
+  String get selectcountry => 'اختر الدولة';
+
+  @override
+  String get selectstate => 'اختر الولاية';
+
+  @override
+  String get register => 'تسجيل الدخول';
+
+  @override
+  String get asaguest => 'كضيف';
+
+  @override
+  String get orsiginwith => 'أو سجل الدخول بواسطة';
+
+  @override
+  String get cancelorder => 'إلغاء الطلب';
+
+  @override
+  String get change => 'تغيير';
+
+  @override
+  String get change_password => 'تغيير كلمة المرور';
+
+  @override
+  String get changeofmind => 'تغيير الرأي';
+
+  @override
+  String get foundbetterpriceelsewhere => 'وجدت سعرًا أفضل في مكان آخر';
+
+  @override
+  String get deliverytime => 'وقت التوصيل';
+
+  @override
+  String get deliveryaddress => 'عنوان التوصيل';
+
+  @override
+  String get deliverycity => 'مدينة التوصيل';
+
+  @override
+  String get deliverydelay => 'تأخير التوصيل';
+
+  @override
+  String get incorrectorder => 'طلب غير صحيح';
+
+  @override
+  String get incorrectitemselected => 'تم اختيار عنصر غير صحيح';
+
+  @override
+  String get yourordercancelled => 'تم إلغاء طلبك';
+
+  @override
+  String get weresorrytoseeyourordergo => 'نأسف لإلغاء طلبك. نحن نسعى دائمًا للتحسين، ونأمل أن نخدمك بشكل أفضل في المرة القادمة';
+
+  @override
+  String get cart => 'عربة التسوق';
+
+  @override
+  String get we_couldnt_find_any_result => 'لم نعثر على أي نتائج!';
+
+  @override
+  String get please_login_register => 'يرجى تسجيل الدخول / التسجيل';
+
+  @override
+  String get log_in_sign_up => 'تسجيل الدخول / التسجيل';
+
+  @override
+  String get please_make_your_first_order => 'هيا، قم بأول طلب لك!';
+
+  @override
+  String get total_items => 'إجمالي العناصر';
+
+  @override
+  String get delivery_fee => 'رسوم التوصيل';
+
+  @override
+  String get discount => 'الخصم';
+
+  @override
+  String get total => 'الإجمالي';
+
+  @override
+  String get payment_summary => 'ملخص الدفع';
+
+  @override
+  String get checkout => 'الدفع';
+
+  @override
+  String get quantity => 'الكمية';
+
+  @override
+  String get egp => 'ج.م';
+
+  @override
+  String get no_restaurants_found => 'لم يتم العثور على مطاعم';
+
+  @override
+  String get thepizzaplace => 'مكان البيتزا';
+
+  @override
+  String get your_location => 'موقعك';
+
+  @override
+  String get street => 'شارع';
+
+  @override
+  String get mobile_number => 'رقم الجوال';
+
+  @override
+  String get change_location => 'تغيير الموقع';
+
+  @override
+  String get location_name => 'اسم الموقع';
+
+  @override
+  String get address => 'العنوان';
+
+  @override
+  String get payment_method => 'طريقة الدفع';
+
+  @override
+  String get cash => 'نقداً';
+
+  @override
+  String get online => 'عبر الإنترنت';
+
+  @override
+  String get checkout_button => 'الدفع';
+
+  @override
+  String get please_enter_address => 'الرجاء إدخال عنوان';
 }

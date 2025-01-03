@@ -482,4 +482,181 @@ class SEn extends S {
 
   @override
   String get signout => 'Sign Out';
+
+  @override
+  String get addrequest => 'Add Request';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get note => 'Note';
+
+  @override
+  String get sendrequest => 'Send Request';
+
+  @override
+  String get minut => 'Minute';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get savechanges => 'Save Changes';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get select => 'Select';
+
+  @override
+  String get selectdate => 'Select Date';
+
+  @override
+  String get selecttime => 'Select Time';
+
+  @override
+  String get selectlocation => 'Select Location';
+
+  @override
+  String get selectaddress => 'Select Address';
+
+  @override
+  String get selectcity => 'Select City';
+
+  @override
+  String get selectcountry => 'Select Country';
+
+  @override
+  String get selectstate => 'Select State';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get asaguest => 'As a Guest';
+
+  @override
+  String get orsiginwith => 'Or sign in with';
+
+  @override
+  String get cancelorder => 'Cancel Order';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get change_password => 'Change Password';
+
+  @override
+  String get changeofmind => 'Change of Mind';
+
+  @override
+  String get foundbetterpriceelsewhere => 'Found better price elsewhere';
+
+  @override
+  String get deliverytime => 'Delivery Time';
+
+  @override
+  String get deliveryaddress => 'Delivery Address';
+
+  @override
+  String get deliverycity => 'Delivery City';
+
+  @override
+  String get deliverydelay => 'Delivery Delay';
+
+  @override
+  String get incorrectorder => 'Incorrect Order';
+
+  @override
+  String get incorrectitemselected => 'Incorrect item selected';
+
+  @override
+  String get yourordercancelled => 'Your order cancelled';
+
+  @override
+  String get weresorrytoseeyourordergo => 'We\'re sorry to see your order gone. We\'re always striving to improve, and we hope to serve you better next time';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get we_couldnt_find_any_result => 'We couldn\'t find any result!';
+
+  @override
+  String get please_login_register => 'Please Login / Register';
+
+  @override
+  String get log_in_sign_up => 'Log in/Sign Up';
+
+  @override
+  String get please_make_your_first_order => 'Come on, make your first order!';
+
+  @override
+  String get total_items => 'Total Items';
+
+  @override
+  String get delivery_fee => 'Delivery Fee';
+
+  @override
+  String get discount => 'Discount';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get payment_summary => 'Payment Summary';
+
+  @override
+  String get checkout => 'Checkout';
+
+  @override
+  String get quantity => 'Quantity';
+
+  @override
+  String get egp => 'EGP';
+
+  @override
+  String get no_restaurants_found => 'No restaurants found';
+
+  @override
+  String get thepizzaplace => 'The Pizza Place';
+
+  @override
+  String get your_location => 'Your Location';
+
+  @override
+  String get street => 'Street';
+
+  @override
+  String get mobile_number => 'Mobile Number';
+
+  @override
+  String get change_location => 'Change Location';
+
+  @override
+  String get location_name => 'Location Name';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get payment_method => 'Payment Method';
+
+  @override
+  String get cash => 'Cash';
+
+  @override
+  String get online => 'Online';
+
+  @override
+  String get checkout_button => 'Check Out';
+
+  @override
+  String get please_enter_address => 'Please enter an address';
 }

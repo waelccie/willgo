@@ -20,9 +20,9 @@ class AuthFooter extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(
+          style:  TextStyle(
             color: ColorsManager.black,
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -31,9 +31,9 @@ class AuthFooter extends StatelessWidget {
           onTap: onTap,
           child: Text(
             subTitle,
-            style: const TextStyle(
+            style:  TextStyle(
               color: ColorsManager.primary,
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),

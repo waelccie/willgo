@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:bot_toast/bot_toast.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:willgo/app/modules/profile/controllers/translation_controller.dart';
 import 'package:willgo/core/services/network_service.dart/dio_network_service.dart';
 
 import '../../../core/global/const.dart';
@@ -11,13 +16,15 @@ class GeneralApis {
   static Future<MainModel> storeFCMToken({
     required String fcm,
   }) async {
+        final translationController = Get.find<TranslationController>();
     final request = NetworkRequest(
+      
       path: APIKeys.storeFCMToken,
       type: NetworkRequestType.POST,
       headers: {
         if (CacheHelper.getUserToken != null)
           'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
-        "lang": CacheHelper.getLocale,
+          "lang": translationController.currentLocale.value.languageCode,
       },
       data: NetworkRequestBody.fromData(
         FormData.fromMap(
@@ -27,6 +34,9 @@ class GeneralApis {
         ),
       ),
     );
+  
+        log("Request Headers: ${request.headers}");
+
     final response = await networkService.execute(
       request,
       (parser) => MainModel.fromJson(parser),

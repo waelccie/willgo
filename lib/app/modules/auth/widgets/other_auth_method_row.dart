@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 
 import '../../../../core/constants/theme/colors_manager.dart';
 
@@ -12,14 +14,14 @@ class OtherAuthMethodRow extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            height: 1,
+            height: 1.h,
             color: ColorsManager.darkGrey,
           ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
-          child: const Text(
-            "Or sign in with",
+          child:  Text(
+           context.translate.orsiginwith,
             style: TextStyle(
               color: ColorsManager.darkGrey,
               fontSize: 14,
@@ -29,7 +31,7 @@ class OtherAuthMethodRow extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            height: 1,
+            height: 1.h,
             color: ColorsManager.darkGrey,
           ),
         ),

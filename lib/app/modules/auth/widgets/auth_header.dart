@@ -14,8 +14,8 @@ class AuthHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 32,
+          style:  TextStyle(
+            fontSize: 32.sp,
             fontWeight: FontWeight.w600,
             color: Colors.black,
           ),
@@ -23,8 +23,8 @@ class AuthHeader extends StatelessWidget {
         SizedBox(height: 4.h),
         Text(
           subTitle,
-          style: const TextStyle(
-            fontSize: 14,
+          style:  TextStyle(
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: ColorsManager.darkGrey,
           ),

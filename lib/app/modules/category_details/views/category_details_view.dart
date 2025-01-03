@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:willgo/app/modules/category_details/weidget/resturant_weidget.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../data/models/ResturantByCat.dart';
 import '../../../data/models/cat_Details.dart';
 import '../controllers/category_details_controller.dart';
@@ -17,7 +19,7 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "All Resturant",
+          context.translate.allrestaurants,
           style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
         ),
       ),
@@ -25,26 +27,26 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
         child: GetBuilder<CategoryDetailsController>(
           builder: (CategoryDetailsController controller) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    padding:  EdgeInsets.symmetric(horizontal: 10.0.w),
                     child: CustomFutureBuilder<categoriesDetails>(
                       future: controller.getCateogriesDetails,
                       onData: (BuildContext context, categoriesDetails data) {
                         return data.data!.isEmpty
                             ? Center(
                                 child: Container(
-                                    height: 50,
+                                    height: 50.h,
                                     child: Text(
-                                      "No Result Found",
+                                      context.translate.noresultsfound,
                                       style: GoogleFonts.dmSans(
                                           fontWeight: FontWeight.w500),
                                     )))
                             : Container(
-                                height: 120,
+                                height: 120.h,
                                 child: ListView.separated(
                                   scrollDirection: Axis.horizontal,
                                   shrinkWrap: true,
@@ -56,7 +58,7 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
                                     );
                                   },
                                   separatorBuilder: (context, index) {
-                                    return SizedBox(width: 8);
+                                    return SizedBox(width: 8.w);
                                   },
                                   itemCount: data.data!.length,
                                 ),
@@ -65,21 +67,21 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
                     ),
                   ),
                   SizedBox(
-                    height: 4,
+                    height: 4.h,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
                     child: Text(
-                      "All Resturant",
+                      context.translate.allrestaurants,
                       style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
                     ),
                   ),
                   SizedBox(
-                    height: 12,
+                    height: 12.h,
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      padding:  EdgeInsets.symmetric(horizontal: 10.0.w),
                       child: CustomFutureBuilder<ResturantByCat>(
                         future: controller.getResurantByCat,
                         onData: (BuildContext context, ResturantByCat data) {
@@ -91,18 +93,18 @@ class CategoryDetailsView extends GetView<CategoryDetailsController> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       SizedBox(
-                                        height: 20,
+                                        height: 20.h,
                                       ),
                                       SvgPicture.asset(
                                           "assets/images/NotFound.svg"),
                                       SizedBox(
-                                        height: 30,
+                                        height: 30.h,
                                       ),
                                       Text(
-                                        "No Resturant found",
+                                        context.translate.no_restaurants_found,
                                         style: GoogleFonts.dmSans(
                                             fontWeight: FontWeight.w700,
-                                            fontSize: 16),
+                                            fontSize: 16.sp),
                                       ),
                                     ],
                                   ),

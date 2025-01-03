@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:willgo/app/data/models/getLocation.dart';
+import 'package:willgo/app/modules/environment/views/internet_connection_view.dart';
 import 'package:willgo/app/modules/home/controllers/home_controller.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../../core/services/get_storage_helper.dart';
 import '../../../data/models/locationById.dart';
 import '../../../data/models/setPrimaryLocation.dart';
@@ -36,11 +38,11 @@ class NavScreenAppBar extends GetView<NavScreenController>
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Deliver to:',
+                 Text(
+                 context.translate.deliver_to,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -49,7 +51,7 @@ class NavScreenAppBar extends GetView<NavScreenController>
                     return Row(
                       children: [
                         Container(
-                          width: 150,
+                          width: 150.w,
                           child: Text(
                             maxLines: 2,
                             CacheHelper.getUserToken == null
@@ -57,7 +59,7 @@ class NavScreenAppBar extends GetView<NavScreenController>
                                 : Get.find<HomeController>().currentCity.trim(),
                             style: TextStyle(
                               color: ColorsManager.grey,
-                              fontSize: 11,
+                              fontSize: 11.sp,
                               fontWeight: FontWeight.w500,
                             ),
                           ),

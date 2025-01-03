@@ -1048,6 +1048,360 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Sign Out'**
   String get signout;
+
+  /// No description provided for @addrequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Request'**
+  String get addrequest;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @note.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get note;
+
+  /// No description provided for @sendrequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Request'**
+  String get sendrequest;
+
+  /// No description provided for @minut.
+  ///
+  /// In en, this message translates to:
+  /// **'Minute'**
+  String get minut;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @savechanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get savechanges;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
+
+  /// No description provided for @selectdate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Date'**
+  String get selectdate;
+
+  /// No description provided for @selecttime.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Time'**
+  String get selecttime;
+
+  /// No description provided for @selectlocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Location'**
+  String get selectlocation;
+
+  /// No description provided for @selectaddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Address'**
+  String get selectaddress;
+
+  /// No description provided for @selectcity.
+  ///
+  /// In en, this message translates to:
+  /// **'Select City'**
+  String get selectcity;
+
+  /// No description provided for @selectcountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Country'**
+  String get selectcountry;
+
+  /// No description provided for @selectstate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select State'**
+  String get selectstate;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @asaguest.
+  ///
+  /// In en, this message translates to:
+  /// **'As a Guest'**
+  String get asaguest;
+
+  /// No description provided for @orsiginwith.
+  ///
+  /// In en, this message translates to:
+  /// **'Or sign in with'**
+  String get orsiginwith;
+
+  /// No description provided for @cancelorder.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel Order'**
+  String get cancelorder;
+
+  /// No description provided for @change.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get change;
+
+  /// No description provided for @change_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get change_password;
+
+  /// No description provided for @changeofmind.
+  ///
+  /// In en, this message translates to:
+  /// **'Change of Mind'**
+  String get changeofmind;
+
+  /// No description provided for @foundbetterpriceelsewhere.
+  ///
+  /// In en, this message translates to:
+  /// **'Found better price elsewhere'**
+  String get foundbetterpriceelsewhere;
+
+  /// No description provided for @deliverytime.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Time'**
+  String get deliverytime;
+
+  /// No description provided for @deliveryaddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Address'**
+  String get deliveryaddress;
+
+  /// No description provided for @deliverycity.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery City'**
+  String get deliverycity;
+
+  /// No description provided for @deliverydelay.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Delay'**
+  String get deliverydelay;
+
+  /// No description provided for @incorrectorder.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect Order'**
+  String get incorrectorder;
+
+  /// No description provided for @incorrectitemselected.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect item selected'**
+  String get incorrectitemselected;
+
+  /// No description provided for @yourordercancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Your order cancelled'**
+  String get yourordercancelled;
+
+  /// No description provided for @weresorrytoseeyourordergo.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re sorry to see your order gone. We\'re always striving to improve, and we hope to serve you better next time'**
+  String get weresorrytoseeyourordergo;
+
+  /// No description provided for @cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cart;
+
+  /// No description provided for @we_couldnt_find_any_result.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t find any result!'**
+  String get we_couldnt_find_any_result;
+
+  /// No description provided for @please_login_register.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Login / Register'**
+  String get please_login_register;
+
+  /// No description provided for @log_in_sign_up.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in/Sign Up'**
+  String get log_in_sign_up;
+
+  /// No description provided for @please_make_your_first_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Come on, make your first order!'**
+  String get please_make_your_first_order;
+
+  /// No description provided for @total_items.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Items'**
+  String get total_items;
+
+  /// No description provided for @delivery_fee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Fee'**
+  String get delivery_fee;
+
+  /// No description provided for @discount.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount'**
+  String get discount;
+
+  /// No description provided for @total.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get total;
+
+  /// No description provided for @payment_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Summary'**
+  String get payment_summary;
+
+  /// No description provided for @checkout.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkout;
+
+  /// No description provided for @quantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get quantity;
+
+  /// No description provided for @egp.
+  ///
+  /// In en, this message translates to:
+  /// **'EGP'**
+  String get egp;
+
+  /// No description provided for @no_restaurants_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No restaurants found'**
+  String get no_restaurants_found;
+
+  /// No description provided for @thepizzaplace.
+  ///
+  /// In en, this message translates to:
+  /// **'The Pizza Place'**
+  String get thepizzaplace;
+
+  /// No description provided for @your_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Location'**
+  String get your_location;
+
+  /// No description provided for @street.
+  ///
+  /// In en, this message translates to:
+  /// **'Street'**
+  String get street;
+
+  /// No description provided for @mobile_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Number'**
+  String get mobile_number;
+
+  /// No description provided for @change_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Location'**
+  String get change_location;
+
+  /// No description provided for @location_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Name'**
+  String get location_name;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @payment_method.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Method'**
+  String get payment_method;
+
+  /// No description provided for @cash.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash'**
+  String get cash;
+
+  /// No description provided for @online.
+  ///
+  /// In en, this message translates to:
+  /// **'Online'**
+  String get online;
+
+  /// No description provided for @checkout_button.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Out'**
+  String get checkout_button;
+
+  /// No description provided for @please_enter_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter an address'**
+  String get please_enter_address;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

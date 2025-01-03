@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../data/models/setPrimaryLocation.dart';
 import '../../new_location/views/new_location_view.dart';
 import '../../new_location/views/new_location_view.dart';
@@ -26,7 +28,7 @@ class CheckOutView extends GetView<CheckOutController> {
       builder: (controller) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Check Out'),
+            title:  Text(context.translate.checkout),
             centerTitle: true,
           ),
           body: SingleChildScrollView(
@@ -47,7 +49,7 @@ class CheckOutView extends GetView<CheckOutController> {
                           height: 8.h,
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(8.0.w),
                           child: Row(
                             children: [
                               Column(
@@ -55,7 +57,7 @@ class CheckOutView extends GetView<CheckOutController> {
                                 CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "your location",
+                                    context.translate.your_location,
                                     style: GoogleFonts.dmSans(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 14,
@@ -63,7 +65,7 @@ class CheckOutView extends GetView<CheckOutController> {
                                   ),
                                   if (controller.getDelvryLocation?.data?.streetName == null||controller.getDelvryLocation?.data==null)
                                     Text(
-                                      "steeet",
+                                     context.translate.street,
                                       style: GoogleFonts.almarai(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w400,
@@ -87,9 +89,9 @@ class CheckOutView extends GetView<CheckOutController> {
                                     ),
                                   if (controller.getDelvryLocation?.data?.phoneNumber == null||controller.getDelvryLocation?.data==null)
                                     Text(
-                                      'mobile number: +20 phoneNumber ',
+                                        context.translate.mobile_number,
                                       style: GoogleFonts.almarai(
-                                          fontSize: 12,
+                                          fontSize: 12.sp,
                                           fontWeight: FontWeight.w400,
                                           color: const Color(0xff878787)),
                                     )
@@ -97,7 +99,7 @@ class CheckOutView extends GetView<CheckOutController> {
                                     Text(
                                       'mobile number: +20 ${controller.getDelvryLocation?.data?.phoneNumber.toString()} ',
                                       style: GoogleFonts.almarai(
-                                        fontSize: 12,
+                                        fontSize: 12.sp,
                                         fontWeight: FontWeight.w400,
                                         color: const Color(0xff878787),
                                       ),
@@ -123,7 +125,7 @@ class CheckOutView extends GetView<CheckOutController> {
                                       );
                                     },
                                     child: Text(
-                                      "Change Location",
+                                      context.translate.change_location,
                                       style: GoogleFonts.dmSans(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 10,

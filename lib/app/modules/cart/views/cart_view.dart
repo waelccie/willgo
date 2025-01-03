@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
 import 'package:willgo/app/modules/check_out/controllers/check_out_controller.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import 'package:willgo/core/global/const.dart';
 import '../../../../core/services/get_storage_helper.dart';
 import '../../../data/models/cart.dart';
@@ -25,7 +27,7 @@ class CartView extends GetView<CartController> {
       builder: (CartController controller) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Cart'),
+            title:  Text(context.translate.cart),
             centerTitle: true,
           ),
           body: CacheHelper.getUserToken == null?
@@ -35,14 +37,14 @@ class CartView extends GetView<CartController> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset("assets/images/NotFound.svg"),
-                SizedBox(height: 30,),
-                Text("We couldn't find any result!",style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
-                SizedBox(height: 20,),
-                Text("please Login / Register",style: GoogleFonts.dmSans(color: Color(0xff878787)),),
-                SizedBox(height: 30,),
-                AppProgressButton(radius: 10,height: 50,width: MediaQuery.of(context).size.width*0.8,onPressed: (d){
+                SizedBox(height: 30.h,),
+                Text(context.translate.we_couldnt_find_any_result,style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
+                SizedBox(height: 20.h,),
+                Text(context.translate.please_login_register,style: GoogleFonts.dmSans(color: Color(0xff878787)),),
+                SizedBox(height: 30.h,),
+                AppProgressButton(radius: 10.r,height: 50.h,width: MediaQuery.of(context).size.width*0.8,onPressed: (d){
                   Get.toNamed(Routes.AUTH);
-                },child: Text("Log in/ Sign Up",style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),)
+                },child: Text(context.translate.log_in_sign_up,style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),)
 
               ],
             ),
@@ -60,10 +62,10 @@ class CartView extends GetView<CartController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SvgPicture.asset("assets/images/NotFound.svg"),
-                          SizedBox(height: 30,),
-                          Text("We couldn't find any result!",style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
-                          SizedBox(height: 20,),
-                          Text("Come on, make your first order",style: GoogleFonts.dmSans(color: Color(0xff878787)),),
+                          SizedBox(height: 30.h,),
+                          Text(context.translate.we_couldnt_find_any_result,style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
+                          SizedBox(height: 20.h,),
+                          Text(context.translate.please_make_your_first_order,style: GoogleFonts.dmSans(color: Color(0xff878787)),),
 
                         ],
                       ),
@@ -140,10 +142,10 @@ class CartView extends GetView<CartController> {
                           dicsounr: data.data?.discount,
                           total: data.data?.totalPrice,
                         ),
-                        const SizedBox(height: 50),
+                         SizedBox(height: 50.h),
                         Padding(
                           padding:
-                          const EdgeInsets.symmetric(horizontal: 18.0, vertical: 8),
+                           EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.h),
                           child: AppProgressButton(
                             onPressed: (d) {
 
@@ -154,9 +156,9 @@ class CartView extends GetView<CartController> {
                               );
                             },
                             child: Text(
-                              'checkout',
+                             context.translate.checkout,
                               style: GoogleFonts.dmSans(
-                                fontSize: 18,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.white,
                               ),

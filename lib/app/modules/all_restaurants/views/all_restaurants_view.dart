@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_extra_fields/form_builder_extra_fields.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:willgo/app/modules/AddSupportRequest/views/add_support_request_view.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../controllers/all_restaurants_controller.dart';
 import 'WEidgets.dart';
 
@@ -11,7 +14,7 @@ class AllRestaurantsView extends GetView<AllRestaurantsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AllRestaurantsView'),
+        title:  Text(context.translate.allrestaurants,),
         centerTitle: true,
       ),
       body: GetBuilder<AllRestaurantsController>(
@@ -20,14 +23,14 @@ class AllRestaurantsView extends GetView<AllRestaurantsController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding:  EdgeInsets.symmetric(horizontal: 10.0.w),
                 child: Text(
-                  "All Rssturant",
+                  context.translate.allrestaurants,
                   style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding:  EdgeInsets.all(12.0.w),
                 child: ListView.separated(
                     shrinkWrap: true,
                     itemBuilder: (context, index) {

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:willgo/app/modules/environment/views/internet_connection_view.dart';
 import 'package:willgo/app/modules/profile/controllers/profile_controller.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 import '../../../widgets/custom_text_field.dart';
 import '../../../widgets/progress_button.dart';
 import '../../../../core/global/validator.dart';
@@ -18,7 +20,7 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
 
         return Scaffold(
           appBar: AppBar(
-            title: const Text("Add Request"),
+            title:  Text(context.translate.addrequest),
             centerTitle: true,
           ),
           body: Form(
@@ -32,8 +34,8 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
                 borderRadius: 30.r,
 
                     controller: controller.nameController,
-                    hint: "Name",
-                    name: "Name",
+                    hint: context.translate.name,
+                    name: context.translate.name,
                   ),
                   SizedBox(height: 24.h),
                   CustomTextField(
@@ -41,8 +43,8 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
 
                   controller: controller.emailController,
 
-                    hint: "Email",
-                    name: "Email",
+                    hint: context.translate.email,
+                    name: context.translate.email,
                     type: TextInputType.emailAddress,
                     validate: Validator.validateEmail,
                   ),
@@ -50,8 +52,8 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
                   CustomTextField(
                     borderRadius: 30.r,
                     controller: controller.noteController,
-                    hint: "Note",
-                    name: "Note",
+                    hint: context.translate.note,
+                    name: context.translate.note,
                     maxLines: 8,
                   ),
                   SizedBox(height: 50.h),
@@ -59,7 +61,7 @@ class AddSupportRequestView extends GetView<AddSupportRequestController> {
                     onPressed: (anim) {
                       controller.submitRequest();
                     },
-                    text: "Send",
+                    text: context.translate.send,
                   ),
                 ],
               ),

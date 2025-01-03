@@ -157,10 +157,82 @@
   "faq": "FAQ",
   "myrates": "My Rates",
   "requestaccountdeletion": "Request Account Deletion",
-  "signout": "Sign Out"
+  "signout": "Sign Out",
+  "addrequest": "Add Request",
+  "name": "Name",
+  "note": "Note",
+  "sendrequest": "Send Request",
+  "minut": "Minute",
+  "edit": "Edit",
+  "delete": "Delete",
+  "savechanges": "Save Changes",
+  "add": "Add",
+  "select": "Select",
+  "selectdate": "Select Date",
+  "selecttime": "Select Time",
+  "selectlocation": "Select Location",
+  "selectaddress": "Select Address",
+  "selectcity": "Select City",
+  "selectcountry": "Select Country",
+  "selectstate": "Select State",
+  "register": "Register",
+  "asaguest": "As a Guest",
+  "orsiginwith": "Or sign in with",
+  "cancelorder": "Cancel Order",
+  "change": "Change",
+  "change_password": "Change Password",
+  "changeofmind": "Change of Mind",
+  "foundbetterpriceelsewhere": "Found better price elsewhere",
+  "deliverytime": "Delivery Time",
+  "deliveryaddress": "Delivery Address",
+  "deliverycity": "Delivery City",
+  "deliverydelay": "Delivery Delay",
+  "incorrectorder": "Incorrect Order",
+  "incorrectitemselected": "Incorrect item selected",
+  "yourordercancelled": "Your order cancelled",
+  "weresorrytoseeyourordergo":"We're sorry to see your order gone. We're always striving to improve, and we hope to serve you better next time",
+  "cart": "Cart",
+  "we_couldnt_find_any_result": "We couldn't find any result!",
+  "please_login_register": "Please Login / Register",
+  "log_in_sign_up": "Log in/Sign Up",
+  "please_make_your_first_order": "Come on, make your first order!",
+  "total_items": "Total Items",
+  "delivery_fee": "Delivery Fee",
+  "discount": "Discount",
+  "total": "Total",
+  "payment_summary": "Payment Summary",
+  "checkout": "Checkout",
+  "quantity": "Quantity",
+  "egp": "EGP",
+  "no_restaurants_found": "No restaurants found",
+  "thepizzaplace": "The Pizza Place",
+  "your_location": "Your Location",
+  "street": "Street",
+  "mobile_number": "Mobile Number",
+  "change_location": "Change Location",
+  "location_name": "Location Name",
+  "address": "Address",
+  "payment_method": "Payment Method",
+  "cash": "Cash",
+  "online": "Online",
+  "checkout_button": "Check Out",
+  "please_enter_address": "Please enter an address"
+   
+  }
+  
+  
+  
+
+  
+
+
+  
+
+
+
 
 
 
 
   
-}
+

@@ -8,6 +8,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:willgo/app/data/models/cart.dart';
 import 'package:willgo/app/modules/check_out/controllers/check_out_controller.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
+import 'package:willgo/core/extensions/build_context.dart';
 
 import '../../../../core/constants/const/app_constants.dart';
 
@@ -124,21 +125,21 @@ class PaymentSummeryWidget extends StatelessWidget {
       future: Get.find<CheckOutController>().getCart,
       onData: (BuildContext context, Cart data) {
         return Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 8.0,
+          padding:  EdgeInsets.symmetric(
+            vertical: 8.0.h,
           ),
           child: Container(
             decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xffEDEDED)),
-                borderRadius: BorderRadius.circular(16)),
+                borderRadius: BorderRadius.circular(16.r)),
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                   EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 10.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Payment Summary',
+                     context.translate.payment_summary,
                     style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600, fontSize: 16),
                   ),
@@ -149,16 +150,16 @@ class PaymentSummeryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Total Items (${data.data!.data?.length??0})',
+                        '${context.translate.total_items} (${data.data!.data?.length??0})',
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
                             color: const Color(0xff878787)),
                       ),
                       Text(
-                        '${AppConstants.appCurrency} ${data.data!.price}',
+                        '${ context.translate.egp} ${data.data!.price}',
                         style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w700, fontSize: 14),
+                            fontWeight: FontWeight.w700, fontSize: 14.sp),
                       )
                     ],
                   ),
@@ -169,16 +170,16 @@ class PaymentSummeryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Delivery Fee',
+                         context.translate.delivery_fee,
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: const Color(0xff878787)),
                       ),
                       Text(
                           data.data!.deliveryFee.toString(),
                         style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w700, fontSize: 14),
+                            fontWeight: FontWeight.w700, fontSize: 14.sp),
                       )
                     ],
                   ),
@@ -189,18 +190,18 @@ class PaymentSummeryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Discount',
+                         context.translate.discount,
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: const Color(0xff878787)),
                       ),
                       Text(
-                        '-${AppConstants.appCurrency} ${data.data!.discount}',
+                        '-${ context.translate.egp} ${data.data!.discount}',
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w700,
                             color: const Color(0xff01A0E2),
-                            fontSize: 14),
+                            fontSize: 14.sp),
                       )
                     ],
                   ),
@@ -211,16 +212,16 @@ class PaymentSummeryWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Total',
+                         context.translate.total,
                         style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
                             color: const Color(0xff878787)),
                       ),
                       Text(
-                        '${AppConstants.appCurrency} ${data.data!.totalPrice}',
+                        '${ context.translate.egp} ${data.data!.totalPrice}',
                         style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w700, fontSize: 14),
+                            fontWeight: FontWeight.w700, fontSize: 14.sp),
                       )
                     ],
                   ),
