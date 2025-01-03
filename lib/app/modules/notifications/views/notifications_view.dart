@@ -23,18 +23,23 @@ class NotificationsView extends GetView<NotificationsController> {
               appBar: AppBar(
                 backgroundColor: Colors.white,
                 leadingWidth: 60,
-                leading: Padding(
-                  padding: EdgeInsets.only(left: 15.0.w),
-                  child: Container(
-                    height: 1.h,
-                    width: 1.w,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: const Color(0xffEDEDED))),
-                    child: const Icon(
-                      Icons.arrow_back_ios_outlined,
-                      color: Colors.black,
-                      size: 18,
+                leading: InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15.0.w),
+                    child: Container(
+                      height: 1.h,
+                      width: 1.w,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: const Color(0xffEDEDED))),
+                      child: const Icon(
+                        Icons.arrow_back_ios_outlined,
+                        color: Colors.black,
+                        size: 18,
+                      ),
                     ),
                   ),
                 ),
