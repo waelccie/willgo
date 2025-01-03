@@ -33,15 +33,15 @@ class RegisterView extends GetView<RegisterController> {
                   SizedBox(height: 20.h),
                   CustomTextField(
                     controller: controller.userController,
-                    hint: "User Name",
-                    name: "enter your name",
+                    name: "User Name",
+                    hint: "Enter your Name",
                     type: TextInputType.name,
                     validate: Validator.validateUsername,
                   ),
                   SizedBox(height: 12.h),
                   CustomTextField(
                     controller: controller.emailController,
-                    hint: "Enter Email",
+                    hint: "Enter Email Address",
                     name: "Email Address",
                     type: TextInputType.emailAddress,
                     validate: Validator.validateEmail,
@@ -50,13 +50,13 @@ class RegisterView extends GetView<RegisterController> {
                   PhoneTextFormField(
                     controller: controller.phoneController,
                     onCountryChanged: controller.onChangePhoneKey,
-                    hintText: "Enter your phone number",
+                    hintText: "Enter your  number Phone",
                     name: "Phone Number",
                   ),
                   SizedBox(height: 12.h),
                   CustomTextField(
                     controller: controller.passwordController,
-                    hint: "Password",
+                    hint: "Enter Password",
                     name: "Password",
                     type: TextInputType.visiblePassword,
                     validate: Validator.validatePassword,
@@ -65,7 +65,7 @@ class RegisterView extends GetView<RegisterController> {
                   SizedBox(height: 12.h),
                   CustomTextField(
                     controller: controller.confirmPasswordController,
-                    hint: "enter password",
+                    hint: "Re-Enter password",
                     name: "Confirm Password",
                     type: TextInputType.visiblePassword,
                     validate: (val) {

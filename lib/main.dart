@@ -13,6 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await CacheHelper.init();
+
   log(CacheHelper.getUserToken.toString());
   Get.put<EnvironmentController>(EnvironmentController());
   Get.find<EnvironmentController>().checkConnection();

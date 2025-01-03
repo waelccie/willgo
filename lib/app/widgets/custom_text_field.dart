@@ -232,7 +232,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             fillColor: widget.fillColor ?? Colors.transparent,
             filled: true,
             errorText: widget.errorText,
-            errorMaxLines: 1,
+            errorMaxLines: 2,
             prefixIcon: widget.prefixIcon,
             suffixIcon: widget.isPassword
                 ? SizedBox(

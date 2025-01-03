@@ -122,7 +122,7 @@ class _AddFullAddressState extends State<AddFullAddress> {
                   SizedBox(
                     height: 14.h,
                   ),
-                  AppProgressButton(
+                  if(Get.find<CheckOutController>().isCheck==false) AppProgressButton(
                     onPressed: (s) {
                       controller.add_newLocation();
                     },

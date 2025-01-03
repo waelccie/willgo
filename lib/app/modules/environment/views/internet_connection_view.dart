@@ -1,3 +1,5 @@
+import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/constants/theme/styles_manager.dart';
 import '../../../../core/extensions/build_context.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class InternetConnectionView extends GetView<EnvironmentController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Assets.images.offline.svg(),
+             SvgPicture.asset("assets/images/wifi.svg"),
               SizedBox(height: 20.h),
               Text(
                 context.translate.you_are_offline,
@@ -27,6 +29,7 @@ class InternetConnectionView extends GetView<EnvironmentController> {
               ),
               SizedBox(height: 4.h),
               Text(
+                textAlign: TextAlign.center,
                 context.translate.please_connect_to_the_internet_and_try_again,
                 style: StylesManager.light(
                   fontSize: 18,

@@ -63,11 +63,12 @@ class _SettingsState extends State<Settings> {
                       },
                       activeColor: Colors.white, // لون السويتش في حالة "تشغيل"
                       activeTrackColor:
-                          Colors.blue[100], // لون المسار في حالة "تشغيل"
+                      const Color(0xff01A0E2), // لون المسار في حالة "تشغيل"
+// لون المسار في حالة "تشغيل"
                       inactiveThumbColor:
-                          Colors.white, // لون السويتش في حالة "إيقاف"
+                      Colors.grey, // لون السويتش في حالة "إيقاف"
                       inactiveTrackColor:
-                          const Color(0xffDFE0F3), // لون المسار في حالة "إيقاف"
+                      Colors.grey[300], // لون المسار في حالة "إيقاف"
                     ),
                   ),
                   buildListTileSettings(

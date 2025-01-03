@@ -159,7 +159,7 @@ class User {
   dynamic countryId;
   dynamic cityId;
   String? fcmToken;
-  int? isNotification;
+  dynamic? isNotification;
   String? createdAt;
   String? updatedAt;
   String? image;
@@ -230,14 +230,14 @@ class Restaurant {
   String? address;
   String? latitude;
   String? longitude;
-  int? rate;
+  dynamic? rate;
   List<String>? phoneNumbers;
   String? deliveryTime;
   String? crNumber;
   String? taxId;
   String? licenceExpireDate;
   String? legalEntityName;
-  int? status;
+  dynamic? status;
   bool? isFavourite;
   int? orderCounts;
   String? createdAt;
@@ -389,7 +389,7 @@ class Location {
 class OrderProducts {
   int? productId;
   int? quantity;
-  String? options;
+  dynamic? options;
   Product? product;
 
   OrderProducts({this.productId, this.quantity, this.options, this.product});

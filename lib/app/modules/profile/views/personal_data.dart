@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:willgo/app/data/models/user_model.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
+import '../../../data/apis/user_apis.dart';
 import '../controllers/profile_controller.dart';
 import '../../../widgets/progress_button.dart';
 
@@ -32,93 +33,102 @@ class PersonaldataView extends StatelessWidget {
               ),
               body: Padding(
                 padding: const EdgeInsets.all(18.0),
-                child: Column(
-                  children: [
-                    Stack(
-                      alignment: Alignment.bottomRight,
+                child: SingleChildScrollView(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height*0.8,
+                    child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 45,
-                          backgroundColor: const Color(0xFFEEEEEE),
-                          child: Text(
-                            '${data.data!?.name.toString().substring(0, 1)}',
-                            style: const TextStyle(
-                              fontSize: 35,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,
+                        Stack(
+                          alignment: Alignment.bottomRight,
+                          children: [
+                            CircleAvatar(
+                              radius: 45,
+                              backgroundColor: const Color(0xFFEEEEEE),
+                              child: Text(
+                                '${data.data!?.name.toString().substring(0, 1)}',
+                                style: const TextStyle(
+                                  fontSize: 35,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
                             ),
-                          ),
+                          ],
                         ),
+                        SizedBox(height: 20.h),
+                        CustomTextField(
+                          controller: controller.name,
+                          borderRadius: 8,
+                          labelStyle: GoogleFonts.inter(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xff101010)),
+                          height: 40.h,
+                          // controller: controller.userController,
+                          hint: "Full Name",
+                          name: "Full Name",
+                          type: TextInputType.name,
+                        ),
+                        SizedBox(height: 18.h),
+                        // CustomTextField(
+                        //   controller: controller.password,
+                        //
+                        //   borderRadius: 8,
+                        //   labelStyle: GoogleFonts.inter(
+                        //       fontSize: 14,
+                        //       fontWeight: FontWeight.w500,
+                        //       color: const Color(0xff101010)),
+                        //   height: 40.h,
+                        //   // controller: controller.userController,
+                        //   hint: "Date of birth",
+                        //   name: "Date of birth",
+                        //   type: TextInputType.name,
+                        // ),
+                        CustomTextField(
+                          controller: controller.phone,
+
+                          borderRadius: 8,
+                          labelStyle: GoogleFonts.inter(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xff101010)),
+                          height: 40.h,
+                          // controller: controller.userController,
+                          hint: "Phone",
+                          name: "Phone",
+                          type: TextInputType.name,
+                        ),
+                        SizedBox(height: 18.h),
+                        CustomTextField(
+                          controller: controller.email,
+
+                          borderRadius: 8,
+                          labelStyle: GoogleFonts.inter(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xff101010)),
+                          height: 40.h,
+                          // controller: controller.userController,
+                          hint: "Email",
+                          name: "Email",
+                          type: TextInputType.name,
+                        ),
+                        const Spacer(),
+                        AppProgressButton(
+                          onPressed: (d) {
+                            controller.updateprofile().then((onValue){
+
+                              controller.getUserData= UserApis.getUserData();
+                              controller.update();
+                            });
+                          },
+                          backgroundColor: const Color(0xff01A0E2),
+                          text: "Save",
+                        ),
+                        SizedBox(height: 12.h),
                       ],
                     ),
-                    SizedBox(height: 20.h),
-                    CustomTextField(
-                      controller: controller.name,
-                      borderRadius: 8,
-                      labelStyle: GoogleFonts.inter(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xff101010)),
-                      height: 40.h,
-                      // controller: controller.userController,
-                      hint: "Full Name",
-                      name: "Full Name",
-                      type: TextInputType.name,
-                    ),
-                    SizedBox(height: 18.h),
-                    // CustomTextField(
-                    //   controller: controller.password,
-                    //
-                    //   borderRadius: 8,
-                    //   labelStyle: GoogleFonts.inter(
-                    //       fontSize: 14,
-                    //       fontWeight: FontWeight.w500,
-                    //       color: const Color(0xff101010)),
-                    //   height: 40.h,
-                    //   // controller: controller.userController,
-                    //   hint: "Date of birth",
-                    //   name: "Date of birth",
-                    //   type: TextInputType.name,
-                    // ),
-                    CustomTextField(
-                      controller: controller.phone,
-
-                      borderRadius: 8,
-                      labelStyle: GoogleFonts.inter(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xff101010)),
-                      height: 40.h,
-                      // controller: controller.userController,
-                      hint: "Phone",
-                      name: "Phone",
-                      type: TextInputType.name,
-                    ),
-                    SizedBox(height: 18.h),
-                    CustomTextField(
-                      controller: controller.email,
-
-                      borderRadius: 8,
-                      labelStyle: GoogleFonts.inter(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xff101010)),
-                      height: 40.h,
-                      // controller: controller.userController,
-                      hint: "Email",
-                      name: "Email",
-                      type: TextInputType.name,
-                    ),
-                    const Spacer(),
-                    AppProgressButton(
-                      onPressed: (d) {
-                        controller.updateprofile();
-                      },
-                      backgroundColor: const Color(0xff01A0E2),
-                      text: "Save",
-                    ),
-                    SizedBox(height: 12.h),
-                  ],
+                  ),
                 ),
               ),
             );

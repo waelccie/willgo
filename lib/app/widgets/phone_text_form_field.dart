@@ -81,11 +81,11 @@ class PhoneTextFormField extends StatelessWidget {
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     alignLabelWithHint: true,
                     hintStyle: StylesManager.regular(
-                      fontSize: 14,
-                      color: Colors.grey[600],
+                      fontSize: 12,
+                      color: Colors.grey[500],
                     ),
                     errorStyle:
-                        const TextStyle(color: Colors.red, fontSize: 12),
+                        const TextStyle(color: Color(0xffFFB1243D), fontSize: 12),
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
                     disabledBorder: const OutlineInputBorder(
@@ -135,7 +135,7 @@ class PhoneTextFormField extends StatelessWidget {
                         color: Colors.grey[600],
                       ),
                       errorStyle:
-                          const TextStyle(color: Colors.red, fontSize: 12),
+                          const TextStyle(color: Color(0xffFFB1243D), fontSize: 12),
                       contentPadding: EdgeInsets.symmetric(
                           vertical: 12.h, horizontal: 16.w),
                       disabledBorder: const OutlineInputBorder(
@@ -180,7 +180,7 @@ class PhoneTextFormField extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   field.errorText ?? '',
-                  style: const TextStyle(color: Colors.red),
+                  style: const TextStyle(color: Color(0xffFFB1243D))
                 ),
               ),
           ],
