@@ -14,8 +14,13 @@ class CategoryDetailsController extends GetxController {
     update();
   }
 
-  bool isClicked = false;
-  late Future<ResturantByCat> getResurantByCat;
+  Map<int, bool> isClicked = {};
+
+  // تبديل حالة العنصر عند النقر
+  void toggleClickedState(int id) {
+    isClicked[id] = !(isClicked[id] ?? false); // عكس الحالة الحالية
+    update(); // تحديث الواجهة
+  }  late Future<ResturantByCat> getResurantByCat;
 
   Future<void> fetchResturantByCat(catid, classid) async {
     getResurantByCat = HomeApis.getResturantByCat(catid, classid);

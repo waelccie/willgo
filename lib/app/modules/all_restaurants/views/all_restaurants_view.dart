@@ -11,7 +11,7 @@ class AllRestaurantsView extends GetView<AllRestaurantsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AllRestaurantsView'),
+        title: const Text('All Rssturant'),
         centerTitle: true,
       ),
       body: GetBuilder<AllRestaurantsController>(
@@ -26,7 +26,7 @@ class AllRestaurantsView extends GetView<AllRestaurantsController> {
                   style: GoogleFonts.dmSans(fontWeight: FontWeight.w500),
                 ),
               ),
-              Padding(
+              controller.getAllResturantController?.data==null? Center(child: CircularProgressIndicator(),): Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: ListView.separated(
                     shrinkWrap: true,

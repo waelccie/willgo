@@ -120,6 +120,7 @@ class OrdersView extends GetView<OrdersController> {
                             child: Container(
                               height: MediaQuery.of(context).size.height,
                               child: ListView.separated(
+                                physics: NeverScrollableScrollPhysics(),
                                 itemBuilder: (BuildContext context, int index) {
                                   return GestureDetector(
                                     onTap: () {

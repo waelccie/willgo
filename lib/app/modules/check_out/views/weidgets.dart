@@ -128,6 +128,7 @@ class PaymentSummeryWidget extends StatelessWidget {
             vertical: 8.0,
           ),
           child: Container(
+
             decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xffEDEDED)),
                 borderRadius: BorderRadius.circular(16)),

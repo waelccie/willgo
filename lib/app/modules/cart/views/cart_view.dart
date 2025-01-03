@@ -21,7 +21,7 @@ class CartView extends GetView<CartController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CartController>(
-      init: CartController(),
+      init: CartController()..checkLocationStatus(context),
       builder: (CartController controller) {
         return Scaffold(
           appBar: AppBar(
@@ -64,6 +64,14 @@ class CartView extends GetView<CartController> {
                           Text("We couldn't find any result!",style: GoogleFonts.dmSans(fontWeight: FontWeight.w700,fontSize: 16),),
                           SizedBox(height: 20,),
                           Text("Come on, make your first order",style: GoogleFonts.dmSans(color: Color(0xff878787)),),
+                          SizedBox(height: 20,),
+Padding(
+  padding: const EdgeInsets.all(10.0),
+  child: AppProgressButton(onPressed: (v){
+    Get.toNamed(Routes.ALL_RESTAURANTS);
+  },child: Text("Find Food",style: GoogleFonts.dmSans(color: Colors.white,fontWeight: FontWeight.w500),),),
+)
+
 
                         ],
                       ),

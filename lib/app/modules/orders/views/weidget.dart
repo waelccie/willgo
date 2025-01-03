@@ -278,7 +278,7 @@ Widget payment_SummeryWidget1(OrderDetailsModel orderModel) => Padding(
     );
 
 Widget order_SummeryWidget1(OrderDetailsModel details) => Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 2),
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 10),
       child: Container(
         decoration: BoxDecoration(
             border: Border.all(color: const Color(0xffEDEDED)),

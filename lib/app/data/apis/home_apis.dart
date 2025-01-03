@@ -1,5 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:willgo/app/data/models/restaurants_model.dart';
 import 'package:willgo/app/data/models/parent_categories_model.dart';
 import 'package:willgo/app/data/models/sliders_model.dart';
@@ -7,9 +9,11 @@ import 'package:willgo/app/data/models/sliders_model.dart';
 import '../../../core/global/const.dart';
 import '../../../core/services/get_storage_helper.dart';
 import '../../../core/services/network_service.dart/dio_network_service.dart';
+import '../../modules/environment/controllers/environment_controller.dart';
 import '../models/ResturantByCat.dart';
 import '../models/cat_Details.dart';
 import '../models/category_model.dart';
+import '../models/notifactionModel.dart';
 import '../parameters/home/get_restaurants_parameters.dart';
 
 class HomeApis {
@@ -131,7 +135,10 @@ class HomeApis {
     final request = NetworkRequest(
       queryParams: {
         if (catid != null) "category_id": catid,
-        if (classid != null) "class_category_id": classid
+        if (classid != null) "class_category_id": classid,
+
+        'longitude':  Get.find<EnvironmentController>().latLng!.longitude,
+        'latitude':  Get.find<EnvironmentController>().latLng!.latitude,
       },
       path: APIKeys.getResturantByCat,
       type: NetworkRequestType.GET,
@@ -370,4 +377,67 @@ class HomeApis {
     );
     return data;
   }
+
+
+
+
+
+  static Future<NotifactionModel> get_Notifaction() async {
+    final request = NetworkRequest(
+      path: APIKeys.getNotifaction,
+      type: NetworkRequestType.GET,
+      headers: {
+        if (CacheHelper.getUserToken != null)
+          'Authorization': "Bearer ${CacheHelper.getUserToken ?? ""}",
+        "lang": CacheHelper.getLocale,
+      },
+      data: const NetworkRequestBody.empty(),
+    );
+    final response = await networkService.execute(
+      request,
+          (parser) => NotifactionModel.fromJson(parser),
+    );
+    var data = response.maybeWhen(
+      ok: ((data) {
+        return data;
+      }),
+      orElse: () {
+        return null;
+      },
+      badRequest: (data) {
+        return data;
+      },
+      created: (data) {
+        return data;
+      },
+      unprocessableEntity: (data) {
+        return data;
+      },
+      noAuth: (data) {
+        return data;
+      },
+      conflict: (data) {
+        return data;
+      },
+      invalidParameters: (data) {
+        return data;
+      },
+      noAccess: (data) {
+        return data;
+      },
+      noData: (message) {
+        if (kDebugMode) {
+          print(message);
+        }
+        BotToast.closeAllLoading();
+      },
+      notFound: (data) {
+        return data;
+      },
+    );
+    return data;
+  }
+
+
+
 }

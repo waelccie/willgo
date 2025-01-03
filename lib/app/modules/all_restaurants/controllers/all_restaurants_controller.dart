@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../data/apis/home_apis.dart';
 import '../../../data/models/restaurants_model.dart';
 import '../../../data/parameters/home/get_restaurants_parameters.dart';
+import '../../environment/controllers/environment_controller.dart';
 
 class AllRestaurantsController extends GetxController {
   int selectedIndex = 0;
@@ -24,8 +25,8 @@ class AllRestaurantsController extends GetxController {
   Future getAllResturant() async {
     getAllResturantController = await HomeApis.getAllResturant(
       GetRestaurantsParameters(
-        longitude: 31.1669351,
-        latitude: 30.9553698,
+        longitude:  Get.find<EnvironmentController>().latLng!.longitude,
+        latitude:  Get.find<EnvironmentController>().latLng!.latitude,
         page: 0,
       ),
     );

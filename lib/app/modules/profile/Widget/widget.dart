@@ -63,7 +63,7 @@ void show(context) {
     builder: (BuildContext context) {
       return SizedBox(
         width: context.width,
-        height: context.height * 0.5, // Set your desired height
+        height: context.height * 0.3, // Set your desired height
         child: BottomSheetView(context),
       );
     },

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:willgo/app/widgets/custom_future_builder.dart';
@@ -8,6 +9,7 @@ import 'package:willgo/core/constants/const/app_constants.dart';
 import '../../../../core/services/get_storage_helper.dart';
 import '../../../data/models/user_model.dart';
 import '../../../widgets/delete_AccountDialog.dart';
+import '../Widget/bottomSheetWidget.dart';
 import '../Widget/logout_dialog.dart';
 import 'personal_data.dart';
 import 'settings.dart';
@@ -262,10 +264,76 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     child: TextButton.icon(
                                       onPressed: () async {
-                                        showCupertinoDialog(
+                                        showModalBottomSheet(
                                           context: context,
-                                          builder: (context) =>
-                                              const LogoutDialog(),
+                                          builder: (BuildContext context) {
+                                            return SizedBox(
+                                              width: context.width,
+                                              height: context.height * 0.25, // Set your desired height
+                                              child:Padding(
+                                                padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 18.w),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Center(
+                                                      child: Container(
+                                                        height: 4.h,
+                                                        width: 50.w,
+                                                        color: const Color(0xffD6D6D6),
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 12.h,
+                                                    ),
+                                                    Text(
+                                                      'SignOut',
+                                                      style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 16),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 18.h,
+                                                    ),
+                                                    Text("Do You Want To LogOut",style: GoogleFonts.dmSans(
+                                                      color: Colors.grey
+                                                    ),),
+                                                    SizedBox(
+                                                      height: 25.h,
+                                                    ),
+
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: AppProgressButton(onPressed: (v){
+                                                              Navigator.of(context).pop();
+            controller.logout();
+                                                          },child: Text("LogOut",style: GoogleFonts.dmSans(
+                                                            color: Colors.white
+                                                          ),),),
+                                                        ),
+                                                        SizedBox(width: 5,),
+
+                                                        Expanded(
+                                                          child: MaterialButton(onPressed: (){
+                                                            Navigator.pop(context);
+                                                          },
+                                                          child: Container(
+                                                            height:52.h,
+                                                            width:180.w,
+
+                                                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
+                                                            border: Border.all(color: Colors.grey)
+                                                            ),
+                                                            child: Center(child: Text("Cancel",style: GoogleFonts.dmSans(color: Colors.grey,fontWeight: FontWeight.w500),)),
+                                                          ),
+                                                          )
+                                                        )
+                                                      ],
+                                                    )
+                                                  ],
+
+                                                ),
+                                              )
+                                            );
+                                          },
                                         );
                                       },
                                       icon: const Icon(
@@ -303,6 +371,20 @@ class ProfileView extends GetView<ProfileController> {
                     );
                   },
                 ),
+        );
+      },
+    );
+  }
+
+
+  void show(context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return SizedBox(
+          width: context.width,
+          height: context.height * 0.3, // Set your desired height
+          child: BottomSheetView(context),
         );
       },
     );

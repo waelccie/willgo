@@ -15,8 +15,11 @@ class SearchControllers extends GetxController {
   // نموذج البحث الذي يحتوي على البيانات المسترجعة
   late SearchModel? searchModel;
 
-  // قائمة البيانات المسترجعة من البحث
-  List<Datum> searchResults = [];
+  // قائمة المنتجات المسترجعة
+  List<Product> productResults = [];
+
+  // قائمة المطاعم المسترجعة
+  List<Restaurant> restaurantResults = [];
 
   // حالة التحميل
   bool isLoading = false;
@@ -24,7 +27,8 @@ class SearchControllers extends GetxController {
   /// استدعاء API لتنفيذ البحث بناءً على النص المدخل
   Future<void> searchCall(String query) async {
     if (query.isEmpty) {
-      searchResults.clear(); // مسح النتائج عند إدخال نص فارغ
+      productResults.clear(); // مسح نتائج المنتجات عند إدخال نص فارغ
+      restaurantResults.clear(); // مسح نتائج المطاعم عند إدخال نص فارغ
       update();
       return;
     }
@@ -34,6 +38,7 @@ class SearchControllers extends GetxController {
 
     try {
       showLoading(); // عرض مؤشر تحميل
+
       // استدعاء API الخاص بالبحث
       var res = await searchApis.search(
         parameters: searcParaneter(name: query),
@@ -42,13 +47,18 @@ class SearchControllers extends GetxController {
       if (res.success == true) {
         // تحديث البيانات عند نجاح الاستدعاء
         searchModel = res;
-        searchResults = searchModel!.data ?? [];
+
+        // تقسيم النتائج إلى منتجات ومطاعم
+        productResults = searchModel?.data?.products ?? [];
+        restaurantResults = searchModel?.data?.restaurants ?? [];
+
         BotToast.closeAllLoading();
         BotToast.showText(text: res.message ?? "Search successful");
       } else {
         // عرض الأخطاء إذا حدثت مشكلة
         showErrorsSequentially(res.errors ?? []);
-        searchResults.clear();
+        productResults.clear();
+        restaurantResults.clear();
       }
     } catch (e) {
       Get.snackbar("Error", "Failed to fetch search results");

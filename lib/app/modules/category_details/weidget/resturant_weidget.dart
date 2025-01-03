@@ -14,7 +14,7 @@ class resturant_Weidget extends StatelessWidget {
   final String name;
   final String image;
 
-  const resturant_Weidget(
+   resturant_Weidget(
       {super.key, required this.name, required this.image, required this.id});
 
   @override
@@ -24,8 +24,8 @@ class resturant_Weidget extends StatelessWidget {
         return InkWell(
           onTap: () {
             controller.fetchResturantByCat(id, null);
-
-            controller.isClicked = !controller.isClicked;
+            controller.update();
+          controller  .toggleClickedState( id);// تحديث الواجهة
             controller.update();
           },
           child: Container(
@@ -35,7 +35,7 @@ class resturant_Weidget extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
-                          color: controller.isClicked == true
+                          color: controller.isClicked[id] == true
                               ? Color(0xff01A0E2)
                               : Colors.white)),
                   child: Padding(
@@ -55,7 +55,7 @@ class resturant_Weidget extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: controller.isClicked == true
+                      color:  controller.isClicked[id] == true
                           ? Color(0xff01A0E2)
                           : Colors.white),
                   child: Padding(
@@ -66,7 +66,7 @@ class resturant_Weidget extends StatelessWidget {
                       style: GoogleFonts.dmSans(
                           fontWeight: FontWeight.w500,
                           fontSize: 12,
-                          color: controller.isClicked == true
+                          color:  controller.isClicked[id] == true
                               ? Colors.white
                               : Colors.black),
                     ),
